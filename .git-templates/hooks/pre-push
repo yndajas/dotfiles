@@ -1,0 +1,6 @@
+#!/bin/sh
+
+## play audio
+number=`jot -r 1 1 2`
+afplay ~/.git-templates-related/hooks/push-$number.wav &
+exit 0
