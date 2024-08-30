@@ -1,6 +1,0 @@
-#!/bin/sh
-
-## play audio
-number=`jot -r 1 1 4`
-afplay ~/.git-templates-related/hooks/checkout-$number.wav &
-exit 0

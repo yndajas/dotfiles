@@ -1,27 +1,25 @@
-[init]
-	defaultBranch = main
-	templatedir = ~/.git-templates
 [color]
 	ui = true
-[user]
-	name = Ynda Jas
-	email = yndajas@gmail.com
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[core]
-	excludesfile = /Users/yndajas/.gitignore
-	editor = nano -w
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [commit]
-	template = /Users/yndajas/.stCommitMsg
+	gpgsign = true
+	template = /Users/ynda/.stCommitMsg
 	verbose = true
-[alias]
-	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / | grep -v ^'alias '
+[core]
+	editor = nvim
+	excludesfile = /Users/ynda/.gitignore_global
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+[rebase]
+	autosquash = true
+	updateRefs = true
+[user]
+	email = yndajas@gmail.com
+	name = Ynda Jas
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICAybAdFboSceiMH16T8hX1eZ4HNVukUohmxCw6bw8RL
+

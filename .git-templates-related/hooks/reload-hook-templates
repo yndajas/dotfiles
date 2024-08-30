@@ -1,2 +1,0 @@
-rm -rf .git/hooks
-git init

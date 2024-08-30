@@ -1,5 +1,0 @@
-#!/bin/sh
-
-## play audio
-afplay ~/.git-templates-related/hooks/fusion-ha.wav &
-exit 0
