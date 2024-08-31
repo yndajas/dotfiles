@@ -6,6 +6,7 @@
 - clean: ['~']
 
 - link:
+    ~/.aliases: .aliases
     ~/.gitconfig: .gitconfig
     ~/.gitignore_global: .gitignore_global
     ~/.stCommitMsg: .stCommitMsg
