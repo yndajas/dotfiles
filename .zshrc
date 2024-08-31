@@ -227,6 +227,10 @@ TEXT_RED='\033[0;31m'
 TEXT_RESET='\033[0m'
 
 if output=$(git -C ~/code/github.com/yndajas/dotfiles status --porcelain) && [ -z "$output" ]; then
+  if output=$(git -C ~/code/github.com/yndajas/dotfiles diff @{u}) && [ -z "$output" ]; then
+  else
+    echo -e "\n${TEXT_RED}${TEXT_BOLD}ALERT: unpushed changes in ~/code/github.com/yndajas/dotfiles${TEXT_RESET}"
+  fi
 else 
   echo -e "\n${TEXT_RED}${TEXT_BOLD}ALERT: uncommited changes in ~/code/github.com/yndajas/dotfiles${TEXT_RESET}"
 fi
