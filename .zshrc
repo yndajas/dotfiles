@@ -215,3 +215,9 @@ function clean_branches() {
 # fzf (fuzzy finder) setup
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# include local customisations (not backed up at github.com/yndajas/dotfiles)
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi
+
