@@ -221,3 +221,13 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
+
+TEXT_BOLD='\033[1m'
+TEXT_RED='\033[0;31m'
+TEXT_RESET='\033[0m'
+
+if output=$(git -C ~/code/github.com/yndajas/dotfiles status --porcelain) && [ -z "$output" ]; then
+else 
+  echo -e "\n${TEXT_RED}${TEXT_BOLD}ALERT: uncommited changes in ~/code/github.com/yndajas/dotfiles${TEXT_RESET}"
+fi
+
