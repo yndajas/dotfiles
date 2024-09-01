@@ -1,8 +1,11 @@
-# ls
+# cat -> bat
+
+alias cat="bat"
+
+# ls -> lsd
 
 alias ls="lsd --almost-all --classify --group-directories-first"
 
 # Vim -> Neovim
 
 alias vim="nvim"
-

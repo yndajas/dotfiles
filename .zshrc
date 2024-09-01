@@ -211,6 +211,10 @@ function clean_branches() {
 # fzf (fuzzy finder) setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# use bat to add syntax highlighting to man
+# see https://github.com/sharkdp/bat#man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
