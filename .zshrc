@@ -1,3 +1,5 @@
+# START local-env (dxw)
+
 # shellcheck disable=SC2148
 
 if [[ "$(uname -m)" == "arm64" ]] || [[ "$(sysctl -in sysctl.proc_translated)" == "1" ]]; then
@@ -185,7 +187,6 @@ fpath=(~/.zsh.d/ $fpath)
 
 # command to clean up old git branches
 # See: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote/38404202#38404202
-
 function clean_branches() {
   FORCE=false
 
@@ -207,13 +208,7 @@ function clean_branches() {
   git switch -
 }
 
-# if git rev-parse --git-dir > /dev/null 2>&1; then
-#   echo "==> Removing merged git branches"
-#   clean_branches
-# fi
-
 # fzf (fuzzy finder) setup
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
@@ -221,7 +216,7 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
-
+# alert if dotfiles changes are not committed or pushed to remote
 TEXT_BOLD='\033[1m'
 TEXT_RED='\033[0;31m'
 TEXT_RESET='\033[0m'
@@ -234,4 +229,3 @@ if output=$(git -C ~/code/github.com/yndajas/dotfiles status --porcelain) && [ -
 else 
   echo -e "\n${TEXT_RED}${TEXT_BOLD}ALERT: uncommited changes in ~/code/github.com/yndajas/dotfiles${TEXT_RESET}"
 fi
-
