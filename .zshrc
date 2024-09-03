@@ -240,5 +240,5 @@ if output=$(git -C ~/code/github.com/yndajas/dotfiles status --porcelain) && [ -
     echo -e "\n${TEXT_RED}${TEXT_BOLD}ALERT: unpushed changes in ~/code/github.com/yndajas/dotfiles${TEXT_RESET}"
   fi
 else 
-  echo -e "\n${TEXT_RED}${TEXT_BOLD}ALERT: uncommited changes in ~/code/github.com/yndajas/dotfiles${TEXT_RESET}"
+  echo -e "\n${TEXT_RED}${TEXT_BOLD}ALERT: uncommitted changes in ~/code/github.com/yndajas/dotfiles${TEXT_RESET}"
 fi
