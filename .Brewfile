@@ -1,0 +1,249 @@
+tap "alphagov/gds"
+tap "domt4/autoupdate"
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/services"
+tap "jesseduffield/lazygit"
+tap "ngrok/ngrok"
+tap "oven-sh/bun"
+# CLI tool for working with Architecture Decision Records
+brew "adr-tools"
+# Get stuff done with container-native workflows for Kubernetes
+brew "argo"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Lightweight DNS forwarder and DHCP server
+brew "dnsmasq"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Monitor a directory for changes and run a shell command
+brew "fswatch"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Native sequence editor for Git interactive rebase
+brew "git-interactive-rebase-tool"
+# Render markdown on the CLI
+brew "glow"
+# Kubernetes package manager
+brew "helm"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
+# Mac App Store command-line interface
+brew "mas"
+# Open source relational database management system
+brew "mysql", restart_service: true
+# Free (GNU) replacement for the Pico text editor
+brew "nano"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Install NodeJS versions
+brew "node-build"
+# Manage multiple NodeJS versions
+brew "nodenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Python package management tool
+brew "poetry"
+# Object-relational database system
+brew "postgresql@14", restart_service: true
+# Install various Ruby versions and implementations
+brew "ruby-build"
+# Ruby version manager
+brew "rbenv"
+# Persistent key-value database, with built-in net interface
+brew "redis", restart_service: true
+# Rust toolchain installer
+brew "rustup"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Terraform version manager inspired by rbenv
+brew "tfenv"
+# Linter for Terraform files
+brew "tflint"
+# Define your dev environment as code. For microservice apps on Kubernetes
+brew "tilt"
+# Extraction utility for .zip compressed archives
+brew "unzip"
+# Internet file retriever
+brew "wget"
+# JavaScript package manager
+brew "yarn"
+# Tool for managing your YubiKey configuration
+brew "ykman"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# UNIX shell (command interpreter)
+brew "zsh"
+# CLI for common commands used by Government Digital Service staff
+brew "alphagov/gds/gds-cli"
+# Everything you need to get started with Heroku
+brew "heroku/brew/heroku"
+# A simple terminal UI for git commands, written in Go
+brew "jesseduffield/lazygit/lazygit"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
+# Chromium based browser
+cask "arc"
+# Securely stores and accesses AWS credentials in a development environment
+cask "aws-vault"
+# Menu bar icon organiser
+cask "bartender"
+# Test localhost and staging websites
+cask "browserstacklocal"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# Voice and text chat software
+cask "discord"
+# App to build and share containerised applications and microservices
+cask "docker"
+# Calendar software
+cask "fantastical"
+# Collaborative team software
+cask "figma"
+# Web browser
+cask "firefox"
+cask "font-fira-code-nerd-font"
+# Game development engine
+cask "godot"
+# Game client for itch.io
+cask "itch"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# App to manage software development and track bugs
+cask "linear-linear"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Web browser
+cask "microsoft-edge"
+# Silence embarrassing notifications while screensharing
+cask "muzzle"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Professional webcam software for the Opal C1
+cask "opal-composer"
+# Monitors computer mic and webcam
+cask "oversight"
+# Collaboration platform for API development
+cask "postman"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
+# .NET IDE
+cask "rider"
+# Team communication and collaboration software
+cask "slack"
+# Graphical client for Git version control
+cask "sourcetree"
+# Music streaming service
+cask "spotify"
+# Customizable email client
+cask "thunderbird"
+# Remote pair programming app
+cask "tuple"
+# Management tool for Unity
+cask "unity-hub"
+# Tool to invert scroll direction for physical scroll wheels
+cask "unnaturalscrollwheels"
+# Open-source code editor
+cask "visual-studio-code"
+# Multiplayer code editor
+cask "zed"
+mas "ColorSlurp", id: 1287239339
+vscode "ahmadawais.shades-of-purple"
+vscode "arcticicestudio.nord-visual-studio-code"
+vscode "ayakosky.fluffy-theme"
+vscode "bierner.github-markdown-preview"
+vscode "bierner.markdown-checkbox"
+vscode "bierner.markdown-emoji"
+vscode "bierner.markdown-footnotes"
+vscode "bierner.markdown-mermaid"
+vscode "bierner.markdown-preview-github-styles"
+vscode "bierner.markdown-yaml-preamble"
+vscode "biomejs.biome"
+vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+vscode "bradlc.vscode-tailwindcss"
+vscode "bung87.rails"
+vscode "bung87.vscode-gemfile"
+vscode "castwide.solargraph"
+vscode "connorshea.vscode-ruby-test-adapter"
+vscode "craigmaslowski.erb"
+vscode "cucumberopen.cucumber-official"
+vscode "danishsarwar.reverse-search"
+vscode "dashiellpowers.ooh-a-flower"
+vscode "davidanson.vscode-markdownlint"
+vscode "dbaeumer.vscode-eslint"
+vscode "deque-systems.vscode-axe-linter"
+vscode "dracula-theme.theme-dracula"
+vscode "eamodio.gitlens"
+vscode "eddiedover.gdscript-formatter-linter"
+vscode "endormi.2077-theme"
+vscode "esbenp.prettier-vscode"
+vscode "fisheva.eva-theme"
+vscode "fooo.ruby-spec-runner"
+vscode "formulahendry.auto-close-tag"
+vscode "ftsamoyed.theme-pink-cat-boo"
+vscode "geequlim.godot-tools"
+vscode "ginfuru.better-nunjucks"
+vscode "github.vscode-pull-request-github"
+vscode "gurgeous.bust-a-gem"
+vscode "hbenl.vscode-test-explorer"
+vscode "heybourn.headwind"
+vscode "huytd.nord-light"
+vscode "kamikillerto.vscode-colorize"
+vscode "koichisasada.vscode-rdbg"
+vscode "kuba-p.theme-pink-candy"
+vscode "kube.theme-kay"
+vscode "mechatroner.rainbow-csv"
+vscode "mikestead.dotenv"
+vscode "misogi.ruby-rubocop"
+vscode "monosans.djlint"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-playwright.playwright"
+vscode "ms-vscode.test-adapter-converter"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "netcorext.uuid-generator"
+vscode "nopjmp.fairyfloss"
+vscode "oderwat.indent-rainbow"
+vscode "okitavera.vscode-nunjucks-formatter"
+vscode "oven.bun-vscode"
+vscode "pascalreitermann93.vscode-yaml-sort"
+vscode "pflannery.vscode-versionlens"
+vscode "pkief.material-icon-theme"
+vscode "redhat.vscode-yaml"
+vscode "ronnidc.nunjucks"
+vscode "rubocop.vscode-rubocop"
+vscode "rust-lang.rust-analyzer"
+vscode "rvest.vs-code-prettier-eslint"
+vscode "shanehofstetter.rails-i18n"
+vscode "shopify.ruby-extensions-pack"
+vscode "shopify.ruby-lsp"
+vscode "sianglim.slim"
+vscode "sorbet.sorbet-vscode-extension"
+vscode "standard.vscode-standard"
+vscode "statelyai.stately-vscode"
+vscode "stylelint.vscode-stylelint"
+vscode "tamasfe.even-better-toml"
+vscode "theaflowers.witch-hazel"
+vscode "tinaciousdesign.theme-tinaciousdesign"
+vscode "vayan.haml"
+vscode "wakatime.vscode-wakatime"
+vscode "wmaurer.change-case"
+vscode "yoavbls.pretty-ts-errors"
+vscode "zanza00.random-theme-switcher"

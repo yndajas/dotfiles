@@ -224,6 +224,24 @@ export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:wrap"
 # see https://github.com/sharkdp/bat#man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# keep Brewfile up to date
+original_brew_command="$(which brew)"
+
+function brew() {
+  # just run brew if there are no arguments
+  if [ $# -eq 0 ]; then
+    eval ${original_brew_command} && return 0
+  fi
+  
+  # otherwise run original brew command
+  # and if that was successful and the first argument was install, uninstall,
+  # remove, or rm, update the Brewfile
+  eval ${original_brew_command} "$@" && if [[ "$1" == "install" || "$1" == "uninstall" || "$1" == "remove" || "$1" == "rm" || "$1" == "untap" ]]; then
+    echo "\n==> Updating Brewfile"
+    eval ${original_brew_command} bundle dump --file=~/code/github.com/yndajas/dotfiles/.Brewfile --describe --force --no-lock
+  fi
+}
+
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
