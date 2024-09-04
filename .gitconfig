@@ -33,8 +33,9 @@
 [rebase]
 	autosquash = true
 	updateRefs = true
+[sequence]
+	editor = interactive-rebase-tool
 [user]
 	email = yndajas@gmail.com
 	name = Ynda Jas
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICAybAdFboSceiMH16T8hX1eZ4HNVukUohmxCw6bw8RL
-
