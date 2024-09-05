@@ -92,6 +92,9 @@
     "html": "html",
     "html.erb": "html"
   },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
   "githubPullRequests.pullBranch": "never",
   "gitlens.defaultDateFormat": "D MMMM YYYY, hh:mm",
   "gitlens.defaultDateShortFormat": "D MMM YYYY",
