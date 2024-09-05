@@ -54,7 +54,7 @@
   "auto-close-tag.disableOnLanguage": [
     "typescript"
   ],
-  "breadcrumbs.enabled": true,
+  "breadcrumbs.enabled": false,
   // "djlint.formatLanguages": [
   //   "jinja",
   //   "nj",
@@ -70,6 +70,8 @@
   //   "H031"
   // ],
   "editor.cursorBlinking": "phase",
+  // "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSurroundingLines": 3,
   "editor.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, monospace",
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "file",
@@ -87,10 +89,12 @@
     "erb": "html"
   },
   "files.associations": {
+    ".env.defaults": "dotenv",
     "*.html": "html",
     "erb": "html",
     "html": "html",
-    "html.erb": "html"
+    "html.erb": "html",
+    "LICENCE": "plaintext"
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
@@ -116,8 +120,13 @@
   "indentRainbow.lightIndicatorStyleLineWidth": 2,
   // "javascript.format.insertSpaceAfterConstructor": true,
   // "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "markdown-preview-github-styles.colorTheme": "light",
+  // "material-icon-theme.saturation": 0.7,
+  "material-icon-theme.hidesExplorerArrows": true,
   "nunjucksFormat.newline": true,
   "playwright.reuseBrowser": true,
   "playwright.showTrace": false,
@@ -150,15 +159,30 @@
     "Witch Hazel",
   ],
   "redhat.telemetry.enabled": false,
+  "search.showLineNumbers": true,
   "stylelint.validate": [
     "css",
     "scss"
   ],
   "terminal.integrated.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, monospace",
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   // "typescript.validate.enable": false,
+  "window.newWindowDimensions": "maximized",
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Tinacious Design",
+  "workbench.colorTheme": "Witch Hazel Hypercolor",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "right"
+  // "workbench.settings.openDefaultSettings": true,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.view.alwaysShowHeaderActions": true,
+  "xstate.nestTypegenFiles": false,
 }
