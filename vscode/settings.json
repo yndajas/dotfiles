@@ -84,6 +84,7 @@
     80,
     120
   ],
+  "editor.stickyScroll.defaultModel": "foldingProviderModel",
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
     "erb": "html"
