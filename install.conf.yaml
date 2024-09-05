@@ -8,6 +8,7 @@
 - link:
     ~/.aliases: .aliases
     ~/.Brewfile: .Brewfile
+    ~/.fzf.zsh: .fzf.zsh
     ~/.gitattributes: .gitattributes
     ~/.gitconfig: .gitconfig
     ~/.gitignore_global: .gitignore_global

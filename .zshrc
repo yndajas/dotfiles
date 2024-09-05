@@ -211,14 +211,6 @@ function clean_branches() {
 # fzf (fuzzy finder) setup
 # this will also add a list to reverse-i-search (CTRL + R)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# respect .gitignore in CTRL + T/fzf
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# show preview window when searching for files using CTRL + T
-export FZF_CTRL_T_OPTS='--no-height --preview "bat --color=always {}" --preview-window "up,60%,~3"'
-# add wrapped preview of full command
-# useful if the command is too long to be shown in the list unwrapped
-export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:wrap"
 
 # use bat to add syntax highlighting to man
 # see https://github.com/sharkdp/bat#man
