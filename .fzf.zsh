@@ -23,4 +23,4 @@ export FZF_CTRL_T_OPTS='--no-height --preview "bat --color=always {}" --preview-
 
 # add wrapped preview of full command
 # useful if the command is too long to be shown in the list unwrapped
-export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:wrap"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:2:wrap"
