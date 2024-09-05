@@ -18,6 +18,8 @@ source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
 FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+export FZF_DEFAULT_OPTS="--multi --bind='ctrl-p:toggle-preview'"
+
 # show preview window when searching for files using CTRL + T
 export FZF_CTRL_T_OPTS="--no-height --preview 'bat --color=always {}' --preview-window up:60%:~3"
 
