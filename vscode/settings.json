@@ -1,14 +1,101 @@
 {
-  "workbench.iconTheme": "material-icon-theme",
-  // ruler points - favour new line at 80
+  "[css][scss]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "explicit"
+    },
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[gdscript]": {
+    "editor.defaultFormatter": "EddieDover.gdscript-formatter-linter"
+  },
+  // "[html]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  "[javascript][typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "explicit"
+    }
+  },
+  // "[nj][njk][nunjucks][twig]": {
+  //   "djlint.enableLinting": true,
+  //   "djlint.profile": "nunjucks",
+  //   "editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter",
+  //   "editor.formatOnSave": true
+  // },
+  // "[python]": {
+  //   "editor.defaultFormatter": "ms-python.black-formatter",
+  //   "editor.formatOnSave": true,
+  //   "editor.formatOnType": true,
+  //   "editor.tabSize": 4
+  // },
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp", // this was RuboCop until installing Shopify's Ruby extension pack
+    "editor.formatOnSave": true,
+    "editor.semanticHighlighting.enabled": true, // added when installing Shopify's Ruby extension pack
+    "files.insertFinalNewline": true, // added when installing Shopify's Ruby extension pack
+    "files.trimFinalNewlines": true, // added when installing Shopify's Ruby extension pack
+    "files.trimTrailingWhitespace": true // added when installing Shopify's Ruby extension pack
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.tabSize": 4
+  },
+  "auto-close-tag.disableOnLanguage": [
+    "typescript"
+  ],
+  "breadcrumbs.enabled": true,
+  // "djlint.formatLanguages": [
+  //   "jinja",
+  //   "nj",
+  //   "njk",
+  //   "nunjucks",
+  //   "twig",
+  //   "handlebars",
+  //   "hbs",
+  //   "mustache"
+  // ],
+  // "djlint.ignore": [
+  //   "H030",
+  //   "H031"
+  // ],
+  "editor.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, monospace",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": false,
   "editor.rulers": [
     80,
     120
   ],
-  // indentation - colour vertical lines; indicate nonstandard indentation
-  "indentRainbow.indicatorStyle": "light",
-  "indentRainbow.lightIndicatorStyleLineWidth": 2,
-  "indentRainbow.errorColor": "rgba(128, 32, 32, 0.6)",
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+  "files.associations": {
+    "*.html": "html",
+    "erb": "html",
+    "html": "html",
+    "html.erb": "html"
+  },
+  "githubPullRequests.pullBranch": "never",
+  "gitlens.defaultDateFormat": "D MMMM YYYY, hh:mm",
+  "gitlens.defaultDateShortFormat": "D MMM YYYY",
+  "gitlens.defaultTimeFormat": "hh:mm",
+  "gitlens.hovers.currentLine.over": "annotation",
+  "godot_tools.editor_path": "/opt/homebrew/bin/godot",
+  "godot_tools.gdscript_lsp_server_port": 6005, // needed for Godot 4 compatibility according to extension, but needs may have since changed
+  "headwind.runOnSave": false,
   "indentRainbow.colors": [
     "rgba(38, 70, 83, 0.3)",
     "rgba(42, 157, 143, 0.3)",
@@ -16,13 +103,20 @@
     "rgba(244, 162, 97, 0.3)",
     "rgba(231, 111, 81, 0.3)"
   ],
-  // breadcrumbs
-  "breadcrumbs.enabled": true,
-  // terminal
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-  // editor
-  // "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
-  // random theme switcher
+  "indentRainbow.errorColor": "rgba(128, 32, 32, 0.6)", // indicate nonstandard indentation
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 2,
+  // "javascript.format.insertSpaceAfterConstructor": true,
+  // "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "markdown-preview-github-styles.colorTheme": "light",
+  "nunjucksFormat.newline": true,
+  "playwright.reuseBrowser": true,
+  "playwright.showTrace": false,
+  "prettier.enable": false,
+  "python.defaultInterpreterPath": "python3",
+  "python.formatting.provider": "black",
+  "randomThemeSwitcher.lastSwitchDay": 4,
   "randomThemeSwitcher.switchMode": "daily",
   "randomThemeSwitcher.themeList": [
     "2077",
@@ -47,176 +141,16 @@
     "Witch Hazel Hypercolor",
     "Witch Hazel",
   ],
-  // HIGHLIGHTING/LANGUAGE SUPPORT
-  // treat ERB as HTML
-  "emmet.includeLanguages": {
-    "erb": "html"
-  },
-  // set up syntax highlighting for ERB files, and try to stop HTML files being read as Nunjucks
-  "files.associations": {
-    "*.html": "html",
-    "erb": "html",
-    "html.erb": "html",
-    "html": "html"
-  },
-  // FORMATTING
-  // tab spaces
-  "editor.insertSpaces": true,
-  "editor.tabSize": 2,
-  // tell Stylelint to check scss as well
+  "redhat.telemetry.enabled": false,
   "stylelint.validate": [
     "css",
     "scss"
   ],
-  // use Prettier/Beautify on save -- commented out for use on projects with defined formatting rules
-  // uncomment to use standard Prettier/Beautify/Rubocop rules, and comment out the setting above
-  // "editor.formatOnSave": true,
-  // set Prettier as default formatter - to see other options or set language-specific defaults
-  // remove this or comment it out, go to a file, Ctrl + Shift + P
-  // format document and configure a default (for the language of the current file)
-  // "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // BEAUTIFY IS DEPRECATED - I'VE UNINSTALLED IT
-  // set Beautify to only format the languages not covered by Prettier
-  // the setting above probably sets Prettier as default for all languages, so this (and the extension) may be redundant
-  // "beautify.language": {
-  //   "html": [
-  //     "html",
-  //     "php",
-  //     "erb"
-  //   ],
-  //   "css": [],
-  //   "js": []
-  // },
-  // Prettier ESLint configuration (mostly taken from the extension README)
-  // "editor.defaultFormatter": "esbenp.prettier-vscode", // disabled  18/04/24 - this seems like something that should be enabled per project, not globally
-  // "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-  "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "file",
-  // "vs-code-prettier-eslint.prettierLast": false,
-  // set up Ruby to format on save per Standard
-  // "ruby.useLanguageServer": true,
-  // "ruby.format": "standard",
-  // "ruby.lint": {
-  //   "standard": true
-  // },
-  "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp", // this was RuboCop until installing Shopify's Ruby extension pack
-    "editor.formatOnSave": true,
-    // the rest were added when installing Shopify's Ruby extension pack
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "editor.semanticHighlighting.enabled": true
-    // the following probably don't matter - I just enabled them when trying to debug a formatter issue
-    // "rubyLsp.formatter": "rubocop",
-    // "rubyLsp.rubyVersionManager": {
-    //   "identifier": "rbenv"
-    // }
-  },
-  // set black as Python formatter
-  "python.formatting.provider": "black",
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 4,
-    "editor.formatOnType": true
-  },
-  // set Nunjucks Template Formatter to format Nunjucks files
-  "[nj][njk][nunjucks][twig]": {
-    "djlint.enableLinting": true,
-    "djlint.profile": "nunjucks",
-    "editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter",
-    "editor.formatOnSave": true
-  },
-  "nunjucksFormat.newline": true,
-  // "[html]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  // organise Tailwind classes
-  "headwind.runOnSave": false,
-  // GIT(HUB)
-  // only trigger GitLens hover modal when hovering over annotation
-  "gitlens.hovers.currentLine.over": "annotation",
-  "gitlens.defaultDateFormat": "D MMMM YYYY, hh:mm",
-  "gitlens.defaultDateShortFormat": "D MMM YYYY",
-  "gitlens.defaultTimeFormat": "hh:mm",
-  // Github-style Markdown preview (Cmd + Shift + V)
-  "markdown-preview-github-styles.colorTheme": "light",
-  // JAVASCRIPT
-  // imports
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "tabnine.experimentalAutoImports": true,
-  // spacing
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "javascript.format.insertSpaceAfterConstructor": true,
-  // TypseScript
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, monospace",
   "typescript.updateImportsOnFileMove.enabled": "always",
   // "typescript.validate.enable": false,
-  "auto-close-tag.disableOnLanguage": [
-    "typescript"
-  ],
-  // GODOT
-  // the extension says this port setting is needed for Godot 4 compatibility
-  "godot_tools.gdscript_lsp_server_port": 6005,
-  "godot_tools.editor_path": "/opt/homebrew/bin/godot",
-  "[gdscript]": {
-    "editor.defaultFormatter": "EddieDover.gdscript-formatter-linter"
-  },
-  // OTHER
-  // something extension related
-  "redhat.telemetry.enabled": false,
-  // TO BE SORTED
-  "githubPullRequests.pullBranch": "never",
-  "workbench.colorTheme": "fairyfloss",
-  "standard.autoFixOnSave": true,
-  "editor.minimap.enabled": false,
-  "playwright.reuseBrowser": true,
-  "playwright.showTrace": false,
-  "djlint.ignore": [
-    "H030",
-    "H031"
-  ],
-  "workbench.sideBar.location": "right",
   "workbench.activityBar.location": "hidden",
-  "python.defaultInterpreterPath": "python3",
-  "djlint.formatLanguages": [
-    "jinja",
-    "nj",
-    "njk",
-    "nunjucks",
-    "twig",
-    "handlebars",
-    "hbs",
-    "mustache"
-  ],
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer",
-    "editor.tabSize": 4
-  },
-  "[javascript][typescript]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    }
-  },
-  "[markdown]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.markdownlint": "explicit"
-    }
-  },
-  "[css][scss]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": "explicit"
-    }
-  },
-  "prettier.enable": false,
-  "[json]": {
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "editor.suggest.insertMode": "replace"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
-  },
-  "randomThemeSwitcher.lastSwitchDay": 4,
+  "workbench.colorTheme": "Tinacious Design",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right"
 }
