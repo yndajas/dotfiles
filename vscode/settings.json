@@ -74,6 +74,8 @@
   "editor.formatOnSaveMode": "file",
   "editor.insertSpaces": true,
   "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "all",
+  "editor.renderLineHighlightOnlyWhenFocus": true,
   "editor.rulers": [
     80,
     120
