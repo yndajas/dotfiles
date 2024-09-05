@@ -54,7 +54,7 @@
   "auto-close-tag.disableOnLanguage": [
     "typescript"
   ],
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.symbolPath": "off",
   // "djlint.formatLanguages": [
   //   "jinja",
   //   "nj",
@@ -182,7 +182,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   // "typescript.validate.enable": false,
   "window.newWindowDimensions": "maximized",
-  "window.title": "${activeEditorMedium}${separator}${rootName}",
   "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "Witch Hazel Hypercolor",
   "workbench.iconTheme": "material-icon-theme",
