@@ -105,8 +105,14 @@
   "gitlens.defaultDateShortFormat": "D MMM YYYY",
   "gitlens.defaultTimeFormat": "hh:mm",
   "gitlens.hovers.currentLine.over": "annotation",
-  "godot_tools.editor_path": "/opt/homebrew/bin/godot",
-  "godot_tools.gdscript_lsp_server_port": 6005, // needed for Godot 4 compatibility according to extension, but needs may have since changed
+  "godotTools.editorPath.godot3": "/opt/homebrew/bin/godot",
+  "godotTools.editorPath.godot4": "/opt/homebrew/bin/godot",
+  "godotTools.lsp.serverPort": 6005,
+  // the lines above were added automatically when opening Godot Tools from the
+  // activity bar, so presumably the format has changed from the lines below and
+  // the lines below are now deprecated?
+  // "godot_tools.editor_path": "/opt/homebrew/bin/godot",
+  // "godot_tools.gdscript_lsp_server_port": 6005, // needed for Godot 4 compatibility according to extension, but needs may have since changed
   "headwind.runOnSave": false,
   "indentRainbow.colors": [
     "rgba(38, 70, 83, 0.3)",
