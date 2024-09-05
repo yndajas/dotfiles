@@ -96,6 +96,7 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "githubPullRequests.pullBranch": "never",
+  "gitlens.advanced.fileHistoryFollowsRenames": true,
   "gitlens.defaultDateFormat": "D MMMM YYYY, hh:mm",
   "gitlens.defaultDateShortFormat": "D MMM YYYY",
   "gitlens.defaultTimeFormat": "hh:mm",
