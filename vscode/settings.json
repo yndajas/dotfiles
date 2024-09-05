@@ -5,9 +5,6 @@
     80,
     120
   ],
-  // colorize bracket pairs
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
   // indentation - colour vertical lines; indicate nonstandard indentation
   "indentRainbow.indicatorStyle": "light",
   "indentRainbow.lightIndicatorStyleLineWidth": 2,
