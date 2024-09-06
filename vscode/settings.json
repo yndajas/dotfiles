@@ -74,7 +74,6 @@
   "editor.cursorSurroundingLines": 3,
   "editor.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, monospace",
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "file",
   "editor.guides.bracketPairs": "active",
   // "editor.guides.highlightActiveIndentation": "always",
   "editor.guides.indentation": false,
