@@ -47,7 +47,7 @@ brew "lsd"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
-brew "mysql", restart_service: true
+brew "mysql"
 # Free (GNU) replacement for the Pico text editor
 brew "nano"
 # Ambitious Vim-fork focused on extensibility and agility
