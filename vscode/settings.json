@@ -143,8 +143,7 @@
   "prettier.enable": false,
   "python.defaultInterpreterPath": "python3",
   "python.formatting.provider": "black",
-  "randomThemeSwitcher.lastSwitchDay": 4,
-  "randomThemeSwitcher.switchMode": "daily",
+  "randomThemeSwitcher.switchMode": "manual",
   "randomThemeSwitcher.themeList": [
     "2077",
     "Dracula Soft",
