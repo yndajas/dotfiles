@@ -69,6 +69,7 @@
   //   "H030",
   //   "H031"
   // ],
+  "editor.acceptSuggestionOnEnter": "off",
   "editor.cursorBlinking": "phase",
   // "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 3,
@@ -88,6 +89,8 @@
     120
   ],
   "editor.stickyScroll.defaultModel": "foldingProviderModel",
+  "editor.suggest.preview": true,
+  "editor.suggestSelection": "recentlyUsed",
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
     "erb": "html"
