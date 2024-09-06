@@ -14,6 +14,8 @@ brew "adr-tools"
 brew "argo"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Toolchain of the web
+brew "biome"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Load/unload environment variables based on $PWD
