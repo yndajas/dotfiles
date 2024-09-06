@@ -70,6 +70,8 @@
   //   "H031"
   // ],
   "editor.acceptSuggestionOnEnter": "off",
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.autoClosingQuotes": "beforeWhitespace",
   "editor.cursorBlinking": "phase",
   // "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 3,
