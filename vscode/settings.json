@@ -82,6 +82,7 @@
   // "editor.guides.highlightActiveIndentation": "always",
   "editor.guides.indentation": false,
   "editor.insertSpaces": true,
+  "editor.linkedEditing": true,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
