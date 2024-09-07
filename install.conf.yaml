@@ -3,11 +3,15 @@
         create: true
         relink: true
 
+- shell:
+  - command: if [ -f ~/Library/Preferences/com.googlecode.iterm2.plist ]; then rm ~/Library/Preferences/com.googlecode.iterm2.plist; fi
+
 - clean: ['~']
 
 - link:
     ~/.aliases: .aliases
     ~/.Brewfile: .Brewfile
+    ~/.config/iterm2/com.googlecode.iterm2.plist: iterm2/preferences/com.googlecode.iterm2.plist
     ~/.fzf.zsh: .fzf.zsh
     ~/.gitattributes: .gitattributes
     ~/.gitconfig: .gitconfig
