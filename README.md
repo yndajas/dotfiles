@@ -1,75 +1,33 @@
+# dotfiles
+
 Dotfiles and other setup files for use across systems
 
-## Instructions
+## Setup
 
-All files/folders live in `~` unless specified below
+1. Clone this repo into `~/code/github.com/yndajas/dotfiles`
+1. In Terminal, run `./install` from the cloned directory
+1. Open iTerm2 and configure it:
+    1. Open `Settings... > General > Settings`
+    1. Check `Load settings from a custom folder or URL`
+    1. Enter `~/.config/iterm2` in the text input
+    1. Under `Save changes` choose `Automatically`
+    1. Close the settings and current terminal window and open a new one
+    1. If the settings don't appear to have loaded properly, try importing the profile in this repository into iTerm2 manually, quitting iTerm2, discarding any changes to the preferences iTerm2 has made, and finally reopening it
+1. Install the following apps manually (to be automated later)
+    - Fork
+    - Xcode? (at least the command line tools)
 
-`iTerm2` - this contains a profile to be imported in the app
+## Maintenance
 
-## Apps
+Most of the files contained in this repo are symlinked into the home directory (or another appropriate directory). Because of how symlinking works, changes will automatically be made directly in the cloned directory. `.zshrc` is set up to provide notifications of uncommited or unpushed changes.
 
-Apps that are useful
+If any new files need backing up, move them into the cloned directory and update `install.conf.yaml` to set up an appropriate symlink.
 
-### Command line
+If any new install steps beyond symlinking files are required, add or update the shell sections in `install.conf.yaml`.
 
-asdf, or RVM/rbenv/ruby-build, NVM, Python manager (?) etc
+## Apps not currently in use
 
-AWS
-[Homebrew](https://brew.sh)
-[ngrok](https://ngrok.com)
-Powerline10k
-
-#### Homebrew
-
-Apps installed via Homebrew (ARM versions by default)
-
-git
-graphviz
-heroku
-imagemagick
-postgresql
-python@3.9
-zsh-autosuggestions
-zsh-completions
-zsh-syntax-highlighting
-
-##### Intel versions
-
-Apps installed via an x86_64/Intel compatibility version of Homebrew
-
-nano (but `which nano` returns `/usr/local/bin` version)
-postgresql@9.4
-
-### GUI
-
-Avast One
-[Chrome](https://www.google.com/intl/en_uk/chrome)
-ColorSlurp
-Cyberduck
-Ferdium
-Firefox
-Free Ruler
-Gapplin
-iTerm2
-Itsycal
-Microsoft Edge
-Microsoft Excel
-Microsoft Outlook
-Microsoft PowerPoint
-Microsoft Word
-Postman
-Slack
-Sourcetree
-Spotica Menu
-Spotify
-UnnaturalScrollWheels
-[Visual Studio Code](https://code.visualstudio.com)
-Xcode
-
-for Markdown notetaking (replacement for Atom, which is being sunset): Sublime Text, Zettlr, MarkText or znote
-
-### Chrome
-
-Websites to run as Chrome Apps (windowed like a native GUI app using Chrome's 'open as window' shortcuts feature)
-
-Tailwind
+- Free Ruler
+- Gapplin
+- iTerm2
+- Itsycal
