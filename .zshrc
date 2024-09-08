@@ -215,16 +215,17 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
-# alert if dotfiles changes are not committed or pushed to remote
-TEXT_BOLD='\033[1m'
-TEXT_RED='\033[0;31m'
-TEXT_RESET='\033[0m'
+# colours for hints and alerts
+text_black_bold='\033[1;30m'
+text_red_bold='\033[1;31m'
+text_green_bold='\033[1;32m'
+text_reset='\033[0m'
 
-if output=$(git -C ~/code/github.com/yndajas/dotfiles status --porcelain) && [ -z "$output" ]; then
-  if output=$(git -C ~/code/github.com/yndajas/dotfiles diff @{u}) && [ -z "$output" ]; then
-  else
-    echo -e "\n${TEXT_RED}${TEXT_BOLD}ALERT: unpushed changes in ~/code/github.com/yndajas/dotfiles${TEXT_RESET}"
+# alert if dotfiles changes are not committed or pushed to remote
+if [ -n "$(eval git -C ${dotfiles_dir} status --porcelain)" ]; then
+  echo -e "\n${text_red_bold} ALERT: uncommitted changes in ${dotfiles_dir} ${text_reset}"
+else
+  if [ -n "$(eval git -C ${dotfiles_dir} diff @{u})" ]; then
+    echo -e "\n${text_red_bold} ALERT: unpushed changes in ${dotfiles_dir} ${text_reset}"
   fi
-else 
-  echo -e "\n${TEXT_RED}${TEXT_BOLD}ALERT: uncommitted changes in ~/code/github.com/yndajas/dotfiles${TEXT_RESET}"
 fi
