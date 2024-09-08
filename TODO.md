@@ -13,6 +13,8 @@
   - Esc + C fuzzy find directories
   - Ctrl + R fuzzy find commands
   - glow Markdown pager
+  - gh
+  - zsh-git
   - jq
   - Zoxide
   - <https://gist.github.com/acamino/2bc8df5e2ed0f99ddbe7a6fddb7773a6> (check these are all valid in my terminal)
