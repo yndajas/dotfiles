@@ -43,18 +43,18 @@ export FZF_CTRL_R_OPTS="
 "
 
 # file search
-file_search_preview="bat --color=always {}"
+file_search_preview="bat --color=always"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --type f"
 export FZF_CTRL_T_OPTS="
   --no-height
-  --preview '${file_search_preview}'
+  --preview '${file_search_preview} {}'
   --preview-window down:60%:~3
 "
 
 # directory search
-directory_search_preview="eza --all --git-ignore --tree --level=2 --classify --color=always --icons=always --sort=type {}"
+directory_search_preview="eza --all --git-ignore --tree --level=2 --classify --color=always --icons=always --sort=type"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
-export FZF_ALT_C_OPTS="--preview '${directory_search_preview}'"
+export FZF_ALT_C_OPTS="--preview '${directory_search_preview} {}'"
 
 # ** search
 
@@ -82,7 +82,12 @@ _fzf_comprun() {
     kill|unalias) fzf;;
     export|unset) fzf "$@" --preview "eval 'echo $'{}";;
     ssh)          fzf "$@" --preview "dig {}";;
-    cd)           fzf "$@" --preview "${directory_search_preview}";;
-    *)            fzf "$@" --no-height --preview "[ -f {} ] && ${file_search_preview} || ${directory_search_preview}" --preview-window down:60%:~3;;
+    cd)           fzf "$@" --preview "${directory_search_preview} {}";;
+    *)            fzf "$@" --no-height --preview "[ -f {} ] && ${file_search_preview} {} || ${directory_search_preview} {}" --preview-window down:60%:~3;;
   esac
 }
+
+# zoxide
+# e.g. when running cd yndajas <TAB>
+
+export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --delimiter ' ' --preview '${directory_search_preview} {2}'"

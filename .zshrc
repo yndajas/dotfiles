@@ -111,9 +111,22 @@ if [[ -v ITERM_PROFILE ]]; then
   source "$ITERM2_INTEGRATION_PATH"
 fi
 
+# fzf (fuzzy finder) setup
+# this will also add a list to reverse-i-search (CTRL + R)
+# fzf-git adds fzf git helpers, e.g. CTRL + G + H to list commit hashes
+# See: https://github.com/junegunn/fzf-git.sh
+# this needs to run before zoxide init in order for _ZO_FZF_OPTS to affect the
+# fzf preview (e.g. when running cd yndajas <TAB>)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/.fzf-git.sh
+
+# I think these often ask to be run at the end of .zshrc. Zoxide mentions
+# needing to run after compinit, which is run a little earlier in this file, and
+# it also needs running before sources ~/.fzf.zsh so that _ZO_FZF_OPTS is set
+# for custom fzf previews (e.g. when running cd yndajas <TAB>)
 if command_exists direnv; then eval "$(direnv hook zsh)"; fi
 if command_exists rbenv; then eval "$(rbenv init -)"; fi
 if command_exists nodenv; then eval "$(nodenv init -)"; fi
+if command_exists zoxide; then eval "$(zoxide init zsh --cmd cd)"; fi
 
 alias -g ...='../..'
 alias -g ....='../../..'
@@ -174,12 +187,6 @@ function clean_branches() {
   git branch -vv | awk '/: gone]/{print $1}' | xargs git branch $delete_flag
   git switch -
 }
-
-# fzf (fuzzy finder) setup
-# this will also add a list to reverse-i-search (CTRL + R)
-# fzf-git adds fzf git helpers, e.g. CTRL + G + H to list commit hashes
-# See: https://github.com/junegunn/fzf-git.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/.fzf-git.sh
 
 ## bat
 

@@ -90,6 +90,8 @@ brew "yarn"
 brew "ykman"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
 # CLI for common commands used by Government Digital Service staff

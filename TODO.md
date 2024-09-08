@@ -14,6 +14,7 @@
   - Ctrl + R fuzzy find commands
   - glow Markdown pager
   - jq
+  - Zoxide
   - <https://gist.github.com/acamino/2bc8df5e2ed0f99ddbe7a6fddb7773a6> (check these are all valid in my terminal)
   - what the Starship git symbols mean
   - Ctrl + O accept highlighted suggestion from menu and provide next set of suggestions (useful for directory navigation when using cd; set in .zshrc with `bindkey -M menuselect '^o' accept-and-infer-next-history`)

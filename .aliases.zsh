@@ -4,6 +4,9 @@
 
 alias cat="bat"
 
+# directories/paths
+# zoxide is aliased to cd using `zoxide init zsh --cmd cd` in .zshrc
+
 # ls -> eza
 
 alias ls="eza --all --classify --color=always --icons=always --sort=type"
