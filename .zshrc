@@ -1,5 +1,3 @@
-# START local-env (dxw)
-
 # shellcheck disable=SC2148
 
 if command_exists /opt/homebrew/bin/brew; then
@@ -146,10 +144,7 @@ bindkey '^[[A' history-substring-search-up
 # see https://github.com/zsh-users/zsh-history-substring-search
 bindkey '^[[B' history-substring-search-down
 
-# Ynda edited from export EDITOR=nano
 export EDITOR=nvim
-
-# END local-env (dxw)
 
 # load aliases
 source ~/.aliases.zsh
