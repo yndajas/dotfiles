@@ -192,9 +192,8 @@ function brew() {
   fi
 
   # otherwise run original brew command
-  # and if that was successful and the first argument was install, uninstall,
-  # remove, or rm, update the Brewfile
-  eval ${original_brew_command} "$@" && if [[ "$1" == "install" || "$1" == "uninstall" || "$1" == "remove" || "$1" == "rm" || "$1" == "untap" ]]; then
+  # and if that was successful, update the global Brewfile if needed
+  eval ${original_brew_command} "$@" && if [[ "$1" == "install" || "$1" == "uninstall" || "$1" == "remove" || "$1" == "rm" || "$1" == "tap" || "$1" == "untap" ]]; then
     echo "\n==> Updating Brewfile"
     update_global_brewfile
   fi
