@@ -181,6 +181,11 @@ function clean_branches() {
 # See: https://github.com/junegunn/fzf-git.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/.fzf-git.sh
 
+## bat
+
+# set bat theme
+export BAT_THEME="OneHalfLight"
+
 # use bat to add syntax highlighting to man
 # see https://github.com/sharkdp/bat#man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
