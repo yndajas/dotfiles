@@ -6,7 +6,11 @@ if ! command_exists /opt/homebrew/bin/brew; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-if ! command_exists brew; then
+if command_exists brew; then
+  # update Brewfile to bring in any vscode or mas changes, avoiding reinstalling
+  # uninstalled apps when running `brew bundle --global install` below
+  update_global_brewfile
+else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 

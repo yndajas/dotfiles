@@ -182,8 +182,6 @@ export BAT_THEME="OneHalfLight"
 # see https://github.com/sharkdp/bat#man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-dotfiles_dir="~/code/github.com/yndajas/dotfiles"
-
 # keep Brewfile up to date
 original_brew_command="$(which brew)"
 
@@ -198,12 +196,12 @@ function brew() {
   # remove, or rm, update the Brewfile
   eval ${original_brew_command} "$@" && if [[ "$1" == "install" || "$1" == "uninstall" || "$1" == "remove" || "$1" == "rm" || "$1" == "untap" ]]; then
     echo "\n==> Updating Brewfile"
-    eval ${original_brew_command} bundle dump --file=${dotfiles_dir}/src/homebrew/.Brewfile --describe --force --no-lock
+    update_global_brewfile
   fi
 }
 
 function install_dotfiles() {
-  eval ${dotfiles_dir}/install
+  eval ${DOTFILES_DIR}/install
 }
 
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
@@ -248,10 +246,10 @@ ${text_black_bold}${command}${text_reset} -> ${explanation}"
 random_hint
 
 # alert if dotfiles changes are not committed or pushed to remote
-if [ -n "$(eval git -C ${dotfiles_dir} status --porcelain)" ]; then
-  echo -e "\n${text_red_bold} ALERT: uncommitted changes in ${dotfiles_dir} ${text_reset}"
+if [ -n "$(eval git -C ${DOTFILES_DIR} status --porcelain)" ]; then
+  echo -e "\n${text_red_bold} ALERT: uncommitted changes in ${DOTFILES_DIR} ${text_reset}"
 else
-  if [ -n "$(eval git -C ${dotfiles_dir} diff @{u})" ]; then
-    echo -e "\n${text_red_bold} ALERT: unpushed changes in ${dotfiles_dir} ${text_reset}"
+  if [ -n "$(eval git -C ${DOTFILES_DIR} diff @{u})" ]; then
+    echo -e "\n${text_red_bold} ALERT: unpushed changes in ${DOTFILES_DIR} ${text_reset}"
   fi
 fi
