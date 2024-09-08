@@ -198,7 +198,7 @@ function brew() {
   # remove, or rm, update the Brewfile
   eval ${original_brew_command} "$@" && if [[ "$1" == "install" || "$1" == "uninstall" || "$1" == "remove" || "$1" == "rm" || "$1" == "untap" ]]; then
     echo "\n==> Updating Brewfile"
-    eval ${original_brew_command} bundle dump --file=${dotfiles_dir}/.Brewfile --describe --force --no-lock
+    eval ${original_brew_command} bundle dump --file=${dotfiles_dir}/src/homebrew/.Brewfile --describe --force --no-lock
   fi
 }
 

@@ -4,7 +4,7 @@
         relink: true
 
 - shell:
-  - [curl https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh > .fzf-git.sh]
+  - [curl https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh > src/fzf/.fzf-git.sh]
   - command: if [ -f ~/Library/Preferences/com.googlecode.iterm2.plist ]; then rm ~/Library/Preferences/com.googlecode.iterm2.plist; fi
 
 - clean:
@@ -14,24 +14,26 @@
     ~/Library/Application Support/Code/User/:
 
 - link:
-    ~/.aliases.zsh: .aliases.zsh
-    ~/.Brewfile: .Brewfile
-    ~/.fzf.zsh: .fzf.zsh
-    ~/.fzf-git.sh: .fzf-git.sh
-    ~/.gitattributes: .gitattributes
-    ~/.gitconfig: .gitconfig
-    ~/.gitignore_global: .gitignore_global
-    ~/.stCommitMsg: .stCommitMsg
-    ~/.zshenv: .zshenv
-    ~/.zshrc: .zshrc
-    ~/.config/iterm2/com.googlecode.iterm2.plist: iterm2/preferences/com.googlecode.iterm2.plist
-    ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
-    ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
+    ~/.aliases.zsh: src/zsh/.aliases.zsh
+    ~/.Brewfile: src/homebrew/.Brewfile
+    ~/.fzf.zsh: src/fzf/.fzf.zsh
+    ~/.fzf-git.sh: src/fzf/.fzf-git.sh
+    ~/.gitattributes: src/git/.gitattributes
+    ~/.gitconfig: src/git/.gitconfig
+    ~/.gitignore_global: src/git/.gitignore_global
+    ~/.stCommitMsg: src/git/.stCommitMsg
+    ~/.zshenv: src/zsh/.zshenv
+    ~/.zshrc: src/zsh/.zshrc
+    ~/.config/iterm2/com.googlecode.iterm2.plist:
+        path: src/iterm/preferences/com.googlecode.iterm2.plist
+        force: true
+    ~/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
+    ~/Library/Application Support/Code/User/settings.json: src/vscode/settings.json
 
 - create:
     - ~/code
 
 - shell:
-  - command: ./script/setup_homebrew_and_shell.zsh
+  - command: script/setup_homebrew_and_shell.zsh
     stdout: true
     stderr: true
