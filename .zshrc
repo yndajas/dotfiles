@@ -131,10 +131,6 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
-function take() {
-  mkdir -p "$@" && cd "${@:$#}" || exit 1
-}
-
 bindkey -e
 
 bindkey -M menuselect '^o' accept-and-infer-next-history
