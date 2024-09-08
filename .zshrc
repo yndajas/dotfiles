@@ -210,6 +210,10 @@ function brew() {
   fi
 }
 
+function install_dotfiles() {
+  eval ${dotfiles_dir}/install
+}
+
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
