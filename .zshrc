@@ -160,23 +160,18 @@ fpath=(~/.zsh.d/ $fpath)
 # command to clean up old git branches
 # See: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote/38404202#38404202
 function clean_branches() {
-  FORCE=false
+  delete_flag="-d"
 
-  for arg in "$@"
-  do
-    if [[ $arg == "--force" ]]; then
-      FORCE=true
-    fi
+  while [ $# -gt 0 ]; do
+    case $1 in
+      --force) delete_flag="-D";;
+    esac
+
+    shift
   done
 
   git switch main && git fetch -p
-
-  if [ "$FORCE" = true ]; then
-    git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
-  else
-    git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
-  fi
-
+  git branch -vv | awk '/: gone]/{print $1}' | xargs git branch $delete_flag
   git switch -
 }
 
