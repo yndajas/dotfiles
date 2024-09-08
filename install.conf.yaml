@@ -7,12 +7,15 @@
   - [curl https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh > .fzf-git.sh]
   - command: if [ -f ~/Library/Preferences/com.googlecode.iterm2.plist ]; then rm ~/Library/Preferences/com.googlecode.iterm2.plist; fi
 
-- clean: ['~']
+- clean:
+    ~/:
+    ~/.config/:
+        recursive: true
+    ~/Library/Application Support/Code/User/:
 
 - link:
     ~/.aliases.zsh: .aliases.zsh
     ~/.Brewfile: .Brewfile
-    ~/.config/iterm2/com.googlecode.iterm2.plist: iterm2/preferences/com.googlecode.iterm2.plist
     ~/.fzf.zsh: .fzf.zsh
     ~/.fzf-git.sh: .fzf-git.sh
     ~/.gitattributes: .gitattributes
@@ -21,6 +24,7 @@
     ~/.stCommitMsg: .stCommitMsg
     ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
+    ~/.config/iterm2/com.googlecode.iterm2.plist: iterm2/preferences/com.googlecode.iterm2.plist
     ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
 
