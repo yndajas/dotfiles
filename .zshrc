@@ -190,6 +190,8 @@ export BAT_THEME="OneHalfLight"
 # see https://github.com/sharkdp/bat#man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+dotfiles_dir="~/code/github.com/yndajas/dotfiles"
+
 # keep Brewfile up to date
 original_brew_command="$(which brew)"
 
@@ -204,7 +206,7 @@ function brew() {
   # remove, or rm, update the Brewfile
   eval ${original_brew_command} "$@" && if [[ "$1" == "install" || "$1" == "uninstall" || "$1" == "remove" || "$1" == "rm" || "$1" == "untap" ]]; then
     echo "\n==> Updating Brewfile"
-    eval ${original_brew_command} bundle dump --file=~/code/github.com/yndajas/dotfiles/.Brewfile --describe --force --no-lock
+    eval ${original_brew_command} bundle dump --file=${dotfiles_dir}/.Brewfile --describe --force --no-lock
   fi
 }
 
