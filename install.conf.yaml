@@ -10,7 +10,7 @@
 - clean: ['~']
 
 - link:
-    ~/.aliases: .aliases
+    ~/.aliases.zsh: .aliases.zsh
     ~/.Brewfile: .Brewfile
     ~/.config/iterm2/com.googlecode.iterm2.plist: iterm2/preferences/com.googlecode.iterm2.plist
     ~/.fzf.zsh: .fzf.zsh

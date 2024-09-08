@@ -176,7 +176,7 @@ export EDITOR=nvim
 # END local-env (dxw)
 
 # load aliases
-source ~/.aliases
+source ~/.aliases.zsh
 
 # ZSH tab completion for cheat.sh
 # https://github.com/chubin/cheat.sh#zsh-tab-completion
