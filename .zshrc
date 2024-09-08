@@ -159,7 +159,8 @@ source ~/.aliases.zsh
 fpath=(~/.zsh.d/ $fpath)
 
 # bun completions
-[ -s "/Users/yndajas/.bun/_bun" ] && source "/Users/yndajas/.bun/_bun"
+# See: https://github.com/oven-sh/bun/blob/267afa293483d5ed5f834a6d35350232188e3f98/docs/cli/bun-completions.md
+[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 
 # command to clean up old git branches
 # See: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote/38404202#38404202
