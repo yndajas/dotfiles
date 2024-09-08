@@ -26,3 +26,8 @@
 
 - create:
     - ~/code
+
+- shell:
+  - command: ./script/setup_homebrew_and_shell.zsh
+    stdout: true
+    stderr: true
