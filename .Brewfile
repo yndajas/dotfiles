@@ -22,6 +22,8 @@ brew "curl"
 brew "direnv"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
+# Modern, maintained replacement for ls
+brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Monitor a directory for changes and run a shell command
@@ -42,8 +44,6 @@ brew "glow"
 brew "helm"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Clone of ls with colorful output, file type icons, and more
-brew "lsd"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
