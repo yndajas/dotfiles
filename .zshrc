@@ -200,7 +200,7 @@ function brew() {
   if [ $# -eq 0 ]; then
     eval ${original_brew_command} && return 0
   fi
-  
+
   # otherwise run original brew command
   # and if that was successful and the first argument was install, uninstall,
   # remove, or rm, update the Brewfile
