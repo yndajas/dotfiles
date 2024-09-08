@@ -12,6 +12,7 @@ HISTSIZE=999999999
 # shellcheck disable=SC2034
 SAVEHIST=$HISTSIZE
 
+# when moving between or deleting words, which (non-alphanumeric?) characters should be considered word-internal
 # shellcheck disable=SC2034
 WORDCHARS=''
 
