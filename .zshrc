@@ -128,21 +128,6 @@ if command_exists rbenv; then eval "$(rbenv init -)"; fi
 if command_exists nodenv; then eval "$(nodenv init -)"; fi
 if command_exists zoxide; then eval "$(zoxide init zsh --cmd cd)"; fi
 
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
-
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
-
 # use Emacs keybindings
 # see "4.1.1: The simple facts" and "4.5.5: Keymaps" at https://zsh.sourceforge.io/Guide/zshguide04.html
 bindkey -e
