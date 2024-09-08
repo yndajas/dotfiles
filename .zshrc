@@ -68,7 +68,7 @@ zstyle ':completion::complete:*' cache-path "$ZSH_CACHE_DIR"
 autoload -Uz compinit
 compinit -i
 
-if command -v ssh-agent >/dev/null 2>&1; then
+if command_exists ssh-agent; then
   eval "$(ssh-agent)"
   ssh-add --apple-load-keychain
 fi
@@ -112,9 +112,7 @@ if ! zgen saved; then
   zgen save
 fi
 
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init zsh)"
-fi
+if command_exists starship; then eval "$(starship init zsh)"; fi
 
 if [[ -v ITERM_PROFILE ]]; then
   ITERM2_INTEGRATION_PATH=$HOME/.iterm2_shell_integration.zsh
@@ -127,21 +125,9 @@ if [[ -v ITERM_PROFILE ]]; then
   source "$ITERM2_INTEGRATION_PATH"
 fi
 
-if command -v direnv > /dev/null 2>&1; then
-  eval "$(direnv hook zsh)"
-fi
-
-if command -v rbenv >/dev/null 2>&1; then
-  eval "$(rbenv init -)"
-fi
-
-if command -v nodenv >/dev/null 2>&1; then
-  eval "$(nodenv init -)"
-fi
-
-if command -v phpenv >/dev/null 2>&1; then
-  eval "$(phpenv init -)"
-fi
+if command_exists direnv; then eval "$(direnv hook zsh)"; fi
+if command_exists rbenv; then eval "$(rbenv init -)"; fi
+if command_exists nodenv; then eval "$(nodenv init -)"; fi
 
 alias -g ...='../..'
 alias -g ....='../../..'

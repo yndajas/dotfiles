@@ -19,6 +19,7 @@
     ~/.gitconfig: .gitconfig
     ~/.gitignore_global: .gitignore_global
     ~/.stCommitMsg: .stCommitMsg
+    ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
     ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
