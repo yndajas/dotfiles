@@ -210,7 +210,9 @@ function clean_branches() {
 
 # fzf (fuzzy finder) setup
 # this will also add a list to reverse-i-search (CTRL + R)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf-git adds fzf git helpers, e.g. CTRL + G + H to list commit hashes
+# See: https://github.com/junegunn/fzf-git.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/.fzf-git.sh
 
 # use bat to add syntax highlighting to man
 # see https://github.com/sharkdp/bat#man
