@@ -225,6 +225,36 @@ text_red_bold='\033[1;31m'
 text_green_bold='\033[1;32m'
 text_reset='\033[0m'
 
+# echo random hint
+function random_hint() {
+  hints=(
+    "aliases,lsrepo,display git information within a repo"
+    "aliases,lsrepos,display git information within a directory of repos"
+    "command line navigation,Ctrl + A,move cursor to the start of the line"
+    "command line navigation,Ctrl + E,move cursor to the end of the line"
+    "command line navigation,Esc + A,move cursor back one word"
+    "command line navigation,Esc + F,move cursor forward one word"
+    "command line navigation,Ctrl + W,delete one word behind"
+    "command line navigation,Esc + D,delete one word ahead"
+  )
+
+  seed=$$$(date +%s)
+  random_index=$(($seed % ${#hints[@]} + 1))
+  random_hint=${hints[$random_index]}
+
+  random_hint_items=(${(s/,/)random_hint})
+  category=${random_hint_items[1]}
+  command=${random_hint_items[2]}
+  explanation=${random_hint_items[3]}
+
+  echo "
+${text_green_bold} HINT: ${category} 
+
+${text_black_bold}${command}${text_reset} -> ${explanation}"
+}
+
+random_hint
+
 # alert if dotfiles changes are not committed or pushed to remote
 if [ -n "$(eval git -C ${dotfiles_dir} status --porcelain)" ]; then
   echo -e "\n${text_red_bold} ALERT: uncommitted changes in ${dotfiles_dir} ${text_reset}"
