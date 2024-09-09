@@ -102,6 +102,8 @@ brew "heroku/brew/heroku"
 brew "jesseduffield/lazygit/lazygit"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
+# GPU-accelerated terminal emulator
+cask "alacritty"
 # Chromium based browser
 cask "arc"
 # Securely stores and accesses AWS credentials in a development environment

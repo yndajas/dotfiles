@@ -24,6 +24,7 @@
     ~/.stCommitMsg: src/git/.stCommitMsg
     ~/.zshenv: src/zsh/.zshenv
     ~/.zshrc: src/zsh/.zshrc
+    ~/.config/alacritty/: src/alacritty/
     ~/.config/iterm2/com.googlecode.iterm2.plist:
         path: src/iterm/preferences/com.googlecode.iterm2.plist
         force: true
