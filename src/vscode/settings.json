@@ -182,5 +182,5 @@
   "workbench.startupEditor": "none",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.view.alwaysShowHeaderActions": true,
-  "xstate.nestTypegenFiles": false,
+  "xstate.nestTypegenFiles": false
 }
