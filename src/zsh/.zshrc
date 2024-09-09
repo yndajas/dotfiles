@@ -209,7 +209,7 @@ if [ -f ~/.zshrc_local ]; then
 fi
 
 # colours for hints and alerts
-text_black_bold='\033[1;30m'
+text_bold='\033[1m'
 text_red_bold='\033[1;31m'
 text_green_bold='\033[1;32m'
 text_reset='\033[0m'
@@ -237,9 +237,9 @@ function random_hint() {
   explanation=${random_hint_items[3]}
 
   echo "
-${text_green_bold} HINT: ${category} 
+${text_green_bold} HINT: ${category} ${text_reset}
 
-${text_black_bold}${command}${text_reset} -> ${explanation}"
+${text_bold}${command}${text_reset} -> ${explanation}"
 }
 
 random_hint
