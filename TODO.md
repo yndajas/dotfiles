@@ -1,5 +1,7 @@
 # TODO
 
+- Link Alacritty settings
+- Set up TMUX on Alacritty for panes and maybe tabs (though tabs are set up through my settings)
 - Add more Mac App Store apps to Brewfile? Or is it auto-populated?
 - Move relevant ~/.config/ files into repo
 - Add Rust inlay hints and other settings for VSCode
@@ -44,3 +46,4 @@
   - Check out Destroy All Software/Execute Program
   - Check out Frontend Masters
   - Japanese learning: WaniKani, BunPro etc
+- Make some TUIs?
