@@ -182,6 +182,11 @@ export BAT_THEME="OneHalfLight"
 # see https://github.com/sharkdp/bat#man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# set less to support mouse scrolling to move display, which in turn adds
+# support to bat when the file is longer than the viewport (i.e. when it uses
+# less)
+export LESS='--mouse'
+
 # keep Brewfile up to date
 original_brew_command="$(which brew)"
 
