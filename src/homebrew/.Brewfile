@@ -40,6 +40,8 @@ brew "git-delta"
 brew "git-interactive-rebase-tool"
 # Render markdown on the CLI
 brew "glow"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # Kubernetes package manager
 brew "helm"
 # Lightweight and flexible command-line JSON processor
