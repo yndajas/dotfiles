@@ -52,6 +52,7 @@
     "editor.tabSize": 4
   },
   "auto-close-tag.disableOnLanguage": ["typescript"],
+  "biome.requireConfigFile": true,
   "breadcrumbs.symbolPath": "off",
   // "djlint.formatLanguages": [
   //   "jinja",
