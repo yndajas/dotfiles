@@ -149,8 +149,6 @@ cask "opal-composer"
 cask "oversight"
 # Collaboration platform for API development
 cask "postman"
-# Move and resize windows using keyboard shortcuts or snap areas
-cask "rectangle"
 # .NET IDE
 cask "rider"
 # Team communication and collaboration software
