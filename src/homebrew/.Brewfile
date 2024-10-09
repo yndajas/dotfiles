@@ -12,6 +12,8 @@ tap "oven-sh/bun"
 brew "adr-tools"
 # Get stuff done with container-native workflows for Kubernetes
 brew "argo"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Toolchain of the web
@@ -49,7 +51,7 @@ brew "jq"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
-brew "mysql", restart_service: true
+brew "mysql"
 # Free (GNU) replacement for the Pico text editor
 brew "nano"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -58,8 +60,6 @@ brew "neovim"
 brew "node-build"
 # Manage multiple NodeJS versions
 brew "nodenv"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
 # Python package management tool
 brew "poetry"
 # Object-relational database system
@@ -137,7 +137,7 @@ cask "iterm2"
 cask "linear-linear"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
-# Web browser
+# Multi-platform web browser
 cask "microsoft-edge"
 # Silence embarrassing notifications while screensharing
 cask "muzzle"
