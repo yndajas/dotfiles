@@ -51,7 +51,9 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.tabSize": 4
   },
-  "auto-close-tag.disableOnLanguage": ["typescript"],
+  "auto-close-tag.disableOnLanguage": [
+    "typescript"
+  ],
   "biome.requireConfigFile": true,
   "breadcrumbs.symbolPath": "off",
   // "djlint.formatLanguages": [
@@ -88,7 +90,10 @@
   "editor.renderLineHighlight": "all",
   "editor.renderLineHighlightOnlyWhenFocus": true,
   "editor.renderWhitespace": "trailing",
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "editor.stickyScroll.defaultModel": "foldingProviderModel",
   "editor.suggest.preview": true,
   "editor.suggestSelection": "recentlyUsed",
@@ -163,7 +168,10 @@
   ],
   "redhat.telemetry.enabled": false,
   "search.showLineNumbers": true,
-  "stylelint.validate": ["css", "scss"],
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
   "terminal.integrated.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, monospace",
   "typescript.implementationsCodeLens.enabled": true,
   "typescript.inlayHints.enumMemberValues.enabled": true,
