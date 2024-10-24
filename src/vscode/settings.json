@@ -134,7 +134,7 @@
   "nunjucksFormat.newline": true,
   "playwright.reuseBrowser": true,
   "playwright.showTrace": false,
-  "prettier.enable": false,
+  "prettier.proseWrap": "always",
   "python.defaultInterpreterPath": "python3",
   "python.formatting.provider": "black",
   "randomThemeSwitcher.switchMode": "manual",
