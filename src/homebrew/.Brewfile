@@ -106,6 +106,8 @@ brew "jesseduffield/lazygit/lazygit"
 brew "oven-sh/bun/bun"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# GraphQL client
+cask "altair-graphql-client"
 # Chromium based browser
 cask "arc"
 # Securely stores and accesses AWS credentials in a development environment
