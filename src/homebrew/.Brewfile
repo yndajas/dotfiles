@@ -133,6 +133,8 @@ cask "godot"
 cask "itch"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Free cross-platform office suite, fresh version
+cask "libreoffice"
 # App to manage software development and track bugs
 cask "linear-linear"
 # Provides updates to various Microsoft products
