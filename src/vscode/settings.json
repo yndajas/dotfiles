@@ -101,6 +101,8 @@
   "emmet.includeLanguages": {
     "erb": "html"
   },
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.statusBarIconsEnabled": true,
   "files.associations": {
     ".env.defaults": "dotenv",
     "*.html": "html",
