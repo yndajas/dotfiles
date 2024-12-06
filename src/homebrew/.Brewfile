@@ -116,6 +116,8 @@ cask "aws-vault"
 cask "bartender"
 # Test localhost and staging websites
 cask "browserstacklocal"
+# E-books management software
+cask "calibre"
 # Universal database tool and SQL client
 cask "dbeaver-community"
 # Voice and text chat software
