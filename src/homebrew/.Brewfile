@@ -56,6 +56,8 @@ brew "mysql"
 brew "nano"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Install NodeJS versions
 brew "node-build"
 # Manage multiple NodeJS versions
