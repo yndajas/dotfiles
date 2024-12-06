@@ -124,6 +124,8 @@ cask "dbeaver-community"
 cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker"
+# Developer platform
+cask "dotnet-sdk"
 # Calendar software
 cask "fantastical"
 # Collaborative team software
@@ -230,6 +232,9 @@ vscode "misogi.ruby-rubocop"
 vscode "monosans.djlint"
 vscode "mquandalle.graphql"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-dotnettools.csdevkit"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
 vscode "ms-playwright.playwright"
 vscode "ms-vscode.test-adapter-converter"
 vscode "ms-vsliveshare.vsliveshare"
