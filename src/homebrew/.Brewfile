@@ -169,6 +169,8 @@ cask "sourcetree"
 cask "spotify"
 # Customizable email client
 cask "thunderbird"
+# To-do list
+cask "todoist"
 # Remote pair programming app
 cask "tuple"
 # Management tool for Unity
