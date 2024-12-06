@@ -8,13 +8,14 @@
   "[gdscript]": {
     "editor.defaultFormatter": "EddieDover.gdscript-formatter-linter"
   },
-  // "[html]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript][typescript]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit"
-    }
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.quickSuggestions": {
@@ -25,7 +26,8 @@
   "[markdown]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.markdownlint": "explicit"
-    }
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // "[nj][njk][nunjucks][twig]": {
   //   "djlint.enableLinting": true,
@@ -40,7 +42,7 @@
   //   "editor.tabSize": 4
   // },
   "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp", // this was RuboCop until installing Shopify's Ruby extension pack
+    // "editor.defaultFormatter": "Shopify.ruby-lsp", // this was RuboCop until installing Shopify's Ruby extension pack
     "editor.formatOnSave": true,
     "editor.semanticHighlighting.enabled": true, // added when installing Shopify's Ruby extension pack
     "files.insertFinalNewline": true, // added when installing Shopify's Ruby extension pack
