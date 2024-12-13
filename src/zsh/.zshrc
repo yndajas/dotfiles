@@ -189,6 +189,7 @@ export LESS='--mouse'
 
 # keep Brewfile up to date
 original_brew_command="$(which brew)"
+original_mas_command="$(which mas)"
 
 function brew() {
   # just run brew if there are no arguments
@@ -199,6 +200,20 @@ function brew() {
   # otherwise run original brew command
   # and if that was successful, update the global Brewfile if needed
   eval ${original_brew_command} "$@" && if [[ "$1" == "install" || "$1" == "uninstall" || "$1" == "remove" || "$1" == "rm" || "$1" == "tap" || "$1" == "untap" ]]; then
+    echo "\n==> Updating Brewfile"
+    update_global_brewfile
+  fi
+}
+
+function mas() {
+  # just run mas if there are no arguments
+  if [ $# -eq 0 ]; then
+    eval ${original_mas_command} && return 0
+  fi
+
+  # otherwise run original mas command
+  # and if that was successful, update the global Brewfile if needed
+  eval ${original_mas_command} "$@" && if [[ "$1" == "install" ]]; then
     echo "\n==> Updating Brewfile"
     update_global_brewfile
   fi
