@@ -63,10 +63,14 @@ brew "pkgconf"
 brew "node-build"
 # Manage multiple NodeJS versions
 brew "nodenv"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # Python package management tool
 brew "poetry"
 # Object-relational database system
 brew "postgresql@14", restart_service: true
+# Parse HTML at the command-line
+brew "pup"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # Ruby version manager
