@@ -1,4 +1,5 @@
 tap "alphagov/gds"
+tap "barnardb/cookies"
 tap "domt4/autoupdate"
 tap "heroku/brew"
 tap "homebrew/bundle"
@@ -100,6 +101,8 @@ brew "zoxide"
 brew "zsh"
 # CLI for common commands used by Government Digital Service staff
 brew "alphagov/gds/gds-cli"
+# Command-line tool for extracting cookies from the user's web browser
+brew "barnardb/cookies/cookies"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # A simple terminal UI for git commands, written in Go
