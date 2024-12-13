@@ -192,6 +192,7 @@ cask "visual-studio-code"
 # Multiplayer code editor
 cask "zed"
 mas "ColorSlurp", id: 1287239339
+mas "Gifski", id: 1351639930
 vscode "ahmadawais.shades-of-purple"
 vscode "arcticicestudio.nord-visual-studio-code"
 vscode "ayakosky.fluffy-theme"
