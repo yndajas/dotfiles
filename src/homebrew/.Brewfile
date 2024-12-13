@@ -135,6 +135,7 @@ cask "figma"
 # Web browser
 cask "firefox"
 cask "font-fira-code-nerd-font"
+cask "font-iosevka-nerd-font"
 # Game development engine
 cask "godot"
 # Game client for itch.io

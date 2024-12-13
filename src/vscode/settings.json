@@ -80,7 +80,7 @@
   "editor.cursorBlinking": "phase",
   // "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 3,
-  "editor.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, monospace",
+  "editor.fontFamily": "FiraCode Nerd Font, Iosevka Nerd Font Mono, Menlo, Monaco, monospace",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
