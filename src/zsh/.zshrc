@@ -184,8 +184,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # set less to support mouse scrolling to move display, which in turn adds
 # support to bat when the file is longer than the viewport (i.e. when it uses
-# less)
-export LESS='--mouse'
+# update: this breaks text selection via the mouse when using Ghostty
+# export LESS='--mouse'
 
 # keep Brewfile up to date
 original_brew_command="$(which brew)"

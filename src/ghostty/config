@@ -1,1 +1,5 @@
+# cursor-click-to-move = true
+cursor-style = block
+# macos-option-as-alt = true
+shell-integration-features = no-cursor
 theme = Tinacious Design (Light)
