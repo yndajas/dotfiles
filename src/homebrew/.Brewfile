@@ -143,6 +143,8 @@ cask "figma"
 cask "firefox"
 cask "font-fira-code-nerd-font"
 cask "font-iosevka-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Game development engine
 cask "godot"
 # Game client for itch.io

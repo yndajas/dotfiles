@@ -28,6 +28,7 @@
     ~/.config/iterm2/com.googlecode.iterm2.plist:
         path: src/iterm/preferences/com.googlecode.iterm2.plist
         force: true
+    ~/.config/ghostty/config: src/ghostty/config
     ~/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: src/vscode/settings.json
 
