@@ -3,4 +3,6 @@ cursor-style = block
 # macos-option-as-alt = true
 shell-integration-features = no-cursor
 theme = Tinacious Design (Light)
+window-height = 1000
+window-width = 1000
 window-inherit-working-directory = false
