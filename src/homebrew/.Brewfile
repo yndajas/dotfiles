@@ -155,6 +155,8 @@ cask "iterm2"
 cask "libreoffice"
 # App to manage software development and track bugs
 cask "linear-linear"
+# Extensible two-pane file manager
+cask "marta"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Multi-platform web browser
