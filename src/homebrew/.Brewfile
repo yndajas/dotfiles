@@ -46,6 +46,8 @@ brew "gmp"
 brew "helm"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Modern load testing tool, using Go and JavaScript
+brew "k6"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
