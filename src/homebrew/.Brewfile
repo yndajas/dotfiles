@@ -49,7 +49,7 @@ brew "jq"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
-brew "mysql", restart_service: true
+brew "mysql"
 # Free (GNU) replacement for the Pico text editor
 brew "nano"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -65,7 +65,7 @@ brew "pandoc"
 # Python package management tool
 brew "poetry"
 # Object-relational database system
-brew "postgresql@14", restart_service: true
+brew "postgresql@14", restart_service: :changed
 # Parse HTML at the command-line
 brew "pup"
 # Install various Ruby versions and implementations
@@ -73,7 +73,7 @@ brew "ruby-build"
 # Ruby version manager
 brew "rbenv"
 # Persistent key-value database, with built-in net interface
-brew "redis", restart_service: true
+brew "redis", restart_service: :changed
 # Rust toolchain installer
 brew "rustup"
 # Static analysis and lint tool, for (ba)sh scripts
