@@ -10,5 +10,5 @@ export DOTFILES_DIR="~/code/github.com/yndajas/dotfiles"
 # by the dotfiles install script, which could reinstall anything that's been
 # removed
 function update_global_brewfile() {
-  brew bundle dump --file=${DOTFILES_DIR}/src/homebrew/.Brewfile --describe --force --no-lock
+  brew bundle dump --file=${DOTFILES_DIR}/src/homebrew/.Brewfile --describe --force
 }
