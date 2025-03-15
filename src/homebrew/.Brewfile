@@ -64,6 +64,8 @@ brew "node-build"
 brew "nodenv"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Python package management tool
 brew "poetry"
 # Object-relational database system

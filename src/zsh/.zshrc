@@ -264,6 +264,9 @@ ${text_bold}${command}${text_reset} -> ${explanation}"
 
 random_hint
 
+# add local folder (where pipx apps are installed?) to path
+export PATH="$PATH:~/.local/bin"
+
 # alert if dotfiles changes are not committed or pushed to remote
 if [ -n "$(eval git -C ${DOTFILES_DIR} status --porcelain)" ]; then
   echo -e "\n${text_red_bold} ALERT: uncommitted changes in ${DOTFILES_DIR} ${text_reset}"
