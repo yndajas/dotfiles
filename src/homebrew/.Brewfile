@@ -186,8 +186,6 @@ cask "thunderbird"
 cask "todoist"
 # Remote pair programming app
 cask "tuple"
-# Management tool for Unity
-cask "unity-hub"
 # Tool to invert scroll direction for physical scroll wheels
 cask "unnaturalscrollwheels"
 # Open-source code editor
