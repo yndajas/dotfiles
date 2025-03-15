@@ -190,6 +190,8 @@ cask "tuple"
 cask "unnaturalscrollwheels"
 # Open-source code editor
 cask "visual-studio-code"
+# Web browser with built-in email client focusing on customization and control
+cask "vivaldi"
 # Multiplayer code editor
 cask "zed"
 mas "ColorSlurp", id: 1287239339
