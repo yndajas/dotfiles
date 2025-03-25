@@ -4,6 +4,11 @@
 
 vim.opt.scrolloff = 8
 
+-- cursor style
+-- default: "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,t:block-blinkon500-blinkoff500-TermCursor"
+-- (according to https://neovim.io/doc/user/options.html#'guicursor', though the last part doesn't work)
+vim.opt.guicursor = "n-v-c-sm-i:block,ci-ve:ver25,r-cr-o:hor20"
+
 -- line numbers
 
 vim.opt.number = true
