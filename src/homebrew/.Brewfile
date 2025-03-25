@@ -34,6 +34,8 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Automatic git commit --fixup
+brew "git-absorb"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
 # Native sequence editor for Git interactive rebase
