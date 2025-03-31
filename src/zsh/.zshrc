@@ -247,6 +247,15 @@ function random_hint() {
     "command line navigation;Ctrl + E;move cursor to the end of the line"
     "command line navigation;Esc + A;move cursor back one word"
     "command line navigation;Esc + F;move cursor forward one word"
+    "fuzzy find and git;Ctrl + G, (Ctrl +) B;view branches"
+    "fuzzy find and git;Ctrl + G, (Ctrl +) E;git for-each-ref"
+    "fuzzy find and git;Ctrl + G, (Ctrl +) F;view files"
+    "fuzzy find and git;Ctrl + G, (Ctrl +) H;view commit hashes"
+    "fuzzy find and git;Ctrl + G, (Ctrl +) L;view reflogs"
+    "fuzzy find and git;Ctrl + G, (Ctrl +) R;view remotes"
+    "fuzzy find and git;Ctrl + G, (Ctrl +) S;view stashes"
+    "fuzzy find and git;Ctrl + G, (Ctrl +) T;view tags"
+    "fuzzy find and git;Ctrl + G, (Ctrl +) W;view worktrees"
   )
 
   seed=$$$(date +%s)
