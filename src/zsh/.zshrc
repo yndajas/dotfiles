@@ -237,23 +237,23 @@ text_reset='\033[0m'
 # echo random hint
 function random_hint() {
   hints=(
-    "aliases,lsrepo,display git information within a repo"
-    "aliases,lsrepos,display git information within a directory of repos"
-    "command line editing,Ctrl + K,delete to end of line"
-    "command line editing,Ctrl + U,delete to start of line"
-    "command line editing,Ctrl + W,delete one word behind"
-    "command line editing,Esc + D,delete one word ahead"
-    "command line navigation,Ctrl + A,move cursor to the start of the line"
-    "command line navigation,Ctrl + E,move cursor to the end of the line"
-    "command line navigation,Esc + A,move cursor back one word"
-    "command line navigation,Esc + F,move cursor forward one word"
+    "aliases;lsrepo;display git information within a repo"
+    "aliases;lsrepos;display git information within a directory of repos"
+    "command line editing;Ctrl + K;delete to end of line"
+    "command line editing;Ctrl + U;delete to start of line"
+    "command line editing;Ctrl + W;delete one word behind"
+    "command line editing;Esc + D;delete one word ahead"
+    "command line navigation;Ctrl + A;move cursor to the start of the line"
+    "command line navigation;Ctrl + E;move cursor to the end of the line"
+    "command line navigation;Esc + A;move cursor back one word"
+    "command line navigation;Esc + F;move cursor forward one word"
   )
 
   seed=$$$(date +%s)
   random_index=$(($seed % ${#hints[@]} + 1))
   random_hint=${hints[$random_index]}
 
-  random_hint_items=(${(s/,/)random_hint})
+  random_hint_items=(${(s/;/)random_hint})
   category=${random_hint_items[1]}
   command=${random_hint_items[2]}
   explanation=${random_hint_items[3]}
