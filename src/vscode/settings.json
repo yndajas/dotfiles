@@ -62,6 +62,7 @@
   "auto-close-tag.disableOnLanguage": ["typescript"],
   "biome.requireConfigFile": true,
   "breadcrumbs.symbolPath": "off",
+  "chat.commandCenter.enabled": false,
   // "djlint.formatLanguages": [
   //   "jinja",
   //   "nj",
