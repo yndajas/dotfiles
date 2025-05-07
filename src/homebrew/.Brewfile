@@ -92,6 +92,8 @@ brew "tfenv"
 brew "tflint"
 # Define your dev environment as code. For microservice apps on Kubernetes
 brew "tilt"
+# Official tldr client written in Rust
+brew "tlrc"
 # Extraction utility for .zip compressed archives
 brew "unzip"
 # Internet file retriever

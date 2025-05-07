@@ -251,6 +251,7 @@ function random_hint() {
     "command line navigation;Ctrl + E;move cursor to the end of the line"
     "command line navigation;Esc + A;move cursor back one word"
     "command line navigation;Esc + F;move cursor forward one word"
+    "command line tools;tldr;community-sourced usage examples"
     "fuzzy find and git;Ctrl + G, (Ctrl +) B;view branches"
     "fuzzy find and git;Ctrl + G, (Ctrl +) E;git for-each-ref"
     "fuzzy find and git;Ctrl + G, (Ctrl +) F;view files"
