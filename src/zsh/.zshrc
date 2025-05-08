@@ -233,10 +233,12 @@ function brew() {
 
   # otherwise run original brew command
   # and if that was successful, update the global Brewfile if needed
-  eval ${original_brew_command} "$@" && if [[ "$1" == 'install' || "$1" == 'uninstall' || "$1" == 'remove' || "$1" == 'rm' || "$1" == 'tap' || "$1" == 'untap' ]]; then
-    echo '\n==> Updating Brewfile'
-    update_global_brewfile
-  fi
+  eval ${original_brew_command} "$@" && case $1 in
+    install | uninstall | remove | rm | tap | untap)
+      echo '\n==> Updating Brewfile'
+      update_global_brewfile
+      ;;
+    esac
 }
 
 function mas() {
