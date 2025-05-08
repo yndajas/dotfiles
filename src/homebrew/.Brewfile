@@ -73,6 +73,8 @@ brew "poetry"
 brew "postgresql@14", restart_service: :changed
 # Parse HTML at the command-line
 brew "pup"
+# Monitor data's progress through a pipe
+brew "pv"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
 # Install various Ruby versions and implementations
