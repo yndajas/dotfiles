@@ -5,6 +5,7 @@ tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
+tap "ngrok/ngrok"
 tap "oven-sh/bun"
 # CLI tool for working with Architecture Decision Records
 brew "adr-tools"
@@ -168,6 +169,8 @@ cask "microsoft-auto-update"
 cask "microsoft-edge"
 # Silence embarrassing notifications while screensharing
 cask "muzzle"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Professional webcam software for the Opal C1
