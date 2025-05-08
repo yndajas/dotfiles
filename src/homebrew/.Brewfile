@@ -11,8 +11,6 @@ tap "oven-sh/bun"
 brew "adr-tools"
 # Get stuff done with container-native workflows for Kubernetes
 brew "argo"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Toolchain of the web
@@ -75,6 +73,8 @@ brew "poetry"
 brew "postgresql@14", restart_service: :changed
 # Parse HTML at the command-line
 brew "pup"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # Ruby version manager
