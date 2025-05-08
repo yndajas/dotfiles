@@ -155,6 +155,10 @@ fpath=(~/.zsh.d/ $fpath)
 # See: https://github.com/oven-sh/bun/blob/267afa293483d5ed5f834a6d35350232188e3f98/docs/cli/bun-completions.md
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 
+function origin_head() {
+  sed -n 's/.*\///p' .git/refs/remotes/origin/HEAD
+}
+
 # command to clean up old git branches
 # See: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote/38404202#38404202
 function clean_branches() {
@@ -168,7 +172,8 @@ function clean_branches() {
     shift
   done
 
-  git switch main && git fetch -p
+  git switch $(origin_head)
+  git fetch --prune
   git branch -vv | awk '/: gone]/{print $1}' | xargs git branch $delete_flag
   git switch -
 }
