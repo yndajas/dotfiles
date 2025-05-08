@@ -153,7 +153,7 @@ fpath=(~/.zsh.d/ $fpath)
 
 # bun completions
 # See: https://github.com/oven-sh/bun/blob/267afa293483d5ed5f834a6d35350232188e3f98/docs/cli/bun-completions.md
-[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+[ -s '~/.bun/_bun' ] && source '~/.bun/_bun'
 
 function in_every_repo_root() {
   local depth=0
@@ -189,14 +189,12 @@ function origin_head() {
 # command to clean up old git branches
 # See: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote/38404202#38404202
 function clean_branches() {
-  delete_flag="-d"
+  local delete_flag='-d'
 
   while [ $# -gt 0 ]; do
     case $1 in
-      --force) delete_flag="-D";;
+      --force) delete_flag='-D'; shift;;
     esac
-
-    shift
   done
 
   git switch $(origin_head)
@@ -208,7 +206,7 @@ function clean_branches() {
 ## bat
 
 # set bat theme
-export BAT_THEME="OneHalfLight"
+export BAT_THEME='OneHalfLight'
 
 # use bat to add syntax highlighting to man
 # see https://github.com/sharkdp/bat#man
@@ -235,8 +233,8 @@ function brew() {
 
   # otherwise run original brew command
   # and if that was successful, update the global Brewfile if needed
-  eval ${original_brew_command} "$@" && if [[ "$1" == "install" || "$1" == "uninstall" || "$1" == "remove" || "$1" == "rm" || "$1" == "tap" || "$1" == "untap" ]]; then
-    echo "\n==> Updating Brewfile"
+  eval ${original_brew_command} "$@" && if [[ "$1" == 'install' || "$1" == 'uninstall' || "$1" == 'remove' || "$1" == 'rm' || "$1" == 'tap' || "$1" == 'untap' ]]; then
+    echo '\n==> Updating Brewfile'
     update_global_brewfile
   fi
 }
@@ -249,8 +247,8 @@ function mas() {
 
   # otherwise run original mas command
   # and if that was successful, update the global Brewfile if needed
-  eval ${original_mas_command} "$@" && if [[ "$1" == "install" ]]; then
-    echo "\n==> Updating Brewfile"
+  eval ${original_mas_command} "$@" && if [[ "$1" == 'install' ]]; then
+    echo '\n==> Updating Brewfile'
     update_global_brewfile
   fi
 }
@@ -272,37 +270,38 @@ text_reset='\033[0m'
 
 # echo random hint
 function random_hint() {
-  hints=(
-    "aliases;lsrepo;display git information within a repo"
-    "aliases;lsrepos;display git information within a directory of repos"
-    "command line editing;Ctrl + K;delete to end of line"
-    "command line editing;Ctrl + U;delete to start of line"
-    "command line editing;Ctrl + W;delete one word behind"
-    "command line editing;Esc + D;delete one word ahead"
-    "command line navigation;Ctrl + A;move cursor to the start of the line"
-    "command line navigation;Ctrl + E;move cursor to the end of the line"
-    "command line navigation;Esc + A;move cursor back one word"
-    "command line navigation;Esc + F;move cursor forward one word"
-    "command line tools;tldr;community-sourced usage examples"
-    "fuzzy find and git;Ctrl + G, (Ctrl +) B;view branches"
-    "fuzzy find and git;Ctrl + G, (Ctrl +) E;git for-each-ref"
-    "fuzzy find and git;Ctrl + G, (Ctrl +) F;view files"
-    "fuzzy find and git;Ctrl + G, (Ctrl +) H;view commit hashes"
-    "fuzzy find and git;Ctrl + G, (Ctrl +) L;view reflogs"
-    "fuzzy find and git;Ctrl + G, (Ctrl +) R;view remotes"
-    "fuzzy find and git;Ctrl + G, (Ctrl +) S;view stashes"
-    "fuzzy find and git;Ctrl + G, (Ctrl +) T;view tags"
-    "fuzzy find and git;Ctrl + G, (Ctrl +) W;view worktrees"
+  # add functions
+  local hints=(
+    'aliases;lsrepo;display git information within a repo'
+    'aliases;lsrepos;display git information within a directory of repos'
+    'command line editing;Ctrl + K;delete to end of line'
+    'command line editing;Ctrl + U;delete to start of line'
+    'command line editing;Ctrl + W;delete one word behind'
+    'command line editing;Esc + D;delete one word ahead'
+    'command line navigation;Ctrl + A;move cursor to the start of the line'
+    'command line navigation;Ctrl + E;move cursor to the end of the line'
+    'command line navigation;Esc + A;move cursor back one word'
+    'command line navigation;Esc + F;move cursor forward one word'
+    'command line tools;tldr;community-sourced usage examples'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) B;view branches'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) E;git for-each-ref'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) F;view files'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) H;view commit hashes'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) L;view reflogs'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) R;view remotes'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) S;view stashes'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) T;view tags'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) W;view worktrees'
   )
 
-  seed=$$$(date +%s)
-  random_index=$(($seed % ${#hints[@]} + 1))
-  random_hint=${hints[$random_index]}
+  local seed=$$$(date +%s)
+  local random_index=$(($seed % ${#hints[@]} + 1))
+  local random_hint=${hints[$random_index]}
 
-  random_hint_items=(${(s/;/)random_hint})
-  category=${random_hint_items[1]}
-  command=${random_hint_items[2]}
-  explanation=${random_hint_items[3]}
+  local random_hint_items=(${(s/;/)random_hint})
+  local category=${random_hint_items[1]}
+  local command=${random_hint_items[2]}
+  local explanation=${random_hint_items[3]}
 
   echo "
 ${text_green_bold} HINT: ${category} ${text_reset}
