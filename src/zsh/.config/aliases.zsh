@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-# cat -> bat
-
-alias cat="bat"
-
 # ls -> eza
 
 alias ls="eza --all --classify --color=always --icons=always --sort=type"

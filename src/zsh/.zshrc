@@ -181,10 +181,7 @@ function clean_branches() {
   git switch -
 }
 
-## bat
-
-# set bat theme
-export BAT_THEME='OneHalfLight'
+source $HOME/.config/zsh/bat.zsh
 
 # use bat to add syntax highlighting to man
 # see https://github.com/sharkdp/bat#man
