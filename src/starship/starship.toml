@@ -1,9 +1,82 @@
-format = '$all'
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[character]
-success_symbol = '[](bold green) '
-error_symbol = '[](bold red) '
+format = """
+$time\
+$cmd_duration\
+$status\
+$line_break\
+$line_break\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$line_break\
+$shell\
+"""
+
+[cmd_duration]
+format = '[$duration](purple) '
+show_notifications = true
+
+[directory]
+style = 'blue'
+truncation_symbol = '…/'
+
+[git_branch]
+format = '[$branch(\($remote_name/$remote_branch\))](bright-yellow) '
+only_attached = true
+
+[git_commit]
+format = '[$hash](bright-yellow) '
+
+[git_state]
+am = 'applying mailbox'
+am_or_rebase = 'applying mailbox or rebasing'
+bisect = 'bisecting'
+cherry_pick = 'cherry-picking'
+format = '[$state \($progress_current/$progress_total\)](cyan) '
+merge = 'merging'
+rebase = 'rebasing'
+revert = 'reverting'
+
+[git_status]
+ahead = 'ahead\($count\) '
+behind = 'behind\($count\) '
+conflicted = 'conflicted\($count\) '
+deleted = 'deleted\($count\) '
+diverged = 'ahead\($ahead_count\) behind\($behind_count\) '
+format = """
+$ahead_behind\
+$conflicted\
+$modified\
+$renamed\
+$typechanged\
+$deleted\
+$untracked\
+$staged\
+$stashed\
+"""
+modified = 'modified\($count\) '
+renamed = 'renamed\($count\) '
+staged = 'staged\($count\) '
+stashed = 'stashed\($count\) '
+typechanged = 'typechanged '
+untracked = 'untracked\($count\) '
+
+[shell]
+disabled = false
+
+[status]
+disabled = false
+failure_style = 'red'
+format = '[$status $symbol$common_meaning$signal_name(\($signal_number\))]($style)'
+success_style = 'green'
+success_symbol = '[SUCCESS]($style)'
+symbol = ''
 
 [time]
 disabled = false
-format = '[$time]($style) '
+format = '$time '
