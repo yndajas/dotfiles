@@ -5,7 +5,6 @@
 
 - shell:
   - [curl https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh > src/fzf/.fzf-git.sh]
-  - command: if [ -f ~/Library/Preferences/com.googlecode.iterm2.plist ]; then rm ~/Library/Preferences/com.googlecode.iterm2.plist; fi
 
 - clean:
     ~/:
@@ -27,9 +26,6 @@
     ~/.zshrc: src/zsh/.zshrc
     ~/.config/alacritty/: src/alacritty/
     ~/.config/ghostty/config: src/ghostty/config
-    ~/.config/iterm2/com.googlecode.iterm2.plist:
-        path: src/iterm/preferences/com.googlecode.iterm2.plist
-        force: true
     ~/.config/nvim/: src/nvim/
     ~/.config/starship.toml: src/starship/starship.toml
     ~/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json

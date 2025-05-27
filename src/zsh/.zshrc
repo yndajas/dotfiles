@@ -93,17 +93,6 @@ fi
 
 command_exists starship && eval "$(starship init zsh)"
 
-if [[ -v ITERM_PROFILE ]]; then
-  ITERM2_INTEGRATION_PATH=$HOME/.iterm2_shell_integration.zsh
-
-  [[ -f $ITERM2_INTEGRATION_PATH ]] || curl \
-    -L https://iterm2.com/shell_integration/zsh \
-    -o "$ITERM2_INTEGRATION_PATH"
-
-  # shellcheck source=/dev/null
-  source "$ITERM2_INTEGRATION_PATH"
-fi
-
 # fzf (fuzzy finder) setup
 # this will also add a list to reverse-i-search (CTRL + R)
 # fzf-git adds fzf git helpers, e.g. CTRL + G + H to list commit hashes
