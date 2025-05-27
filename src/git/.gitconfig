@@ -37,6 +37,8 @@
 	updateRefs = true
 [sequence]
 	editor = interactive-rebase-tool
+[status]
+	showStash = true
 [user]
 	email = yndajas@gmail.com
 	name = Ynda Jas
