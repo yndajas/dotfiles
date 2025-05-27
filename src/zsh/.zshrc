@@ -194,11 +194,6 @@ function man-builtin() {
   man -P "less +/\ \ \ \ \ \ \ $1\ " zshbuiltins
 }
 
-# set less to support mouse scrolling to move display, which in turn adds
-# support to bat when the file is longer than the viewport (i.e. when it uses
-# update: this breaks text selection via the mouse when using Ghostty
-# export LESS='--mouse'
-
 function install_dotfiles() {
   eval ${DOTFILES_DIR}/install
 }
