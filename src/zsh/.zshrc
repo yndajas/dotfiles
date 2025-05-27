@@ -182,14 +182,7 @@ function clean_branches() {
 }
 
 source $HOME/.config/zsh/bat.zsh
-
-# use bat to add syntax highlighting to man
-# see https://github.com/sharkdp/bat#man
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-function man-builtin() {
-  man -P "less +/\ \ \ \ \ \ \ $1\ " zshbuiltins
-}
+source $HOME/.config/zsh/man.zsh
 
 function install_dotfiles() {
   eval ${DOTFILES_DIR}/install
