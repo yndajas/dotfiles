@@ -165,8 +165,6 @@ cask "libreoffice"
 cask "linear-linear"
 # Extensible two-pane file manager
 cask "marta"
-# Provides updates to various Microsoft products
-cask "microsoft-auto-update"
 # Multi-platform web browser
 cask "microsoft-edge"
 # Silence embarrassing notifications while screensharing
