@@ -16,9 +16,7 @@ WORDCHARS=''
 
 ZSH_CACHE_DIR=$HOME/.zcache
 
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir -p "$ZSH_CACHE_DIR"
-fi
+[[ -d $ZSH_CACHE_DIR ]] || mkdir -p "$ZSH_CACHE_DIR"
 
 setopt auto_pushd
 setopt pushd_ignore_dups
@@ -54,10 +52,7 @@ zstyle ':completion::complete:*' cache-path "$ZSH_CACHE_DIR"
 autoload -Uz compinit
 compinit -i
 
-if command_exists ssh-agent; then
-  eval "$(ssh-agent)"
-  ssh-add --apple-load-keychain
-fi
+command_exists ssh-agent && eval "$(ssh-agent)" && ssh-add --apple-load-keychain
 
 # zgen settings
 # shellcheck disable=SC2034
@@ -77,9 +72,7 @@ ZGEN_SYSTEM_UPDATE_DAYS=7
 ZGEN_CLONE_DIR=$HOME/zgen
 ZGEN_SCRIPT_PATH=$ZGEN_CLONE_DIR/zgen.zsh
 
-if [[ ! -f $ZGEN_SCRIPT_PATH ]]; then
-  git clone git@github.com:tarjoilija/zgen.git "$ZGEN_CLONE_DIR"
-fi
+[[ -f $ZGEN_SCRIPT_PATH ]] || git clone git@github.com:tarjoilija/zgen.git "$ZGEN_CLONE_DIR"
 
 # shellcheck source=/dev/null
 source "$ZGEN_SCRIPT_PATH"
@@ -98,14 +91,14 @@ if ! zgen saved; then
   zgen save
 fi
 
-if command_exists starship; then eval "$(starship init zsh)"; fi
+command_exists starship && eval "$(starship init zsh)"
 
 if [[ -v ITERM_PROFILE ]]; then
   ITERM2_INTEGRATION_PATH=$HOME/.iterm2_shell_integration.zsh
 
-  if [[ ! -f $ITERM2_INTEGRATION_PATH ]]; then
-    curl -L https://iterm2.com/shell_integration/zsh -o "$ITERM2_INTEGRATION_PATH"
-  fi
+  [[ -f $ITERM2_INTEGRATION_PATH ]] || curl \
+    -L https://iterm2.com/shell_integration/zsh \
+    -o "$ITERM2_INTEGRATION_PATH"
 
   # shellcheck source=/dev/null
   source "$ITERM2_INTEGRATION_PATH"
@@ -117,16 +110,16 @@ fi
 # See: https://github.com/junegunn/fzf-git.sh
 # this needs to run before zoxide init in order for _ZO_FZF_OPTS to affect the
 # fzf preview (e.g. when running cd yndajas <TAB>)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/.fzf-git.sh
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh && source ~/.fzf-git.sh
 
 # I think these often ask to be run at the end of .zshrc. Zoxide mentions
 # needing to run after compinit, which is run a little earlier in this file, and
 # it also needs running before sources ~/.fzf.zsh so that _ZO_FZF_OPTS is set
 # for custom fzf previews (e.g. when running cd yndajas <TAB>)
-if command_exists direnv; then eval "$(direnv hook zsh)"; fi
-if command_exists rbenv; then eval "$(rbenv init -)"; fi
-if command_exists nodenv; then eval "$(nodenv init -)"; fi
-if command_exists zoxide; then eval "$(zoxide init zsh --cmd cd)"; fi
+command_exists direnv && eval "$(direnv hook zsh)"
+command_exists rbenv && eval "$(rbenv init -)"
+command_exists nodenv && eval "$(nodenv init -)"
+command_exists zoxide && eval "$(zoxide init zsh --cmd cd)"
 
 # use Emacs keybindings
 # see "4.1.1: The simple facts" and "4.5.5: Keymaps" at https://zsh.sourceforge.io/Guide/zshguide04.html
@@ -153,13 +146,13 @@ fpath=(~/.zsh.d/ $fpath)
 
 # bun completions
 # See: https://github.com/oven-sh/bun/blob/267afa293483d5ed5f834a6d35350232188e3f98/docs/cli/bun-completions.md
-[ -s '~/.bun/_bun' ] && source '~/.bun/_bun'
+[[ -s '~/.bun/_bun' ]] && source '~/.bun/_bun'
 
 function in_every_repo_root() {
   local depth=0
   local max_depth=0
 
-  while [ $# -gt 0 ]; do
+  while [[ $# -gt 0 ]]; do
     case $1 in
       --depth) depth=$2; shift 2;;
       --max-depth) max_depth=$2; shift 2;;
@@ -174,7 +167,7 @@ function in_every_repo_root() {
       echo "\n==> Executing $command_to_execute in $(pwd)\n"
 
       eval $command_to_execute
-    elif [ $depth -lt $max_depth ]; then
+    elif [[ $depth -lt $max_depth ]]; then
       in_every_repo_root $command_to_execute --depth $(($depth + 1)) --max-depth $max_depth
     fi
 
@@ -191,7 +184,7 @@ function origin_head() {
 function clean_branches() {
   local delete_flag='-d'
 
-  while [ $# -gt 0 ]; do
+  while [[ $# -gt 0 ]]; do
     case $1 in
       --force) delete_flag='-D'; shift;;
     esac
@@ -227,9 +220,7 @@ original_mas_command="$(which mas)"
 
 function brew() {
   # just run brew if there are no arguments
-  if [ $# -eq 0 ]; then
-    eval ${original_brew_command} && return 0
-  fi
+  [[ $# -eq 0 ]] && eval ${original_brew_command} && return 0
 
   # otherwise run original brew command
   # and if that was successful, update the global Brewfile if needed
@@ -243,9 +234,7 @@ function brew() {
 
 function mas() {
   # just run mas if there are no arguments
-  if [ $# -eq 0 ]; then
-    eval ${original_mas_command} && return 0
-  fi
+  [[ $# -eq 0 ]] && eval ${original_mas_command} && return 0
 
   # otherwise run original mas command
   # and if that was successful, update the global Brewfile if needed
@@ -260,9 +249,7 @@ function install_dotfiles() {
 }
 
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
-if [ -f ~/.zshrc_local ]; then
-    source ~/.zshrc_local
-fi
+[[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
 
 # colours for hints and alerts
 text_bold='\033[1m'
@@ -321,11 +308,9 @@ export PATH="$PATH:~/.local/bin"
 # open dotfiles in VSCode by default or optionally specify whether you want to
 # do that and/or change directory
 function dotfiles() {
-  if [ $# -eq 0 ]; then
-    code $DOTFILES_DIR
-  fi
+  [[ $# -eq 0 ]] && code $DOTFILES_DIR
 
-  while [ $# -gt 0 ]; do
+  while [[ $# -gt 0 ]]; do
     case $1 in
       --cd) cd $DOTFILES_DIR;;
       --code) code $DOTFILES_DIR;;
@@ -336,10 +321,10 @@ function dotfiles() {
 }
 
 # alert if dotfiles changes are not committed or pushed to remote
-if [ -n "$(eval git -C ${DOTFILES_DIR} status --porcelain)" ]; then
+if [[ -n "$(eval git -C ${DOTFILES_DIR} status --porcelain)" ]]; then
   echo -e "\n${text_red_bold} ALERT: uncommitted changes in ${DOTFILES_DIR} ${text_reset}"
 else
-  if [ -n "$(eval git -C ${DOTFILES_DIR} diff @{u})" ]; then
+  if [[ -n "$(eval git -C ${DOTFILES_DIR} diff @{u})" ]]; then
     echo -e "\n${text_red_bold} ALERT: unpushed changes in ${DOTFILES_DIR} ${text_reset}"
   fi
 fi
