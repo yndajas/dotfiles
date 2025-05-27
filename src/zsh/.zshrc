@@ -123,8 +123,7 @@ bindkey '^[[B' history-substring-search-down
 
 export EDITOR=nvim
 
-# load aliases
-source ~/.aliases.zsh
+source $HOME/.config/zsh/aliases.zsh
 
 # ZSH tab completion for cheat.sh
 # https://github.com/chubin/cheat.sh#zsh-tab-completion

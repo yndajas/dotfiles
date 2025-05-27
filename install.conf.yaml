@@ -13,7 +13,6 @@
     ~/Library/Application Support/Code/User/:
 
 - link:
-    ~/.aliases.zsh: src/zsh/.aliases.zsh
     ~/.Brewfile: src/homebrew/.Brewfile
     ~/.fzf.zsh: src/fzf/.fzf.zsh
     ~/.fzf-git.sh: src/fzf/.fzf-git.sh
