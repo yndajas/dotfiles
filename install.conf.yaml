@@ -31,6 +31,7 @@
         path: src/iterm/preferences/com.googlecode.iterm2.plist
         force: true
     ~/.config/nvim/: src/nvim/
+    ~/.config/starship.toml: src/starship/starship.toml
     ~/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: src/vscode/settings.json
 
