@@ -122,8 +122,6 @@ bindkey '^[[A' history-substring-search-up
 # see https://github.com/zsh-users/zsh-history-substring-search
 bindkey '^[[B' history-substring-search-down
 
-export EDITOR=nvim
-
 source $HOME/.config/zsh/aliases.zsh
 
 # ZSH tab completion for cheat.sh
@@ -137,6 +135,7 @@ fpath=($HOME/.zsh.d/ $fpath)
 source $HOME/.config/zsh/bat.zsh
 source $HOME/.config/zsh/git.zsh
 source $HOME/.config/zsh/man.zsh
+source $HOME/.config/zsh/neovim.zsh
 
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
