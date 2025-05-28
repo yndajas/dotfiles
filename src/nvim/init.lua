@@ -56,48 +56,7 @@ require("lazy").setup({
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { "nvim-tree/nvim-web-devicons" },
   { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function ()
-      local configs = require("nvim-treesitter.configs")
-
-      configs.setup({
-          ensure_installed = {
-            "c",
-            "lua",
-            "vim",
-            "vimdoc",
-            "query",
-            "css",
-            "csv",
-            "diff",
-            "dockerfile",
-            "gdscript",
-            "git_config",
-            "git_rebase",
-            "gitattributes",
-            "gitcommit",
-            "gitignore",
-            "godot_resource",
-            "html",
-            "javascript",
-            "json",
-            "markdown",
-            "python",
-            "ruby",
-            "rust",
-            "scss",
-            "sql",
-            "toml",
-            "typescript"
-          },
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },
-        })
-    end
-  }
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }
 })
 
 -- Set up colour scheme
@@ -128,3 +87,40 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- Set up lualine (status bar)
 
 require('lualine').setup()
+
+-- Set up Treesitter
+
+require("nvim-treesitter.configs").setup {
+  ensure_installed = {
+    "c",
+    "css",
+    "csv",
+    "diff",
+    "dockerfile",
+    "gdscript",
+    "git_config",
+    "git_rebase",
+    "gitattributes",
+    "gitcommit",
+    "gitignore",
+    "godot_resource",
+    "html",
+    "javascript",
+    "json",
+    "lua",
+    "markdown",
+    "python",
+    "query",
+    "ruby",
+    "rust",
+    "scss",
+    "sql",
+    "toml",
+    "typescript",
+    "vim",
+    "vimdoc",
+  },
+  sync_install = false,
+  highlight = { enable = true },
+  indent = { enable = true }
+}
