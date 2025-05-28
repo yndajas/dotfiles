@@ -76,6 +76,7 @@ require("lazy").setup({
             "gdscript",
             "git_config",
             "git_rebase",
+            "gitattributes",
             "gitcommit",
             "gitignore",
             "godot_resource",
