@@ -96,7 +96,7 @@ command_exists starship && eval "$(starship init zsh)"
 # See: https://github.com/junegunn/fzf-git.sh
 # this needs to run before zoxide init in order for _ZO_FZF_OPTS to affect the
 # fzf preview (e.g. when running cd yndajas <TAB>)
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh && source ~/.fzf-git.sh
+[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh && source $HOME/.fzf-git.sh
 
 # I think these often ask to be run at the end of .zshrc. Zoxide mentions
 # needing to run after compinit, which is run a little earlier in this file, and
@@ -127,18 +127,18 @@ source $HOME/.config/zsh/aliases.zsh
 
 # ZSH tab completion for cheat.sh
 # https://github.com/chubin/cheat.sh#zsh-tab-completion
-fpath=(~/.zsh.d/ $fpath)
+fpath=($HOME/.zsh.d/ $fpath)
 
 # bun completions
 # See: https://github.com/oven-sh/bun/blob/267afa293483d5ed5f834a6d35350232188e3f98/docs/cli/bun-completions.md
-[[ -s '~/.bun/_bun' ]] && source '~/.bun/_bun'
+[[ -s $HOME/.bun/_bun ]] && source $HOME/.bun/_bun
 
 source $HOME/.config/zsh/bat.zsh
 source $HOME/.config/zsh/git.zsh
 source $HOME/.config/zsh/man.zsh
 
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
-[[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
+[[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
 
 # echo random hint -------------------------------------------------------------
 source $HOME/.config/zsh/text_formats.zsh
@@ -188,6 +188,6 @@ ${text_bold}${command}${text_reset} -> ${explanation}"
 random_hint # ------------------------------------------------------------------
 
 # add local folder (where pipx apps are installed?) to path
-export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 source $HOME/.config/zsh/dotfiles.zsh
