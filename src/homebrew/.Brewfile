@@ -4,7 +4,6 @@ tap "domt4/autoupdate"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "jesseduffield/lazygit"
 tap "ngrok/ngrok"
 tap "oven-sh/bun"
 # CLI tool for working with Architecture Decision Records
@@ -117,8 +116,6 @@ brew "alphagov/gds/gds-cli"
 brew "barnardb/cookies/cookies"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
-# A simple terminal UI for git commands, written in Go
-brew "jesseduffield/lazygit/lazygit"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 # GPU-accelerated terminal emulator
@@ -181,8 +178,6 @@ cask "postman"
 cask "rider"
 # Team communication and collaboration software
 cask "slack"
-# Graphical client for Git version control
-cask "sourcetree"
 # Music streaming service
 cask "spotify"
 # Customizable email client
