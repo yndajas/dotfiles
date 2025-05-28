@@ -20,7 +20,7 @@ $shell\
 """
 
 [battery]
-format = '[plug me in\($percentage\)](red) '
+format = '[plug me in?\($percentage\)](red) '
 
 [cmd_duration]
 format = '[$duration](purple) '
