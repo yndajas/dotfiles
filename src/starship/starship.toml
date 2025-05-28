@@ -5,6 +5,7 @@ $time\
 $cmd_duration\
 $status\
 $line_break\
+$fill\
 $line_break\
 $username\
 $hostname\
@@ -24,6 +25,10 @@ show_notifications = true
 [directory]
 style = 'blue'
 truncation_symbol = '…/'
+
+[fill]
+style = 'bright-white'
+symbol = '-'
 
 [git_branch]
 format = '[$branch(\($remote_name/$remote_branch\))](bright-yellow) '
