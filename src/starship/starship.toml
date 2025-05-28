@@ -14,9 +14,13 @@ $git_branch\
 $git_commit\
 $git_state\
 $git_status\
+$battery\
 $line_break\
 $shell\
 """
+
+[battery]
+format = '[plug me in\($percentage\)](red) '
 
 [cmd_duration]
 format = '[$duration](purple) '
