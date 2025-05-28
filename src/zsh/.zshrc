@@ -122,8 +122,6 @@ bindkey '^[[A' history-substring-search-up
 # see https://github.com/zsh-users/zsh-history-substring-search
 bindkey '^[[B' history-substring-search-down
 
-source $HOME/.config/zsh/aliases.zsh
-
 # ZSH tab completion for cheat.sh
 # https://github.com/chubin/cheat.sh#zsh-tab-completion
 fpath=($HOME/.zsh.d/ $fpath)
@@ -134,6 +132,7 @@ fpath=($HOME/.zsh.d/ $fpath)
 
 source $HOME/.config/zsh/bat.zsh
 source $HOME/.config/zsh/git.zsh
+source $HOME/.config/zsh/ls.zsh
 source $HOME/.config/zsh/man.zsh
 source $HOME/.config/zsh/neovim.zsh
 
