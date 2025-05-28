@@ -36,7 +36,7 @@ function set_text_format() {
       --background) codes+=($background_codes[$2]); shift 2;;
       --bold) codes+=($bold_code); shift;;
       --reset) codes=(); shift $#;;
-      *) echo 'Error: invalid argument(s)'; exit 1;;
+      *) echo 'Error: invalid argument(s)'; return 1;;
     esac
   done
 
