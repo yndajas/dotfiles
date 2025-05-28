@@ -86,6 +86,7 @@ if ! zgen saved; then
   zgen save
 fi
 
+source $HOME/.config/zsh/text_formatting.zsh # needed before any set_text_format
 source $HOME/.config/zsh/homebrew.zsh
 
 command_exists starship && eval "$(starship init zsh)"
@@ -140,34 +141,37 @@ source $HOME/.config/zsh/man.zsh
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
 
-# echo random hint -------------------------------------------------------------
-source $HOME/.config/zsh/text_formats.zsh
+# add local folder (where pipx apps are installed?) to path
+export PATH="$PATH:$HOME/.local/bin"
 
+source $HOME/.config/zsh/dotfiles.zsh
+
+# echo random hint -------------------------------------------------------------
 function random_hint() {
   # add functions
   local hints=(
-    'aliases;lsrepo;display git information within a repo'
-    'aliases;lsrepos;display git information within a directory of repos'
-    'command line editing;Ctrl + K;delete to end of line'
-    'command line editing;Ctrl + U;delete to start of line'
-    'command line editing;Ctrl + W;delete one word behind'
-    'command line editing;Esc + D;delete one word ahead'
-    'command line navigation;Ctrl + A;move cursor to the start of the line'
-    'command line navigation;Ctrl + E;move cursor to the end of the line'
-    'command line navigation;Esc + A;move cursor back one word'
-    'command line navigation;Esc + F;move cursor forward one word'
-    'command line tools;clean_branches;remove merged branches'
-    'command line tools;in_every_repo_root [command];execute the specified command in every repo'
-    'command line tools;tldr [command];community-sourced usage examples'
-    'fuzzy find and git;Ctrl + G, (Ctrl +) B;view branches'
+    'aliases;lsrepo;Display git information within a repo'
+    'aliases;lsrepos;Display git information within a directory of repos'
+    'command line editing;Ctrl + K;Delete to end of line'
+    'command line editing;Ctrl + U;Delete to start of line'
+    'command line editing;Ctrl + W;Delete one word behind'
+    'command line editing;Esc + D;Delete one word ahead'
+    'command line navigation;Ctrl + A;Move cursor to the start of the line'
+    'command line navigation;Ctrl + E;Move cursor to the end of the line'
+    'command line navigation;Esc + A;Move cursor back one word'
+    'command line navigation;Esc + F;Move cursor forward one word'
+    'command line tools;clean_branches;Remove merged branches'
+    'command line tools;in_every_repo_root [command];Execute the specified command in every repo'
+    'command line tools;tldr [command];Community-sourced usage examples'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) B;View branches'
     'fuzzy find and git;Ctrl + G, (Ctrl +) E;git for-each-ref'
-    'fuzzy find and git;Ctrl + G, (Ctrl +) F;view files'
-    'fuzzy find and git;Ctrl + G, (Ctrl +) H;view commit hashes'
-    'fuzzy find and git;Ctrl + G, (Ctrl +) L;view reflogs'
-    'fuzzy find and git;Ctrl + G, (Ctrl +) R;view remotes'
-    'fuzzy find and git;Ctrl + G, (Ctrl +) S;view stashes'
-    'fuzzy find and git;Ctrl + G, (Ctrl +) T;view tags'
-    'fuzzy find and git;Ctrl + G, (Ctrl +) W;view worktrees'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) F;View files'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) H;View commit hashes'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) L;View reflogs'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) R;View remotes'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) S;View stashes'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) T;View tags'
+    'fuzzy find and git;Ctrl + G, (Ctrl +) W;View worktrees'
   )
 
   local seed=$$$(date +%s)
@@ -179,15 +183,10 @@ function random_hint() {
   local command=${random_hint_items[2]}
   local explanation=${random_hint_items[3]}
 
-  echo "
-${text_green_bold} HINT: ${category} ${text_reset}
-
-${text_bold}${command}${text_reset} -> ${explanation}"
+  set_text_format --foreground cyan
+  echo "A reminder about $category"
+  set_text_format --reset
+  echo "$explanation -> $command"
 }
 
 random_hint # ------------------------------------------------------------------
-
-# add local folder (where pipx apps are installed?) to path
-export PATH="$PATH:$HOME/.local/bin"
-
-source $HOME/.config/zsh/dotfiles.zsh

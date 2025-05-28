@@ -16,16 +16,18 @@ function dotfiles() {
 } # ----------------------------------------------------------------------------
 
 function install_dotfiles() {
-  eval ${DOTFILES_DIR}/install
+  eval $DOTFILES_DIR/install
 }
 
 # alert if dotfiles changes are not committed or pushed to remote --------------
-source $HOME/.config/zsh/text_formats.zsh
+source $HOME/.config/zsh/text_formatting.zsh
 
-if [[ -n "$(eval git -C ${DOTFILES_DIR} status --porcelain)" ]]; then
-  echo -e "\n${text_red_bold} ALERT: uncommitted changes in ${DOTFILES_DIR} ${text_reset}"
+if [[ -n "$(eval git -C $DOTFILES_DIR status --porcelain)" ]]; then
+  set_text_format --foreground red
+  echo "Warning: uncommitted changes in $DOTFILES_DIR"
 else
-  if [[ -n "$(eval git -C ${DOTFILES_DIR} diff @{u})" ]]; then
-    echo -e "\n${text_red_bold} ALERT: unpushed changes in ${DOTFILES_DIR} ${text_reset}"
+  if [[ -n "$(eval git -C $DOTFILES_DIR diff @{u})" ]]; then
+    set_text_format --foreground red
+    echo "Warning: unpushed changes in $DOTFILES_DIR"
   fi
 fi # ---------------------------------------------------------------------------
