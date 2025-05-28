@@ -71,6 +71,7 @@ require("lazy").setup({
             "query",
             "css",
             "csv",
+            "diff",
             "dockerfile",
             "gdscript",
             "git_config",
