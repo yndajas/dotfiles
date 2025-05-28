@@ -48,7 +48,8 @@ zstyle ':completion::complete:*' cache-path "$ZSH_CACHE_DIR"
 autoload -Uz compinit
 compinit -i
 
-command_exists ssh-agent && eval "$(ssh-agent)" && ssh-add --apple-load-keychain
+command_exists ssh-agent && \
+  eval "$(ssh-agent)" > /dev/null && ssh-add -q --apple-load-keychain
 
 # zgen settings
 # shellcheck disable=SC2034
