@@ -133,55 +133,8 @@ fpath=(~/.zsh.d/ $fpath)
 # See: https://github.com/oven-sh/bun/blob/267afa293483d5ed5f834a6d35350232188e3f98/docs/cli/bun-completions.md
 [[ -s '~/.bun/_bun' ]] && source '~/.bun/_bun'
 
-function in_every_repo_root() {
-  local depth=0
-  local max_depth=0
-
-  while [[ $# -gt 0 ]]; do
-    case $1 in
-      --depth) depth=$2; shift 2;;
-      --max-depth) max_depth=$2; shift 2;;
-      *) local command_to_execute=$1; shift;;
-    esac
-  done
-
-  for directory in */ ; do
-    builtin cd "$directory"
-
-    if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-      echo "\n==> Executing $command_to_execute in $(pwd)\n"
-
-      eval $command_to_execute
-    elif [[ $depth -lt $max_depth ]]; then
-      in_every_repo_root $command_to_execute --depth $(($depth + 1)) --max-depth $max_depth
-    fi
-
-    builtin cd ..
-  done
-}
-
-function origin_head() {
-  sed -n 's/.*\///p' .git/refs/remotes/origin/HEAD
-}
-
-# command to clean up old git branches
-# See: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote/38404202#38404202
-function clean_branches() {
-  local delete_flag='-d'
-
-  while [[ $# -gt 0 ]]; do
-    case $1 in
-      --force) delete_flag='-D'; shift;;
-    esac
-  done
-
-  git switch $(origin_head)
-  git fetch --prune
-  git branch -vv | awk '/: gone]/{print $1}' | xargs git branch $delete_flag
-  git switch -
-}
-
 source $HOME/.config/zsh/bat.zsh
+source $HOME/.config/zsh/git.zsh
 source $HOME/.config/zsh/man.zsh
 
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
