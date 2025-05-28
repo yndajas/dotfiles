@@ -184,20 +184,12 @@ function clean_branches() {
 source $HOME/.config/zsh/bat.zsh
 source $HOME/.config/zsh/man.zsh
 
-function install_dotfiles() {
-  eval ${DOTFILES_DIR}/install
-}
-
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
 [[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
 
-# colours for hints and alerts
-text_bold='\033[1m'
-text_red_bold='\033[1;31m'
-text_green_bold='\033[1;32m'
-text_reset='\033[0m'
+# echo random hint -------------------------------------------------------------
+source $HOME/.config/zsh/text_formats.zsh
 
-# echo random hint
 function random_hint() {
   # add functions
   local hints=(
@@ -240,31 +232,9 @@ ${text_green_bold} HINT: ${category} ${text_reset}
 ${text_bold}${command}${text_reset} -> ${explanation}"
 }
 
-random_hint
+random_hint # ------------------------------------------------------------------
 
 # add local folder (where pipx apps are installed?) to path
 export PATH="$PATH:~/.local/bin"
 
-# open dotfiles in VSCode by default or optionally specify whether you want to
-# do that and/or change directory
-function dotfiles() {
-  [[ $# -eq 0 ]] && code $DOTFILES_DIR
-
-  while [[ $# -gt 0 ]]; do
-    case $1 in
-      --cd) cd $DOTFILES_DIR;;
-      --code) code $DOTFILES_DIR;;
-    esac
-
-    shift
-  done
-}
-
-# alert if dotfiles changes are not committed or pushed to remote
-if [[ -n "$(eval git -C ${DOTFILES_DIR} status --porcelain)" ]]; then
-  echo -e "\n${text_red_bold} ALERT: uncommitted changes in ${DOTFILES_DIR} ${text_reset}"
-else
-  if [[ -n "$(eval git -C ${DOTFILES_DIR} diff @{u})" ]]; then
-    echo -e "\n${text_red_bold} ALERT: unpushed changes in ${DOTFILES_DIR} ${text_reset}"
-  fi
-fi
+source $HOME/.config/zsh/dotfiles.zsh
