@@ -190,3 +190,5 @@ function random_hint() {
 }
 
 random_hint # ------------------------------------------------------------------
+
+eval $(thefuck --alias)

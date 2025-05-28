@@ -92,6 +92,8 @@ brew "starship"
 brew "tfenv"
 # Linter for Terraform files
 brew "tflint"
+# Programmatically correct mistyped console commands
+brew "thefuck"
 # Define your dev environment as code. For microservice apps on Kubernetes
 brew "tilt"
 # Official tldr client written in Rust
