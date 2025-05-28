@@ -128,12 +128,10 @@ source $HOME/.config/zsh/git.zsh
 source $HOME/.config/zsh/ls.zsh
 source $HOME/.config/zsh/man.zsh
 source $HOME/.config/zsh/neovim.zsh
+source $HOME/.config/zsh/pipx.zsh
 
 # include local customisations (not backed up at github.com/yndajas/dotfiles)
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
-
-# add local folder (where pipx apps are installed?) to path
-export PATH="$PATH:$HOME/.local/bin"
 
 source $HOME/.config/zsh/dotfiles.zsh
 
