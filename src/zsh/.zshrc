@@ -5,7 +5,8 @@ HISTSIZE=999999999
 # shellcheck disable=SC2034
 SAVEHIST=$HISTSIZE
 
-# when moving between or deleting words, which (non-alphanumeric?) characters should be considered word-internal
+# when moving between or deleting words, which (non-alphanumeric?) characters
+# should be considered word-internal
 # shellcheck disable=SC2034
 WORDCHARS=''
 
@@ -86,21 +87,6 @@ if ! zgen saved; then
   zgen save
 fi
 
-source $HOME/.config/zsh/text_formatting.zsh # needed before any set_text_format
-source $HOME/.config/zsh/homebrew.zsh
-
-command_exists starship && eval "$(starship init zsh)"
-
-# this needs to run before zoxide init because it contains the _ZO_FZF_OPTS
-# environment variable (https://github.com/ajeetdsouza/zoxide#environment-variables)
-[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh && source $HOME/.fzf-git.sh
-
-command_exists direnv && eval "$(direnv hook zsh)"
-command_exists rbenv && eval "$(rbenv init -)"
-command_exists nodenv && eval "$(nodenv init -)"
-# needs to run after compinit (https://github.com/ajeetdsouza/zoxide#installation)
-command_exists zoxide && eval "$(zoxide init zsh --cmd cd)"
-
 # use Emacs keybindings
 # see "4.1.1: The simple facts" and "4.5.5: Keymaps" at https://zsh.sourceforge.io/Guide/zshguide04.html
 bindkey -e
@@ -115,15 +101,26 @@ bindkey '^[[A' history-substring-search-up
 # see https://github.com/zsh-users/zsh-history-substring-search
 bindkey '^[[B' history-substring-search-down
 
-# ZSH tab completion for cheat.sh
-# https://github.com/chubin/cheat.sh#zsh-tab-completion
-fpath=($HOME/.zsh.d/ $fpath)
+# probably needs to come before anything that relies on Homebrew-installed apps
+source $HOME/.config/zsh/homebrew.zsh
 
-# bun completions
-# See: https://github.com/oven-sh/bun/blob/267afa293483d5ed5f834a6d35350232188e3f98/docs/cli/bun-completions.md
+# bun completions (https://github.com/oven-sh/bun/blob/main/docs/cli/bun-completions.md)
 [[ -s $HOME/.bun/_bun ]] && source $HOME/.bun/_bun
+# needs to run before zoxide init because it contains the _ZO_FZF_OPTS
+# environment variable (https://github.com/ajeetdsouza/zoxide#environment-variables)
+[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh && source $HOME/.fzf-git.sh
 
+command_exists direnv && eval "$(direnv hook zsh)"
+command_exists nodenv && eval "$(nodenv init -)"
+command_exists rbenv && eval "$(rbenv init -)"
+command_exists starship && eval "$(starship init zsh)"
+# needs to run after compinit (https://github.com/ajeetdsouza/zoxide#installation)
+command_exists thefuck && eval $(thefuck --alias)
+command_exists zoxide && eval "$(zoxide init zsh --cmd cd)"
+
+source $HOME/.config/zsh/text_formatting.zsh # needed before any set_text_format
 source $HOME/.config/zsh/bat.zsh
+source $HOME/.config/zsh/dotfiles.zsh
 source $HOME/.config/zsh/git.zsh
 source $HOME/.config/zsh/hints.zsh
 source $HOME/.config/zsh/ls.zsh
@@ -131,11 +128,7 @@ source $HOME/.config/zsh/man.zsh
 source $HOME/.config/zsh/neovim.zsh
 source $HOME/.config/zsh/pipx.zsh
 
-# include local customisations (not backed up at github.com/yndajas/dotfiles)
+# local customisations (not backed up at github.com/yndajas/dotfiles)
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
 
-source $HOME/.config/zsh/dotfiles.zsh
-
 random_hint
-
-eval $(thefuck --alias)
