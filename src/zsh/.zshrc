@@ -91,21 +91,14 @@ source $HOME/.config/zsh/homebrew.zsh
 
 command_exists starship && eval "$(starship init zsh)"
 
-# fzf (fuzzy finder) setup
-# this will also add a list to reverse-i-search (CTRL + R)
-# fzf-git adds fzf git helpers, e.g. CTRL + G + H to list commit hashes
-# See: https://github.com/junegunn/fzf-git.sh
-# this needs to run before zoxide init in order for _ZO_FZF_OPTS to affect the
-# fzf preview (e.g. when running cd yndajas <TAB>)
+# this needs to run before zoxide init because it contains the _ZO_FZF_OPTS
+# environment variable (https://github.com/ajeetdsouza/zoxide#environment-variables)
 [[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh && source $HOME/.fzf-git.sh
 
-# I think these often ask to be run at the end of .zshrc. Zoxide mentions
-# needing to run after compinit, which is run a little earlier in this file, and
-# it also needs running before sources ~/.fzf.zsh so that _ZO_FZF_OPTS is set
-# for custom fzf previews (e.g. when running cd yndajas <TAB>)
 command_exists direnv && eval "$(direnv hook zsh)"
 command_exists rbenv && eval "$(rbenv init -)"
 command_exists nodenv && eval "$(nodenv init -)"
+# needs to run after compinit (https://github.com/ajeetdsouza/zoxide#installation)
 command_exists zoxide && eval "$(zoxide init zsh --cmd cd)"
 
 # use Emacs keybindings
@@ -147,6 +140,7 @@ source $HOME/.config/zsh/dotfiles.zsh
 # echo random hint -------------------------------------------------------------
 function random_hint() {
   # add functions
+  # add normal fuzzy find - reverse-i-search (CTRL + R), cd yndajas <TAB>, CTRL + T, some others
   local hints=(
     'aliases;lsrepo;Display git information within a repo'
     'aliases;lsrepos;Display git information within a directory of repos'

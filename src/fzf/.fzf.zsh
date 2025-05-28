@@ -87,7 +87,6 @@ _fzf_comprun() {
   esac
 }
 
-# zoxide
-# e.g. when running cd yndajas <TAB>
-
+# zoxide (cd yndajas <TAB>)
+# this needs to run before zoxide init (https://github.com/ajeetdsouza/zoxide#environment-variables)
 export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS --delimiter ' ' --preview '${directory_search_preview} {2}'"
