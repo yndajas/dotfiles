@@ -19,6 +19,7 @@
     ~/.gitattributes: src/git/.gitattributes
     ~/.gitconfig: src/git/.gitconfig
     ~/.gitignore_global: src/git/.gitignore_global
+    ~/.hushlogin: src/zsh/.hushlogin
     ~/.sqliterc: src/sqlite/.sqliterc
     ~/.stCommitMsg: src/git/.stCommitMsg
     ~/.zshenv: src/zsh/.zshenv
