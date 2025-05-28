@@ -101,14 +101,7 @@ require("lazy").setup({
 
 -- Set up colour scheme
 
-require("catppuccin").setup({
-  flavour = "latte",
-  color_overrides = {
-    latte = {
-      base = "#f8f8ff",
-    }
-  }
-})
+require("catppuccin").setup({ flavour = "latte" })
 vim.cmd [[colorscheme catppuccin]]
 
 -- Set up Telescope
