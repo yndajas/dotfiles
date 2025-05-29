@@ -1,0 +1,10 @@
+always-download "https://henry.codes/rss/reading-list.xml"
+auto-reload yes
+browser open
+datetime-format "%d %b %y"
+download-full-page yes
+feed-sort-order lastupdated
+feedlist-format "%4i %n %11u %t%> %L"
+scrolloff 8
+suppress-first-reload yes
+text-width 80

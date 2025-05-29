@@ -56,6 +56,8 @@ brew "mysql"
 brew "nano"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# RSS/Atom feed reader for text terminals
+brew "newsboat"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Install NodeJS versions
