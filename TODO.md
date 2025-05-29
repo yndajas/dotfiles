@@ -1,16 +1,12 @@
 # TODO
 
-- Link Alacritty settings
-- Set up TMUX on Alacritty for panes and maybe tabs (though tabs are set up through my settings)
+- Set up TMUX on Ghostty for panes?
 - Add more Mac App Store apps to Brewfile? Or is it auto-populated?
 - Move relevant ~/.config/ files into repo
-- Add Rust inlay hints and other settings for VSCode
-- Look through default settings in VSCode and tweak as appropriate. Done: editor.*
-- Tidy up .zshrc - reorder, improve section dividers, move aliases to .aliases, split into multiple files etc
 - Add to hints array
   - custom functions like clean_branches and random_hint
   - man readline view navigation keys
-  - ~command~ ** fuzzy find
+  - ~command~ \*\* fuzzy find
   - Ctrl + T fuzzy find files
   - Esc + C fuzzy find directories
   - Ctrl + R fuzzy find commands
@@ -19,24 +15,35 @@
   - zsh-git
   - jq
   - Zoxide
-  - <https://gist.github.com/acamino/2bc8df5e2ed0f99ddbe7a6fddb7773a6> (check these are all valid in my terminal)
+  - <https://gist.github.com/acamino/2bc8df5e2ed0f99ddbe7a6fddb7773a6> (check
+    these are all valid in my terminal)
   - what the Starship git symbols mean
-  - Ctrl + O accept highlighted suggestion from menu and provide next set of suggestions (useful for directory navigation when using cd; set in .zshrc with `bindkey -M menuselect '^o' accept-and-infer-next-history`)
-  - up and down to navigate zsh (auto?)completion suggestions, going through historical matching commands (set in .zshrc with `bindkey '^[[A' history-substring-search-up` and `bindkey '^[[B' history-substring-search-down`))
+  - Ctrl + O accept highlighted suggestion from menu and provide next set of
+    suggestions (useful for directory navigation when using cd; set in .zshrc
+    with `bindkey -M menuselect '^o' accept-and-infer-next-history`)
+  - up and down to navigate zsh (auto?)completion suggestions, going through
+    historical matching commands (set in .zshrc with
+    `bindkey '^[[A' history-substring-search-up` and
+    `bindkey '^[[B' history-substring-search-down`))
   - cheat.sh
-  - difference between .zshrc, .zshenv and others: <https://unix.stackexchange.com/a/487889/639529>
-  - conditional expressions and their flags in Zsh: <https://zsh.sourceforge.io/Doc/Release/Conditional-Expressions.html#Conditional-Expressions>
-- Add bat config file (e.g. to set the theme default without adding an environment variable): <https://github.com/sharkdp/bat#configuration-file>
+  - difference between .zshrc, .zshenv and others:
+    <https://unix.stackexchange.com/a/487889/639529>
+  - conditional expressions and their flags in Zsh:
+    <https://zsh.sourceforge.io/Doc/Release/Conditional-Expressions.html#Conditional-Expressions>
+- Add bat config file (e.g. to set the theme default without adding an
+  environment variable): <https://github.com/sharkdp/bat#configuration-file>
 - Add bat extras? <https://github.com/eth-p/bat-extras>
-- Set up Ripgrep with fzf to search inside files: <https://github.com/junegunn/fzf/blob/master/ADVANCED.md#ripgrep-integration>
-- Add `ls **` fzf command that sets `fd --type d`: <https://github.com/junegunn/fzf/tree/master?tab=readme-ov-file#custom-fuzzy-completion>
-- Add tldr/tlrc: <https://www.josean.com/posts/7-amazing-cli-tools>
-- Add thefuck: <https://www.josean.com/posts/7-amazing-cli-tools>
-- Add Zoxide: <https://www.josean.com/posts/7-amazing-cli-tools>
+- Set up Ripgrep with fzf to search inside files:
+  <https://github.com/junegunn/fzf/blob/master/ADVANCED.md#ripgrep-integration>
+- Add `ls **` fzf command that sets `fd --type d`:
+  <https://github.com/junegunn/fzf/tree/master?tab=readme-ov-file#custom-fuzzy-completion>
 - Consider moving away from zgen given lack of maintenance
 - If sticking with Zgen:
-  - curl zgen.zsh into this folder in install script, link it into ~, then source it in .zshrc instead of cloning the whole directory: <https://github.com/tarjoilija/zgen?tab=readme-ov-file#installation>
-  - Confirm that zgen installs plugins successfully, including any newly-added ones after initial install
+  - curl zgen.zsh into this folder in install script, link it into ~, then
+    source it in .zshrc instead of cloning the whole directory:
+    <https://github.com/tarjoilija/zgen?tab=readme-ov-file#installation>
+  - Confirm that zgen installs plugins successfully, including any newly-added
+    ones after initial install
 - Add command line tools setup step
 - Echo random reminder/TODO on .zshrc
   - Continue reading through The Rust Programming Language
