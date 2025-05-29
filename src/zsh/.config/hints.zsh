@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+# TO ADD
+# functions
+# normal fuzzy find - reverse-i-search (CTRL + R), cd yndajas <TAB>, CTRL + T, some others
+# curl cht.sh (https://github.com/chubin/cheat.sh) - consider installing it
+
 hints=(
   'aliases;lsrepo;Display git information within a repo'
   'aliases;lsrepos;Display git information within a directory of repos'
@@ -23,23 +28,38 @@ hints=(
   'fuzzy find and git;Ctrl + G, (Ctrl +) S;View stashes'
   'fuzzy find and git;Ctrl + G, (Ctrl +) T;View tags'
   'fuzzy find and git;Ctrl + G, (Ctrl +) W;View worktrees'
+  'hints;all_hints;Show all hints'
 )
 
-function random_hint() {
-  # add functions
-  # add normal fuzzy find - reverse-i-search (CTRL + R), cd yndajas <TAB>, CTRL + T, some others
-  # add curl cht.sh (https://github.com/chubin/cheat.sh) - consider installing it
-  local seed=$$$(date +%s)
-  local random_index=$(($seed % ${#hints[@]} + 1))
-  local random_hint=${hints[$random_index]}
+function print_hint() {
+  [[ $# -ne 1 ]] && return 1
 
-  local random_hint_items=(${(s/;/)random_hint})
-  local category=${random_hint_items[1]}
-  local command=${random_hint_items[2]}
-  local explanation=${random_hint_items[3]}
+  local hint=$hints[$1]
+  local components=(${(s/;/)hint})
+  local category=$components[1]
+  local command=$components[2]
+  local explanation=$components[3]
 
   set_text_format --foreground cyan
   echo "A reminder about $category"
   set_text_format --reset
-  echo "$explanation -> $command"
+  echo -n "$explanation -> "
+  set_text_format --bold
+  echo $command
+}
+
+function random_hint() {
+  local seed=$$$(date +%s)
+  local random_index=$(( $seed % $#hints[@] + 1 ))
+  print_hint $random_index
+}
+
+function all_hints() {
+  local formatted_hints=""
+  for index in $(seq 1 $#hints[@])
+  do
+    formatted_hints+=`print_hint $index`
+    [[ $index -ne $#hints[@] ]] && formatted_hints+="\n\n"
+  done
+  echo "$formatted_hints[@]"
 }
