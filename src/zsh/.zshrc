@@ -75,15 +75,12 @@ ZGEN_SCRIPT_PATH=$ZGEN_CLONE_DIR/zgen.zsh
 source "$ZGEN_SCRIPT_PATH"
 
 if ! zgen saved; then
-  # zsh-users plugins
+  zgen load djui/alias-tips
+  zgen load unixorn/autoupdate-zgen
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-completions
   zgen load zsh-users/zsh-syntax-highlighting # Must be loaded before zsh-history-substring-search
   zgen load zsh-users/zsh-history-substring-search
-
-  # Other plugins
-  zgen load djui/alias-tips
-  zgen load unixorn/autoupdate-zgen
 
   zgen save
 fi
