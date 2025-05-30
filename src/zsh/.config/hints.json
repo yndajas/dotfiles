@@ -1,0 +1,137 @@
+{
+  "Docker": [
+    {
+      "explanation": "Kill all containers",
+      "hint": "docker kill $(docker ps -q)",
+      "homegrown": false
+    },
+    {
+      "explanation": "Remove all containers",
+      "hint": "docker rm $(docker ps -a -q)",
+      "homegrown": false
+    },
+    {
+      "explanation": "Remove all volumes",
+      "hint": "docker volume rm $(docker volume ls -q)",
+      "homegrown": false
+    },
+    {
+      "explanation": "Remove all images",
+      "hint": "docker rmi $(docker images -q)",
+      "homegrown": false
+    },
+    {
+      "explanation": "Remove unused data",
+      "hint": "docker system prune -a",
+      "homegrown": false
+    },
+    {
+      "explanation": "Remove temporary or cached Docker Scout data",
+      "hint": "docker scout cache prune",
+      "homegrown": false
+    },
+    {
+      "explanation": "Remove build cache (see also: docker builder rm)",
+      "hint": "docker builder prune",
+      "homegrown": false
+    },
+    {
+      "explanation": "Remove orphaned containers (not defined in Compose file)",
+      "hint": "docker-compose down --remove-orphans",
+      "homegrown": false
+    }
+  ],
+  "documentation": [
+    {
+      "explanation": "Community-sourced usage examples",
+      "hint": "tldr <command>",
+      "homegrown": false
+    },
+    {
+      "explanation": "Display and create hints (this tool)",
+      "hint": "hints [<command>]",
+      "homegrown": true
+    }
+  ],
+  "environment": [
+    {
+      "explanation": "Manage dotfiles",
+      "hint": "dotfiles [<command>]",
+      "homegrown": true
+    }
+  ],
+  "git": [
+    {
+      "explanation": "Display git information within a directory of repositories",
+      "hint": "lsrepos",
+      "homegrown": true
+    },
+    {
+      "explanation": "Display git information within a repository",
+      "hint": "lsrepo",
+      "homegrown": true
+    },
+    {
+      "explanation": "Execute the specified command in every repo",
+      "hint": "in_every_repo_root <command>",
+      "homegrown": true
+    },
+    {
+      "explanation": "Remove merged branches",
+      "hint": "clean_branches",
+      "homegrown": true
+    },
+    {
+      "explanation": "Explore branches",
+      "hint": "Ctrl + G, (Ctrl +) B",
+      "homegrown": false
+    },
+    {
+      "explanation": "Explore commit hashes",
+      "hint": "Ctrl + G, (Ctrl +) H",
+      "homegrown": false
+    },
+    {
+      "explanation": "Explore files",
+      "hint": "Ctrl + G, (Ctrl +) F",
+      "homegrown": false
+    },
+    {
+      "explanation": "Explore reflogs",
+      "hint": "Ctrl + G, (Ctrl +) L",
+      "homegrown": false
+    },
+    {
+      "explanation": "Explore remotes",
+      "hint": "Ctrl + G, (Ctrl +) R",
+      "homegrown": false
+    },
+    {
+      "explanation": "Explore stashes",
+      "hint": "Ctrl + G, (Ctrl +) S",
+      "homegrown": false
+    },
+    {
+      "explanation": "Explore tags",
+      "hint": "Ctrl + G, (Ctrl +) T",
+      "homegrown": false
+    },
+    {
+      "explanation": "Explore worktrees",
+      "hint": "Ctrl + G, (Ctrl +) W",
+      "homegrown": false
+    },
+    {
+      "explanation": "git for-each-ref",
+      "hint": "Ctrl + G, (Ctrl +) E",
+      "homegrown": false
+    }
+  ],
+  "tmux": [
+    {
+      "explanation": "Open hyperlink under cursor",
+      "hint": "Cmd + Shift + click",
+      "homegrown": true
+    }
+  ]
+}

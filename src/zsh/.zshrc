@@ -130,4 +130,4 @@ source $HOME/.config/zsh/pipx.zsh
 # local customisations (not backed up at github.com/yndajas/dotfiles)
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
 
-random_hint
+hints random
