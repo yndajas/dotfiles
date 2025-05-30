@@ -27,7 +27,6 @@
     ~/.tmux.conf: src/tmux/.tmux.conf
     ~/.zshenv: src/zsh/.zshenv
     ~/.zshrc: src/zsh/.zshrc
-    ~/.config/alacritty/: src/alacritty/
     ~/.config/ghostty/config: src/ghostty/config
     ~/.config/nvim/: src/nvim/
     ~/.config/starship.toml: src/starship/starship.toml

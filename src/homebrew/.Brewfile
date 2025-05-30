@@ -124,8 +124,6 @@ brew "barnardb/cookies/cookies"
 brew "heroku/brew/heroku"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
-# GPU-accelerated terminal emulator
-cask "alacritty"
 # GraphQL client
 cask "altair-graphql-client"
 # Chromium based browser
