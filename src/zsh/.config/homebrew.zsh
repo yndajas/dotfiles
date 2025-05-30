@@ -5,7 +5,7 @@ if command_exists /opt/homebrew/bin/brew; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-original_brew_command="$(which brew)"
+[[ -z $original_brew_command ]] && original_brew_command="$(which brew)"
 function brew() {
   # just run brew if there are no arguments
   [[ $# -eq 0 ]] && eval ${original_brew_command} && return 0
@@ -20,7 +20,7 @@ function brew() {
     esac
 }
 
-original_mas_command="$(which mas)"
+[[ -z $original_mas_command ]] && original_mas_command="$(which mas)"
 function mas() {
   # just run mas if there are no arguments
   [[ $# -eq 0 ]] && eval ${original_mas_command} && return 0
