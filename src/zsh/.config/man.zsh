@@ -4,6 +4,10 @@
 # see https://github.com/sharkdp/bat#man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-function man-builtin() {
-  man -P "less +/\ \ \ \ \ \ \ $1\ " zshbuiltins
+function manual() {
+  if [[ $(whence -w $1 | grep builtin) ]]; then
+    man -P "less --pattern \"^       $1( |$)\"" zshbuiltins
+  else
+    man $@
+  fi
 }
