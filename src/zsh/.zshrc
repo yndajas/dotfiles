@@ -85,9 +85,10 @@ if ! zgen saved; then
   zgen save
 fi
 
-# use Emacs keybindings
+# use Vim keybindings
 # see "4.1.1: The simple facts" and "4.5.5: Keymaps" at https://zsh.sourceforge.io/Guide/zshguide04.html
-bindkey -e
+bindkey -v '^?' backward-delete-char '\e[3~' delete-char
+
 # Ctrl + O -> accept current menu selection and try completion with menu selection again
 # see "4.4.1: Moving through the history" at https://zsh.sourceforge.io/Guide/zshguide04.html
 # see https://github.com/zsh-users/zsh/blob/6b9704e2c4e4c8524137a9c15bf9b166a975f3eb/Doc/Zsh/mod_complist.yo#L318-L326
