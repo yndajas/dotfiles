@@ -100,6 +100,8 @@ brew "thefuck"
 brew "tilt"
 # Official tldr client written in Rust
 brew "tlrc"
+# Terminal multiplexer
+brew "tmux"
 # Extraction utility for .zip compressed archives
 brew "unzip"
 # Internet file retriever

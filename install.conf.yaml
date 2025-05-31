@@ -24,6 +24,7 @@
     ~/.newsboat/urls: src/newsboat/urls
     ~/.sqliterc: src/sqlite/.sqliterc
     ~/.stCommitMsg: src/git/.stCommitMsg
+    ~/.tmux.conf: src/tmux/.tmux.conf
     ~/.zshenv: src/zsh/.zshenv
     ~/.zshrc: src/zsh/.zshrc
     ~/.config/alacritty/: src/alacritty/

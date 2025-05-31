@@ -121,6 +121,7 @@ source $HOME/.config/zsh/bat.zsh
 source $HOME/.config/zsh/dotfiles.zsh
 source $HOME/.config/zsh/git.zsh
 source $HOME/.config/zsh/hints.zsh
+source $HOME/.config/zsh/less.zsh
 source $HOME/.config/zsh/ls.zsh
 source $HOME/.config/zsh/man.zsh
 source $HOME/.config/zsh/neovim.zsh

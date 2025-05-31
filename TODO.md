@@ -1,6 +1,5 @@
 # TODO
 
-- Set up TMUX on Ghostty for panes?
 - Add more Mac App Store apps to Brewfile? Or is it auto-populated?
 - Move relevant ~/.config/ files into repo
 - Add to hints array
