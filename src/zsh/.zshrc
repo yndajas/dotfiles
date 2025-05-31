@@ -110,8 +110,8 @@ source $HOME/.config/zsh/homebrew.zsh
 [[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh && source $HOME/.fzf-git.sh
 
 command_exists direnv && eval "$(direnv hook zsh)"
-command_exists nodenv && eval "$(nodenv init -)"
-command_exists rbenv && eval "$(rbenv init -)"
+[[ -z $TMUX ]] && command_exists nodenv && eval "$(nodenv init -)"
+[[ -z $TMUX ]] && command_exists rbenv && eval "$(rbenv init -)"
 command_exists starship && { type starship_zle-keymap-select > /dev/null || { eval "$(starship init zsh)" } }
 # needs to run after compinit (https://github.com/ajeetdsouza/zoxide#installation)
 command_exists thefuck && eval $(thefuck --alias)
