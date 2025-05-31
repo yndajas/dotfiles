@@ -1,6 +1,7 @@
 # cursor-click-to-move = true
 cursor-style = block
 # macos-option-as-alt = true
+macos-titlebar-proxy-icon = hidden
 shell-integration-features = no-cursor
 theme = catppuccin-latte
 window-height = 1000
