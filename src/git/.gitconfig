@@ -27,6 +27,7 @@
 [interactive]
 	diffFilter = delta --color-only
 [interactive-rebase-tool]
+	inputConfirmYes = q
 	selectedBackgroundColor = white
 [merge]
 	conflictstyle = diff3
