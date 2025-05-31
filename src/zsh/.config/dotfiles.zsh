@@ -8,7 +8,7 @@ function dotfiles() {
 Commands:
    cd         change into the directory of the dotfiles repository
    code       open the dotfiles repository in VS Code
-   install    reinstall the dotfiles (idempotent)"
+   install    (re)install the dotfiles (idempotent)"
 
   [[ $# -gt 1 ]] && echo $usage_text && return 1
 
@@ -17,7 +17,7 @@ Commands:
   fi
 
   while ! (( $valid_commands[(Ie)$command] )); do
-    read 'command?Enter command (cd/code/install): '
+    vared -p 'Enter command (cd/code/install): ' command
   done
 
   case $command in
