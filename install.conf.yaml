@@ -20,8 +20,6 @@
     ~/.gitconfig: src/git/.gitconfig
     ~/.gitignore_global: src/git/.gitignore_global
     ~/.hushlogin: src/zsh/.hushlogin
-    ~/.newsboat/config: src/newsboat/config
-    ~/.newsboat/urls: src/newsboat/urls
     ~/.sqliterc: src/sqlite/.sqliterc
     ~/.stCommitMsg: src/git/.stCommitMsg
     ~/.tmux.conf: src/tmux/.tmux.conf
@@ -33,6 +31,8 @@
     ~/.config/zsh/: src/zsh/.config/
     ~/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: src/vscode/settings.json
+    ~/.newsboat/config: src/newsboat/config
+    ~/.newsboat/urls: src/newsboat/urls
 
 - create:
     - ~/code
