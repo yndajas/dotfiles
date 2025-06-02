@@ -40,4 +40,9 @@ function warn_about_unsynced_dotfiles {
     set_text_format --foreground red
     echo "Warning: unpushed changes in ${DOTFILES_DIR}"
   fi
+
+  if ! git -C "${DOTFILES_DIR}" submodule --quiet foreach "git diff origin/HEAD --quiet" 2> /dev/null; then
+    set_text_format --foreground red
+    echo 'Warning: dotfiles submodule is out of date'
+  fi
 }
