@@ -27,9 +27,9 @@
     ${HOME}/.zshenv: src/zsh/.zshenv
     ${HOME}/.zshrc: src/zsh/.zshrc
     ${HOME}/.config/ghostty/config: src/ghostty/config
-    ${HOME}/.config/nvim/: src/nvim/
+    ${HOME}/.config/nvim: src/nvim
     ${HOME}/.config/starship.toml: src/starship/starship.toml
-    ${HOME}/.config/zshrc/: src/zsh/.config/zshrc/
+    ${HOME}/.config/zshrc: src/zsh/.config/zshrc
     ${HOME}/.newsboat/config: src/newsboat/config
     ${HOME}/.newsboat/urls: src/newsboat/urls
     ${HOME}/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
