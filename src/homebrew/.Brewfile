@@ -40,6 +40,8 @@ brew "git-interactive-rebase-tool"
 brew "glow"
 # GNU multiple precision arithmetic library
 brew "gmp"
+# Terminal based graphical activity monitor inspired by gtop and vtop
+brew "gotop"
 # Kubernetes package manager
 brew "helm"
 # Lightweight and flexible command-line JSON processor
