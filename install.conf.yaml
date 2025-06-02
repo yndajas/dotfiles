@@ -7,36 +7,36 @@
   - [curl https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh > src/fzf/.fzf-git.sh]
 
 - clean:
-    ~/:
-    ~/.config/:
+    ${HOME}/:
+    ${HOME}/.config/:
         recursive: true
-    ~/Library/Application Support/Code/User/:
+    ${HOME}/Library/Application Support/Code/User/:
 
 - link:
-    ~/.Brewfile: src/homebrew/.Brewfile
-    ~/.fzf.zsh: src/fzf/.fzf.zsh
-    ~/.fzf-git.sh: src/fzf/.fzf-git.sh
-    ~/.gitattributes: src/git/.gitattributes
-    ~/.gitconfig: src/git/.gitconfig
-    ~/.gitignore_global: src/git/.gitignore_global
-    ~/.hushlogin: src/zsh/.hushlogin
-    ~/.shellcheckrc: src/shellcheck/.shellcheckrc
-    ~/.sqliterc: src/sqlite/.sqliterc
-    ~/.stCommitMsg: src/git/.stCommitMsg
-    ~/.tmux.conf: src/tmux/.tmux.conf
-    ~/.zshenv: src/zsh/.zshenv
-    ~/.zshrc: src/zsh/.zshrc
-    ~/.config/ghostty/config: src/ghostty/config
-    ~/.config/nvim/: src/nvim/
-    ~/.config/starship.toml: src/starship/starship.toml
-    ~/.config/zshrc/: src/zsh/.config/zshrc/
-    ~/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
-    ~/Library/Application Support/Code/User/settings.json: src/vscode/settings.json
-    ~/.newsboat/config: src/newsboat/config
-    ~/.newsboat/urls: src/newsboat/urls
+    ${HOME}/.Brewfile: src/homebrew/.Brewfile
+    ${HOME}/.fzf.zsh: src/fzf/.fzf.zsh
+    ${HOME}/.fzf-git.sh: src/fzf/.fzf-git.sh
+    ${HOME}/.gitattributes: src/git/.gitattributes
+    ${HOME}/.gitconfig: src/git/.gitconfig
+    ${HOME}/.gitignore_global: src/git/.gitignore_global
+    ${HOME}/.hushlogin: src/zsh/.hushlogin
+    ${HOME}/.shellcheckrc: src/shellcheck/.shellcheckrc
+    ${HOME}/.sqliterc: src/sqlite/.sqliterc
+    ${HOME}/.stCommitMsg: src/git/.stCommitMsg
+    ${HOME}/.tmux.conf: src/tmux/.tmux.conf
+    ${HOME}/.zshenv: src/zsh/.zshenv
+    ${HOME}/.zshrc: src/zsh/.zshrc
+    ${HOME}/.config/ghostty/config: src/ghostty/config
+    ${HOME}/.config/nvim/: src/nvim/
+    ${HOME}/.config/starship.toml: src/starship/starship.toml
+    ${HOME}/.config/zshrc/: src/zsh/.config/zshrc/
+    ${HOME}/.newsboat/config: src/newsboat/config
+    ${HOME}/.newsboat/urls: src/newsboat/urls
+    ${HOME}/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
+    ${HOME}/Library/Application Support/Code/User/settings.json: src/vscode/settings.json
 
 - create:
-    - ~/code
+    - ${HOME}/code
 
 - shell:
   - command: script/setup_homebrew_and_shell.zsh

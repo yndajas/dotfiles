@@ -4,7 +4,7 @@ Dotfiles and other setup files for use across systems
 
 ## Setup
 
-1. Clone this repo into `~/code/github.com/yndajas/dotfiles`
+1. Clone this repo into `${HOME}/code/github.com/yndajas/dotfiles`
 1. In Terminal, run `./install` from the cloned directory
 1. Install the following apps manually (to be automated later)
    - Fork
