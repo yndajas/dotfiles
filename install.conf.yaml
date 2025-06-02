@@ -14,8 +14,8 @@
 
 - link:
     ${HOME}/.Brewfile: src/homebrew/.Brewfile
-    ${HOME}/.fzf.zsh: src/fzf/.fzf.zsh
     ${HOME}/.fzf-git.sh: src/fzf/.fzf-git.sh
+    ${HOME}/.fzf.zsh: src/fzf/.fzf.zsh
     ${HOME}/.gitattributes: src/git/.gitattributes
     ${HOME}/.gitconfig: src/git/.gitconfig
     ${HOME}/.gitignore_global: src/git/.gitignore_global
