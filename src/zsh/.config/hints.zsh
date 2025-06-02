@@ -11,36 +11,30 @@
 # tmux copy mode: https://man.openbsd.org/tmux#WINDOWS_AND_PANES
 # tmux open url: Shift + Cmd + Click
 
-HINTS_PATH=$HOME/.config/zsh/hints.json
+HINTS_PATH="${HOME}/.config/zsh/hints.json"
 
 function add_hint() {
-  local category=''
-  local hint=''
-  local explanation=''
-  local homegrown=''
-
-  while [[ -z $category ]]; do vared -p 'Enter a category: ' category; done
-  while [[ -z $hint ]]; do vared -p 'Enter the hint: ' hint; done
-  while [[ -z $explanation ]]; do vared -p 'Enter an explanation: ' explanation; done
-
+  local category hint explanation homegrown current_json
   local valid_homegrown_responses=(y yes n no)
-  while ! (( $valid_homegrown_responses[(Ie)$homegrown] )); do vared -p 'Is it homegrown (y[es]/n[o])? ' homegrown; done
-  case $homegrown in
+
+  while [[ -z "${category}" ]]; do vared -p 'Enter a category: ' category; done
+  while [[ -z "${hint}" ]]; do vared -p 'Enter the hint: ' hint; done
+  while [[ -z "${explanation}" ]]; do vared -p 'Enter an explanation: ' explanation; done
+
+  # shellcheck disable=1087,2128,2250
+  # Zsh-specific syntax
+  while ! (( "$valid_homegrown_responses[(Ie)$homegrown]" )); do vared -p 'Is it homegrown (y[es]/n[o])? ' homegrown; done
+  case "${homegrown}" in
     y|yes) homegrown=true;;
     n|no) homegrown=false;;
+    *) return 1;;
   esac
 
-  # local new_hint="{
-  #   \"explanation\": \"$explanation\",
-  #   \"hint\": \"$hint\",
-  #   \"homegrown\": $homegrown
-  # }"
-
-  local current_json=$(cat $HINTS_PATH)
-  echo $current_json | jq --arg category $category \
-     --arg explanation $explanation \
-     --arg hint $hint \
-     --argjson homegrown "$homegrown" \
+  current_json=$(cat "${HINTS_PATH}")
+  echo "${current_json}" | jq --arg category "${category}" \
+     --arg explanation "${explanation}" \
+     --arg hint "${hint}" \
+     --argjson homegrown "${homegrown}" \
      '.[$category] = (
         .[$category] + [{
           explanation: $explanation,
@@ -48,88 +42,91 @@ function add_hint() {
           homegrown: $homegrown
         }] |
         del(.. | nulls)
-     )' > $HINTS_PATH
+     )' > "${HINTS_PATH}"
 }
 
 function random_hint() {
-  local seed=$$$(date +%s)
+  local seed category_count category item_count item hint explanation homegrown
+  seed=$$$(date +%s)
 
-  local category_count=$(jq 'keys | length' $HINTS_PATH)
-  local category_key_index=$(( $seed % $category_count ))
-  local category=$(jq -r "keys[$category_key_index]" $HINTS_PATH)
+  category_count=$(jq 'keys | length' "${HINTS_PATH}")
+  local category_key_index=$(( seed % category_count ))
+  category=$(jq -r "keys[${category_key_index}]" "${HINTS_PATH}")
 
-  local item_count=$(jq ".\"$category\" | length" $HINTS_PATH)
-  local item_index=$(( $seed % $item_count ))
-  local item=$(jq -r ".\"$category\"[$item_index]" $HINTS_PATH)
+  item_count=$(jq ".\"${category}\" | length" "${HINTS_PATH}")
+  local item_index=$(( seed % item_count ))
+  item=$(jq -r ".\"${category}\"[${item_index}]" "${HINTS_PATH}")
 
-  local hint=$(echo $item | jq -r '.hint')
-  local explanation=$(echo $item | jq -r '.explanation')
-  local homegrown=$(echo $item | jq -r '.homegrown')
+  hint=$(echo "${item}" | jq -r '.hint')
+  explanation=$(echo "${item}" | jq -r '.explanation')
+  homegrown=$(echo "${item}" | jq -r '.homegrown')
 
   local formatted_hint=""
-  formatted_hint+=`set_text_format --foreground cyan`
-  formatted_hint+="A reminder about $category\n"
-  formatted_hint+=`set_text_format --reset`
-  formatted_hint+="$explanation -> "
-  formatted_hint+=`set_text_format --bold`
-  formatted_hint+=$hint
-  if [[ $homegrown == 'true' ]]; then
-    formatted_hint+=`set_text_format --foreground white`
+  formatted_hint+=$(set_text_format --foreground cyan)
+  formatted_hint+="A reminder about ${category}\n"
+  formatted_hint+=$(set_text_format --reset)
+  formatted_hint+="${explanation} -> "
+  formatted_hint+=$(set_text_format --bold)
+  formatted_hint+="${hint}"
+  if [[ "${homegrown}" == 'true' ]]; then
+    formatted_hint+=$(set_text_format --foreground white)
     formatted_hint+=' (homegrown)'
   fi
 
-  echo $formatted_hint
+  echo "${formatted_hint}"
 }
 
 function all_hints() {
   while [[ $# -gt 0 ]]; do
-    case $1 in
+    case "${1}" in
       --homegrown) local homegrown_only='true'; shift;;
       *) return 1;;
     esac
   done
 
   local formatted_hints=""
-  local category_count=$(jq 'keys | length' $HINTS_PATH)
+  local category_count
+  category_count=$(jq 'keys | length' "${HINTS_PATH}")
 
-  for category_key_index in $(seq 0 $(( $category_count - 1 )))
+  local category item_count item homegrown hint explanation
+  for category_key_index in $(seq 0 $(( category_count - 1 )))
   do
-    local category=$(jq -r "keys[$category_key_index]" $HINTS_PATH)
-    [[ $homegrown_only == 'true' ]] && \
-      [[ $(jq ".\"$category\" | map(select(.homegrown)) | length" $HINTS_PATH) -eq 0 ]] && \
+    category=$(jq -r "keys[${category_key_index}]" "${HINTS_PATH}")
+    [[ "${homegrown_only}" == 'true' ]] && \
+      [[ $(jq ".\"${category}\" | map(select(.homegrown)) | length" "${HINTS_PATH}") -eq 0 ]] && \
       continue
-    formatted_hints+=`set_text_format --foreground cyan`
-    formatted_hints+="Reminders about $category\n"
+    formatted_hints+=$(set_text_format --foreground cyan)
+    formatted_hints+="Reminders about ${category}\n"
 
-    local item_count=$(jq ".\"$category\" | length" $HINTS_PATH)
+    item_count=$(jq ".\"${category}\" | length" "${HINTS_PATH}")
 
-    for item_index in $(seq 0 $(( $item_count - 1 )))
+    for item_index in $(seq 0 $(( item_count - 1 )))
     do
-      local item=$(jq -r ".\"$category\"[$item_index]" $HINTS_PATH)
-      local homegrown=$(echo $item | jq -r '.homegrown')
-      [[ $homegrown_only == 'true' ]] && [[ $homegrown != 'true' ]] && continue
-      local hint=$(echo $item | jq -r '.hint')
-      local explanation=$(echo $item | jq -r '.explanation')
+      item=$(jq -r ".\"${category}\"[${item_index}]" "${HINTS_PATH}")
+      homegrown=$(echo "${item}" | jq -r '.homegrown')
+      [[ "${homegrown_only}" == 'true' ]] && [[ "${homegrown}" != 'true' ]] && continue
+      hint=$(echo "${item}" | jq -r '.hint')
+      explanation=$(echo "${item}" | jq -r '.explanation')
 
-      formatted_hints+=`set_text_format --reset`
-      formatted_hints+="$explanation -> "
-      formatted_hints+=`set_text_format --bold`
-      formatted_hints+=$hint
-      if [[ $homegrown == 'true' ]]; then
-        formatted_hints+=`set_text_format --foreground white`
+      formatted_hints+=$(set_text_format --reset)
+      formatted_hints+="${explanation} -> "
+      formatted_hints+=$(set_text_format --bold)
+      formatted_hints+="${hint}"
+      if [[ "${homegrown}" == 'true' ]]; then
+        formatted_hints+=$(set_text_format --foreground white)
         formatted_hints+=' (homegrown)'
       fi
       formatted_hints+="\n"
     done
 
-    [[ $category_key_index -lt $(( $category_count - 1 )) ]] && formatted_hints+="\n"
+    [[ "${category_key_index}" -lt $(( category_count - 1 )) ]] && formatted_hints+="\n"
   done
 
-  echo "$formatted_hints" | cat
+  echo "${formatted_hints}" | cat
 }
 
 function hint_categories() {
-  jq -r 'keys[]' $HINTS_PATH
+  jq -r 'keys[]' "${HINTS_PATH}"
 }
 
 function hints() {
@@ -144,21 +141,26 @@ Commands:
    list       display all hints
    random     display a random hint"
 
-  [[ $# -gt 1 ]] && echo $usage_text && return 1
+  [[ $# -gt 1 ]] && echo "${usage_text}" && return 1
 
   if [[ $# -eq 1 ]]; then
-    (( $valid_commands[(Ie)$1] )) && command=$1 || { echo $usage_text && return 1 }
+    # shellcheck disable=1087,2128,2250
+    # Zsh-specific syntax
+    { (( "$valid_commands[(Ie)${1}]" )) && command="${1}"; } || { echo "${usage_text}" && return 1; }
   fi
 
-  while ! (( $valid_commands[(Ie)$command] )); do
+  # shellcheck disable=1087,2128,2250
+  # Zsh-specific syntax
+  while ! (( "$valid_commands[(Ie)$command]" )); do
     vared -p 'Enter command (add/categories/homegrown/list/random): ' command
   done
 
-  case $command in
+  case "${command}" in
     add) add_hint;;
     categories) hint_categories;;
     homegrown) all_hints --homegrown;;
     list) all_hints;;
     random) random_hint;;
+    *) return 1;;
   esac
 }

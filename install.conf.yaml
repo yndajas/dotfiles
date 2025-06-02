@@ -20,6 +20,7 @@
     ~/.gitconfig: src/git/.gitconfig
     ~/.gitignore_global: src/git/.gitignore_global
     ~/.hushlogin: src/zsh/.hushlogin
+    ~/.shellcheckrc: src/shellcheck/.shellcheckrc
     ~/.sqliterc: src/sqlite/.sqliterc
     ~/.stCommitMsg: src/git/.stCommitMsg
     ~/.tmux.conf: src/tmux/.tmux.conf

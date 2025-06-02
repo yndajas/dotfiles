@@ -1,0 +1,10 @@
+# don't try to check referenced files
+disable=SC1091
+
+enable=add-default-case
+enable=avoid-nullary-conditions
+enable=check-set-e-suppressed
+enable=deprecate-which
+enable=quote-safe-variables
+enable=require-double-brackets
+enable=require-variable-braces

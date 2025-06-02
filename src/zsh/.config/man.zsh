@@ -5,9 +5,9 @@
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 function manual() {
-  if [[ $(whence -w $1 | grep builtin) ]]; then
-    man -P "less --pattern \"^       $1( |$)\"" zshbuiltins
+  if whence -aw "${1}" | grep --quiet builtin; then
+    man -P "less --pattern \"^       ${1}( |$)\"" zshbuiltins
   else
-    man $@
+    man "${@}"
   fi
 }

@@ -1,18 +1,18 @@
-# shellcheck disable=SC2148
+#!/usr/bin/env zsh
 
-HISTFILE=$HOME/.histfile
+HISTFILE="${HOME}/.histfile"
 HISTSIZE=999999999
 # shellcheck disable=SC2034
-SAVEHIST=$HISTSIZE
+# Zsh-specific variable
+SAVEHIST="${HISTSIZE}"
 
+# shellcheck disable=SC2034
 # when moving between or deleting words, which (non-alphanumeric?) characters
 # should be considered word-internal
-# shellcheck disable=SC2034
 WORDCHARS=''
 
-ZSH_CACHE_DIR=$HOME/.zcache
-
-[[ -d $ZSH_CACHE_DIR ]] || mkdir -p "$ZSH_CACHE_DIR"
+ZSH_CACHE_DIR="${HOME}/.zcache"
+[[ -d "${ZSH_CACHE_DIR}" ]] || mkdir -p "${ZSH_CACHE_DIR}"
 
 setopt auto_pushd
 setopt pushd_ignore_dups
@@ -40,10 +40,10 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':completion:*:*:*:*:processes' command "ps -u ${USER} -o pid,user,comm -w -w"
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 zstyle ':completion::complete:*' use-cache true
-zstyle ':completion::complete:*' cache-path "$ZSH_CACHE_DIR"
+zstyle ':completion::complete:*' cache-path "${ZSH_CACHE_DIR}"
 
 autoload -Uz compinit
 compinit -i
@@ -53,26 +53,24 @@ command_exists ssh-agent && \
 
 # zgen settings
 # shellcheck disable=SC2034
-ZGEN_RESET_ON_CHANGE=$HOME/.zshrc
+# used by zgen
+ZGEN_RESET_ON_CHANGE="${HOME}/.zshrc"
 
 # zsh-syntax-highlighting settings
 # shellcheck disable=SC2034
+# used by zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # autoupdate-zgen settings
 # shellcheck disable=SC2034
+# used by autoupdate-zgen
 ZGEN_PLUGIN_UPDATE_DAYS=7
 # shellcheck disable=SC2034
+# used by autoupdate-zgen
 ZGEN_SYSTEM_UPDATE_DAYS=7
 
-# Setup zgen
-ZGEN_CLONE_DIR=$HOME/zgen
-ZGEN_SCRIPT_PATH=$ZGEN_CLONE_DIR/zgen.zsh
-
-[[ -f $ZGEN_SCRIPT_PATH ]] || git clone git@github.com:tarjoilija/zgen.git "$ZGEN_CLONE_DIR"
-
-# shellcheck source=/dev/null
-source "$ZGEN_SCRIPT_PATH"
+[[ -f "${HOME}/zgen/zgen.zsh" ]] || git clone git@github.com:tarjoilija/zgen.git "${HOME}/zgen"
+source "${HOME}/zgen/zgen.zsh"
 
 if ! zgen saved; then
   zgen load djui/alias-tips
@@ -101,34 +99,35 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # probably needs to come before anything that relies on Homebrew-installed apps
-source $HOME/.config/zsh/homebrew.zsh
+source "${HOME}/.config/zsh/homebrew.zsh"
 
 # bun completions (https://github.com/oven-sh/bun/blob/main/docs/cli/bun-completions.md)
-[[ -s $HOME/.bun/_bun ]] && source $HOME/.bun/_bun
+[[ -s "${HOME}/.bun/_bun" ]] && source "${HOME}/.bun/_bun"
 # needs to run before zoxide init because it contains the _ZO_FZF_OPTS
 # environment variable (https://github.com/ajeetdsouza/zoxide#environment-variables)
-[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh && source $HOME/.fzf-git.sh
+[[ -f "${HOME}/.fzf.zsh" ]] && source "${HOME}/.fzf.zsh" && source "${HOME}/.fzf-git.sh"
 
 command_exists direnv && eval "$(direnv hook zsh)"
-[[ -z $TMUX ]] && command_exists nodenv && eval "$(nodenv init -)"
-[[ -z $TMUX ]] && command_exists rbenv && eval "$(rbenv init -)"
-command_exists starship && { type starship_zle-keymap-select > /dev/null || { eval "$(starship init zsh)" } }
+[[ -z "${TMUX}" ]] && command_exists nodenv && eval "$(nodenv init -)"
+[[ -z "${TMUX}" ]] && command_exists rbenv && eval "$(rbenv init -)"
+command_exists starship && { type starship_zle-keymap-select > /dev/null || eval "$(starship init zsh)"; }
 # needs to run after compinit (https://github.com/ajeetdsouza/zoxide#installation)
-command_exists thefuck && eval $(thefuck --alias)
+command_exists thefuck && eval "$(thefuck --alias)"
 command_exists zoxide && eval "$(zoxide init zsh --cmd cd)"
 
-source $HOME/.config/zsh/text_formatting.zsh # needed before any set_text_format
-source $HOME/.config/zsh/bat.zsh
-source $HOME/.config/zsh/dotfiles.zsh
-source $HOME/.config/zsh/git.zsh
-source $HOME/.config/zsh/hints.zsh
-source $HOME/.config/zsh/less.zsh
-source $HOME/.config/zsh/ls.zsh
-source $HOME/.config/zsh/man.zsh
-source $HOME/.config/zsh/neovim.zsh
-source $HOME/.config/zsh/pipx.zsh
+source "${HOME}/.config/zsh/text_formatting.zsh" # needed before any set_text_format
+source "${HOME}/.config/zsh/bat.zsh"
+source "${HOME}/.config/zsh/dotfiles.zsh"
+source "${HOME}/.config/zsh/git.zsh"
+source "${HOME}/.config/zsh/hints.zsh"
+source "${HOME}/.config/zsh/less.zsh"
+source "${HOME}/.config/zsh/ls.zsh"
+source "${HOME}/.config/zsh/man.zsh"
+source "${HOME}/.config/zsh/neovim.zsh"
+source "${HOME}/.config/zsh/pipx.zsh"
+source "${HOME}/.config/zsh/shellcheck.zsh"
 
 # local customisations (not backed up at github.com/yndajas/dotfiles)
-[[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
+[[ -f "${HOME}/.zshrc_local" ]] && source "${HOME}/.zshrc_local"
 
 hints random
