@@ -36,7 +36,7 @@ function warn_about_unsynced_dotfiles {
   if [[ -n "$(git -C "${DOTFILES_DIR}" status --porcelain)" ]]; then
     set_text_format --foreground red
     echo "Warning: uncommitted changes in ${DOTFILES_DIR}"
-  elif [[ -n "$(git -C "${DOTFILES_DIR}" diff "@{upstream}")" ]]; then
+  elif ! git -C "${DOTFILES_DIR}" diff "@{upstream}" --quiet; then
     set_text_format --foreground red
     echo "Warning: unpushed changes in ${DOTFILES_DIR}"
   fi
