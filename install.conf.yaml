@@ -29,7 +29,7 @@
     ~/.config/ghostty/config: src/ghostty/config
     ~/.config/nvim/: src/nvim/
     ~/.config/starship.toml: src/starship/starship.toml
-    ~/.config/zsh/: src/zsh/.config/
+    ~/.config/zshrc/: src/zsh/.config/zshrc/
     ~/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: src/vscode/settings.json
     ~/.newsboat/config: src/newsboat/config

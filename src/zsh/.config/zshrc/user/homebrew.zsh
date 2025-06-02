@@ -1,10 +1,5 @@
 #!/usr/bin/env zsh
 
-if command_exists /opt/homebrew/bin/brew; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-fi
-
 [[ -z "${original_brew_command}" ]] && original_brew_command="$(command -v brew)"
 function brew() {
   # just run brew if there are no arguments

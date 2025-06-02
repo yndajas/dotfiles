@@ -10,8 +10,9 @@
 # Caps lock is now control
 # tmux copy mode: https://man.openbsd.org/tmux#WINDOWS_AND_PANES
 # tmux open url: Shift + Cmd + Click
+# glow for viewing Markdown files
 
-HINTS_PATH="${HOME}/.config/zsh/hints.json"
+HINTS_PATH="${HOME}/.config/zshrc/user/hints.json"
 
 function add_hint() {
   local category hint explanation homegrown current_json

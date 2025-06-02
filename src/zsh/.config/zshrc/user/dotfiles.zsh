@@ -32,11 +32,12 @@ Commands:
   esac
 }
 
-# alert if dotfiles changes are not committed or pushed to remote
-if [[ -n "$(git -C "${DOTFILES_DIR}" status --porcelain)" ]]; then
-  set_text_format --foreground red
-  echo "Warning: uncommitted changes in ${DOTFILES_DIR}"
-elif [[ -n "$(git -C "${DOTFILES_DIR}" diff "@{upstream}")" ]]; then
-  set_text_format --foreground red
-  echo "Warning: unpushed changes in ${DOTFILES_DIR}"
-fi
+function warn_about_unsynced_dotfiles {
+  if [[ -n "$(git -C "${DOTFILES_DIR}" status --porcelain)" ]]; then
+    set_text_format --foreground red
+    echo "Warning: uncommitted changes in ${DOTFILES_DIR}"
+  elif [[ -n "$(git -C "${DOTFILES_DIR}" diff "@{upstream}")" ]]; then
+    set_text_format --foreground red
+    echo "Warning: unpushed changes in ${DOTFILES_DIR}"
+  fi
+}
