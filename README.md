@@ -6,9 +6,8 @@ Dotfiles and other setup files for use across systems
 
 1. Clone this repo into `${HOME}/code/github.com/yndajas/dotfiles`
 1. In Terminal, run `./install` from the cloned directory
-1. Install the following apps manually (to be automated later)
-   - Fork
-   - Xcode? (at least the command line tools)
+1. Install Xcode (at least the command line tools) manually (to be automated
+   later)?
 
 ## Maintenance
 
@@ -22,9 +21,3 @@ If any new files need backing up, move them into the cloned directory and update
 
 If any new install steps beyond symlinking files are required, add or update the
 shell sections in `install.conf.yaml`.
-
-## Apps not currently in use
-
-- Free Ruler
-- Gapplin
-- Itsycal
