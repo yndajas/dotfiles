@@ -52,38 +52,6 @@ compinit -i
 command_exists ssh-agent && \
   eval "$(ssh-agent)" > /dev/null && ssh-add -q --apple-load-keychain
 
-# zgen settings
-# shellcheck disable=SC2034
-# used by zgen
-ZGEN_RESET_ON_CHANGE="${HOME}/.zshrc"
-
-# zsh-syntax-highlighting settings
-# shellcheck disable=SC2034
-# used by zsh-syntax-highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-# autoupdate-zgen settings
-# shellcheck disable=SC2034
-# used by autoupdate-zgen
-ZGEN_PLUGIN_UPDATE_DAYS=7
-# shellcheck disable=SC2034
-# used by autoupdate-zgen
-ZGEN_SYSTEM_UPDATE_DAYS=7
-
-[[ -f "${HOME}/zgen/zgen.zsh" ]] || git clone git@github.com:tarjoilija/zgen.git "${HOME}/zgen"
-source "${HOME}/zgen/zgen.zsh"
-
-if ! zgen saved; then
-  zgen load djui/alias-tips
-  zgen load unixorn/autoupdate-zgen
-  zgen load zsh-users/zsh-autosuggestions
-  zgen load zsh-users/zsh-completions
-  zgen load zsh-users/zsh-syntax-highlighting # Must be loaded before zsh-history-substring-search
-  zgen load zsh-users/zsh-history-substring-search
-
-  zgen save
-fi
-
 # use Vim keybindings
 # see "4.1.1: The simple facts" and "4.5.5: Keymaps" at https://zsh.sourceforge.io/Guide/zshguide04.html
 bindkey -v '^?' backward-delete-char '\e[3~' delete-char
@@ -98,6 +66,8 @@ bindkey '^[[A' history-substring-search-up
 # Down -> move down through historical commands in completion
 # see https://github.com/zsh-users/zsh-history-substring-search
 bindkey '^[[B' history-substring-search-down
+
+source "${HOME}/.config/zsh/zgenom.zsh"
 
 # probably needs to come before anything that relies on Homebrew-installed apps
 source "${HOME}/.config/zsh/homebrew.zsh"

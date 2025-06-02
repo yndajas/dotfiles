@@ -36,13 +36,6 @@
   <https://github.com/junegunn/fzf/blob/master/ADVANCED.md#ripgrep-integration>
 - Add `ls **` fzf command that sets `fd --type d`:
   <https://github.com/junegunn/fzf/tree/master?tab=readme-ov-file#custom-fuzzy-completion>
-- Consider moving away from zgen given lack of maintenance
-- If sticking with Zgen:
-  - curl zgen.zsh into this folder in install script, link it into ~, then
-    source it in .zshrc instead of cloning the whole directory:
-    <https://github.com/tarjoilija/zgen?tab=readme-ov-file#installation>
-  - Confirm that zgen installs plugins successfully, including any newly-added
-    ones after initial install
 - Add command line tools setup step
 - Echo random reminder/TODO on .zshrc
   - Continue reading through The Rust Programming Language
