@@ -16,8 +16,6 @@ brew "bat"
 brew "biome"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-# Load/unload environment variables based on $PWD
-brew "direnv"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
 # Modern, maintained replacement for ls

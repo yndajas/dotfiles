@@ -86,7 +86,6 @@ source "${HOME}/.config/zsh/homebrew.zsh"
 # environment variable (https://github.com/ajeetdsouza/zoxide#environment-variables)
 [[ -f "${HOME}/.fzf.zsh" ]] && source "${HOME}/.fzf.zsh" && source "${HOME}/.fzf-git.sh"
 
-command_exists direnv && eval "$(direnv hook zsh)"
 [[ -z "${TMUX}" ]] && command_exists nodenv && eval "$(nodenv init -)"
 [[ -z "${TMUX}" ]] && command_exists rbenv && eval "$(rbenv init -)"
 command_exists starship && { type starship_zle-keymap-select > /dev/null || eval "$(starship init zsh)"; }
