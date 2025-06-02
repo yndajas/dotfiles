@@ -11,6 +11,14 @@ SAVEHIST="${HISTSIZE}"
 # should be considered word-internal
 WORDCHARS=''
 
+# shellcheck disable=SC2034
+# used by ZLE. Makes moving between Vi insert and command/normal mode quicker
+# but might have trade offs/break certain things
+# (https://superuser.com/a/648046/1070357)
+# (https://www.johnhawthorn.com/2012/09/vi-escape-delays)
+# (https://github.com/jeffreytse/zsh-vi-mode)
+KEYTIMEOUT=1
+
 ZSH_CACHE_DIR="${HOME}/.zcache"
 [[ -d "${ZSH_CACHE_DIR}" ]] || mkdir -p "${ZSH_CACHE_DIR}"
 
