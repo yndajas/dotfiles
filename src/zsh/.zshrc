@@ -38,6 +38,7 @@ source "${HOME}/.config/zshrc/external/fzf.zsh"
 
 source "${HOME}/.config/zshrc/external/bat.zsh"
 source "${HOME}/.config/zshrc/external/bun.zsh"
+source "${HOME}/.config/zshrc/external/cargo.zsh"
 source "${HOME}/.config/zshrc/external/ls.zsh"
 source "${HOME}/.config/zshrc/external/neovim.zsh"
 source "${HOME}/.config/zshrc/external/nodenv.zsh"

@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-. "${HOME}/.cargo/env"
-
 function command_exists() {
   command -v "${1}" > /dev/null 2>&1
 }
