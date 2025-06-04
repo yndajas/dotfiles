@@ -17,6 +17,7 @@ $git_status\
 $battery\
 $line_break\
 $shell\
+$shlvl\
 $character\
 """
 # right_format = '$character'
@@ -28,9 +29,9 @@ format = '[plug me in?\($percentage\)](red) '
 # error_symbol = '[ INSERT ](bold bg:green fg:#e6e9ef)'
 # success_symbol = '[ INSERT ](bold bg:green fg:#e6e9ef)'
 # vimcmd_symbol = '[ NORMAL ](bold bg:blue fg:#e6e9ef)'
-error_symbol = '[insert](white)'
-success_symbol = '[insert](white)'
-vimcmd_symbol = '[normal](white)'
+error_symbol = ' [insert](white)'
+success_symbol = ' [insert](white)'
+vimcmd_symbol = ' [normal](white)'
 
 [cmd_duration]
 format = '[$duration](purple) '
@@ -87,6 +88,11 @@ untracked = 'untracked\($count\) '
 
 [shell]
 disabled = false
+format = '[$indicator]($style)'
+
+[shlvl]
+disabled = false
+format = '[\($shlvl\)](bold white)'
 
 [status]
 disabled = false

@@ -1,3 +1,4 @@
 #!/usr/bin/env zsh
 
-[[ -z "${TMUX}" ]] && command_exists rbenv && eval "$(rbenv init -)"
+path_excludes "${HOME}/.rbenv/shims" && command_exists rbenv && \
+  eval "$(rbenv init -)"

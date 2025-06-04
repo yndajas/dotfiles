@@ -1,8 +1,7 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-fi
+path_excludes "/opt/homebrew/opt/fzf/bin" && \
+  export PATH="${PATH}:/opt/homebrew/opt/fzf/bin"
 
 # Auto-completion
 # ---------------

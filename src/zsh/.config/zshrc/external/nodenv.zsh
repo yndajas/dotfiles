@@ -1,3 +1,4 @@
 #!/usr/bin/env zsh
 
-[[ -z "${TMUX}" ]] && command_exists nodenv && eval "$(nodenv init -)"
+path_excludes "${HOME}/.nodenv/shims" && command_exists nodenv && \
+  eval "$(nodenv init -)"
