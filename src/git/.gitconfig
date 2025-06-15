@@ -2,7 +2,6 @@
 	ui = true
 [commit]
 	gpgsign = true
-	template = /Users/ynda/.stCommitMsg
 	verbose = true
 [core]
 	editor = nvim
