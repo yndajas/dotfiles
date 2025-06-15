@@ -27,6 +27,7 @@ vim.opt.smartindent = true
 -- max line width
 
 vim.opt.textwidth = 80
+vim.opt.colorcolumn = "+1"
 
 -- copy to OS clipboard with yy
 
