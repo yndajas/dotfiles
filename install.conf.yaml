@@ -22,7 +22,6 @@
     ${HOME}/.hushlogin: src/zsh/.hushlogin
     ${HOME}/.shellcheckrc: src/shellcheck/.shellcheckrc
     ${HOME}/.sqliterc: src/sqlite/.sqliterc
-    ${HOME}/.stCommitMsg: src/git/.stCommitMsg
     ${HOME}/.tmux.conf: src/tmux/.tmux.conf
     ${HOME}/.zshenv: src/zsh/.zshenv
     ${HOME}/.zshrc: src/zsh/.zshrc
