@@ -14,6 +14,7 @@
 
 - link:
     ${HOME}/.Brewfile: src/homebrew/.Brewfile
+    ${HOME}/.editorconfig: src/.editorconfig
     ${HOME}/.fzf-git.sh: src/fzf/.fzf-git.sh
     ${HOME}/.fzf.zsh: src/fzf/.fzf.zsh
     ${HOME}/.gitattributes: src/git/.gitattributes
