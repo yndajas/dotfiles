@@ -84,6 +84,8 @@ brew "ruby-build"
 brew "rbenv"
 # Persistent key-value database, with built-in net interface
 brew "redis", restart_service: :changed
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Rust toolchain installer
 brew "rustup"
 # Static analysis and lint tool, for (ba)sh scripts
