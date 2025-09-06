@@ -1,8 +1,29 @@
 # TODO
 
+- Investigate tabs and splits in (Neo)Vim vs buffers - see if tabs are visible
+  without barbar.nvim
+- Add Raycast config?
+- Symlink .config/sketchybar...
+- Add commands for finding open localhost ports somewhere:
+  - find listening ports `lsof -i -n -P | grep '(LISTEN)'`
+  - find Ruby ports `lsof -i -n -P | grep 'ruby'`
+  - find ports in use by Ruby and associated processes (Ruby could be
+    susbtituted with something else found by the first command above, perhaps
+    via a function argument): `echo -e "ports in use by Ruby processes (lsof) followed by process IDs, uptime, and commands (ps)\n" && lsof -i -P -n | grep 'ruby' | tee > >(awk '{print $9}' | grep --only-matching --extended-regexp "\d+$" | sort | uniq) >(awk '{print $2}' | uniq | xargs -I {} ps {} -o pid=,time=,comm=)`
+- Copy glow.json from Advent of Code repo to this repo (symlinked)
+- Check out Helix some more; symlink in dotfiles repo if useful, uninstall if
+  not
+- Shift functions to executable script files added to path? <https://youtu.be/D2pe9ZZ2yCE>
+- transfer tabs from Arc and mobile browsers to somewhere else
+- unset variables outside functions that aren't needed permanently?
 - Add more Mac App Store apps to Brewfile? Or is it auto-populated?
 - Move relevant ~/.config/ files into repo
 - Add to hints array
+  - Vim: splits (:sp), tabs (:tabnew or maybe :new), forward search current word
+    (*, then n or N to go next or previous), backward search current word (£,
+    then the same), redo (.), visual block mode (Ctrl + V, then use keys to
+    select multiple lines, then Ctrl + I to go to the start of the first, do
+    something, then Esc to apply to the start of each)
   - custom functions like clean_branches and random_hint
   - man readline view navigation keys
   - ~command~ \*\* fuzzy find
