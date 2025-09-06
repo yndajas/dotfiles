@@ -39,6 +39,7 @@
 	editor = interactive-rebase-tool
 [status]
 	showStash = true
+	showUntrackedFiles = all
 [user]
 	email = yndajas@gmail.com
 	name = Ynda Jas
