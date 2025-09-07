@@ -12,6 +12,13 @@ return {
     config = function()
       require("telescope").load_extension("fzf")
       require("telescope").setup {
+          defaults = {
+            mappings = {
+              i = {
+                ["<CR>"] = require("telescope.actions").select_tab,
+              },
+            },
+          },
           pickers = {
               find_files = {
                   hidden = true,
