@@ -73,6 +73,8 @@ brew "node-build"
 brew "nodenv"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Command-line tool to generate, analyze, convert and manipulate colors
+brew "pastel"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Python package management tool
