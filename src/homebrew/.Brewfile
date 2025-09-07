@@ -1,7 +1,6 @@
 tap "alphagov/gds"
 tap "barnardb/cookies"
 tap "domt4/autoupdate"
-tap "felixkratz/formulae"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/services"
@@ -133,8 +132,6 @@ brew "zsh"
 brew "alphagov/gds/gds-cli"
 # Command-line tool for extracting cookies from the user's web browser
 brew "barnardb/cookies/cookies"
-# Custom macOS statusbar with shell plugin, interaction and graph support
-brew "felixkratz/formulae/sketchybar"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
@@ -163,7 +160,6 @@ cask "fantastical"
 cask "firefox"
 cask "font-fira-code-nerd-font"
 cask "font-iosevka-nerd-font"
-cask "font-sf-pro"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Free and open-source image editor
