@@ -22,3 +22,6 @@ vim.opt.textwidth = 80
 vim.opt.colorcolumn = "+1"
 -- copy to OS clipboard
 vim.opt.clipboard = "unnamed"
+-- mark trailing space
+vim.opt.list = true
+vim.opt.listchars = "trail:·"
