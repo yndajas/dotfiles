@@ -11,6 +11,8 @@ tap "oven-sh/bun"
 brew "adr-tools"
 # Get stuff done with container-native workflows for Kubernetes
 brew "argo"
+# Securely store and access AWS credentials in development environments
+brew "aws-vault", link: false
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -136,7 +138,7 @@ cask "altair-graphql-client"
 # Chromium based browser
 cask "arc"
 # Securely stores and accesses AWS credentials in a development environment
-cask "aws-vault"
+cask "aws-vault-binary"
 # Menu bar icon organiser
 cask "bartender"
 # Test localhost and staging websites
