@@ -166,6 +166,8 @@ cask "libreoffice"
 cask "linear-linear"
 # Extensible two-pane file manager
 cask "marta"
+# Shows the next meeting in the menu bar
+cask "meetingbar"
 # Multi-platform web browser
 cask "microsoft-edge"
 # Silence embarrassing notifications while screensharing
