@@ -69,7 +69,7 @@ brew "newsboat"
 brew "pkgconf"
 # Install NodeJS versions
 brew "node-build"
-# Manage multiple NodeJS versions
+# Node.js version manager
 brew "nodenv"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
