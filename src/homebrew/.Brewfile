@@ -180,6 +180,8 @@ cask "opal-composer"
 cask "oversight"
 # Collaboration platform for API development
 cask "postman"
+# Control your tools with a few keystrokes
+cask "raycast"
 # .NET IDE
 cask "rider"
 # Team communication and collaboration software
