@@ -147,8 +147,6 @@ cask "arc"
 cask "aws-vault-binary"
 # Menu bar icon organiser
 cask "bartender"
-# Test localhost and staging websites
-cask "browserstacklocal"
 # E-books management software
 cask "calibre"
 # Universal database tool and SQL client
@@ -161,8 +159,6 @@ cask "docker"
 cask "dotnet-sdk"
 # Calendar software
 cask "fantastical"
-# Collaborative team software
-cask "figma"
 # Web browser
 cask "firefox"
 cask "font-fira-code-nerd-font"
@@ -176,10 +172,6 @@ cask "godot"
 cask "itch"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
-# App to manage software development and track bugs
-cask "linear-linear"
-# Extensible two-pane file manager
-cask "marta"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
 # Multi-platform web browser
@@ -218,8 +210,6 @@ cask "visual-studio-code"
 cask "vivaldi"
 # Multiplayer code editor
 cask "zed"
-mas "ColorSlurp", id: 1287239339
-mas "Gifski", id: 1351639930
 vscode "ahmadawais.shades-of-purple"
 vscode "alexcvzz.vscode-sqlite"
 vscode "arcticicestudio.nord-visual-studio-code"
