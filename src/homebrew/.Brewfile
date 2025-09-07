@@ -206,8 +206,6 @@ cask "unnaturalscrollwheels"
 cask "visual-studio-code"
 # Web browser with built-in email client focusing on customization and control
 cask "vivaldi"
-# Multiplayer code editor
-cask "zed"
 vscode "ahmadawais.shades-of-purple"
 vscode "alexcvzz.vscode-sqlite"
 vscode "arcticicestudio.nord-visual-studio-code"
