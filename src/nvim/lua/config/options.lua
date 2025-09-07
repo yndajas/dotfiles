@@ -1,0 +1,24 @@
+-- scroll offset
+vim.opt.scrolloff = 8
+-- cursor style
+  -- default:
+  -- "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,t:block-blinkon500-blinkoff500-TermCursor"
+  -- according to https://neovim.io/doc/user/options.html#'guicursor', though
+  -- the last part doesn't work
+vim.opt.guicursor = "n-v-c-sm-i:block,ci-ve:ver25,r-cr-o:hor20"
+-- line numbers
+vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+-- indentation
+local indent_size = 2
+vim.opt.tabstop = indent_size
+vim.opt.softtabstop = indent_size
+vim.opt.shiftwidth = indent_size
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+-- max line width
+vim.opt.textwidth = 80
+vim.opt.colorcolumn = "+1"
+-- copy to OS clipboard
+vim.opt.clipboard = "unnamed"
