@@ -154,7 +154,7 @@ cask "dbeaver-community"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerised applications and microservices
-cask "docker"
+cask "docker-desktop"
 # Developer platform
 cask "dotnet-sdk"
 # Calendar software
@@ -199,7 +199,7 @@ cask "spotify"
 # Customizable email client
 cask "thunderbird"
 # To-do list
-cask "todoist"
+cask "todoist-app"
 # Remote pair programming app
 cask "tuple"
 # Tool to invert scroll direction for physical scroll wheels
