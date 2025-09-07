@@ -11,6 +11,8 @@ tap "oven-sh/bun"
 brew "adr-tools"
 # Get stuff done with container-native workflows for Kubernetes
 brew "argo"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Toolchain of the web
