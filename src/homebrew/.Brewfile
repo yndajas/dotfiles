@@ -31,6 +31,8 @@ brew "fd"
 brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# WebDriver <-> Marionette proxy
+brew "geckodriver"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
