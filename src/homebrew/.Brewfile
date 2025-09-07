@@ -194,6 +194,8 @@ cask "postman"
 cask "raycast"
 # .NET IDE
 cask "rider"
+# Screenshot measurement and annotation tool
+cask "shottr"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
