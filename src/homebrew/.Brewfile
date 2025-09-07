@@ -166,6 +166,8 @@ cask "font-iosevka-nerd-font"
 cask "font-sf-pro"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Free and open-source image editor
+cask "gimp"
 # Game development engine
 cask "godot"
 # Game client for itch.io
