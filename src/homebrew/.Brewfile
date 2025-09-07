@@ -48,8 +48,6 @@ brew "glow"
 brew "gmp"
 # Terminal based graphical activity monitor inspired by gtop and vtop
 brew "gotop"
-# Post-modern modal text editor
-brew "helix"
 # Kubernetes package manager
 brew "helm"
 # Lightweight and flexible command-line JSON processor
