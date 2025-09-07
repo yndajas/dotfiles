@@ -54,122 +54,107 @@ require("lazy").setup {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
-     },
-    {
-        "junegunn/fzf",
-        build = "./install --all",
+        config = function()
+          require("catppuccin").setup {
+              flavour = "latte",
+           }
+          vim.cmd [[colorscheme catppuccin]]
+        end,
      },
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = "make",
+             },
          },
+        config = function()
+          require("telescope").load_extension("fzf")
+          require("telescope").setup {
+              pickers = {
+                  find_files = {
+                      hidden = true,
+                      no_ignore = false,
+                   },
+              },
+          }
+
+          local builtin = require("telescope.builtin")
+          vim.keymap.set(
+              "n", "<leader>ff", function()
+                  builtin.find_files(
+                      {
+                          find_command = {
+                              "fd",
+                              "--strip-cwd-prefix",
+                              "--hidden",
+                              "--follow",
+                              "--exclude",
+                              ".git",
+                              "--type",
+                              "f",
+                          },
+                      }
+                  )
+              end, {}
+          )
+          vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+          vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+          vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+        end,
     },
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-     },
-    {
-        "nvim-tree/nvim-web-devicons",
-     },
     {
         "nvim-lualine/lualine.nvim",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
          },
+        opts = {},
     },
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-     },
-}
-
--- Set up colour scheme
-
-require("catppuccin").setup {
-    flavour = "latte",
- }
-vim.cmd [[colorscheme catppuccin]]
-
--- Set up Telescope
--- \ff = find files
--- \sf = search files
-
-require("telescope").load_extension("fzf")
-require("telescope").setup {
-    pickers = {
-        find_files = {
-            hidden = true,
-            no_ignore = false,
-         },
-    },
-}
-
-local builtin = require("telescope.builtin")
-vim.keymap.set(
-    "n", "<leader>ff", function()
-        builtin.find_files(
-            {
-                find_command = {
-                    "fd",
-                    "--strip-cwd-prefix",
-                    "--hidden",
-                    "--follow",
-                    "--exclude",
-                    ".git",
-                    "--type",
-                    "f",
-                },
-            }
-        )
-    end, {}
-)
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-
--- Set up lualine (status bar)
-
-require("lualine").setup()
-
--- Set up Treesitter
-
-require("nvim-treesitter.configs").setup {
-    ensure_installed = {
-        "c",
-        "css",
-        "csv",
-        "diff",
-        "dockerfile",
-        "gdscript",
-        "git_config",
-        "git_rebase",
-        "gitattributes",
-        "gitcommit",
-        "gitignore",
-        "godot_resource",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "python",
-        "query",
-        "ruby",
-        "rust",
-        "scss",
-        "sql",
-        "toml",
-        "typescript",
-        "vim",
-        "vimdoc",
-    },
-    sync_install = false,
-    highlight = {
-        enable = true,
-     },
-    indent = {
-        enable = true,
+        config = function()
+          require("nvim-treesitter.configs").setup {
+              ensure_installed = {
+                  "c",
+                  "css",
+                  "csv",
+                  "diff",
+                  "dockerfile",
+                  "gdscript",
+                  "git_config",
+                  "git_rebase",
+                  "gitattributes",
+                  "gitcommit",
+                  "gitignore",
+                  "godot_resource",
+                  "html",
+                  "javascript",
+                  "json",
+                  "lua",
+                  "markdown",
+                  "python",
+                  "query",
+                  "ruby",
+                  "rust",
+                  "scss",
+                  "sql",
+                  "toml",
+                  "typescript",
+                  "vim",
+                  "vimdoc",
+              },
+              sync_install = false,
+              highlight = {
+                  enable = true,
+               },
+              indent = {
+                  enable = true,
+               },
+          }
+        end,
      },
 }
