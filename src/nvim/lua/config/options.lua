@@ -25,3 +25,5 @@ vim.opt.clipboard = "unnamed"
 -- mark trailing space
 vim.opt.list = true
 vim.opt.listchars = "trail:·"
+-- always show tabline, even when there's only one tab
+vim.opt.showtabline = 2
