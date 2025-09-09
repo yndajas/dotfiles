@@ -138,5 +138,17 @@
       "hint": "Cmd + Shift + click",
       "homegrown": true
     }
+  ],
+  "Neovim": [
+    {
+      "explanation": "Blame current buffer",
+      "hint": ":Gitsigns blame",
+      "homegrown": false
+    },
+    {
+      "explanation": "Blame current line",
+      "hint": ":Gitsigns blame_line",
+      "homegrown": false
+    }
   ]
 }
