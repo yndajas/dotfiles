@@ -8,7 +8,7 @@
   - find listening ports `lsof -i -n -P | grep '(LISTEN)'`
   - find Ruby ports `lsof -i -n -P | grep 'ruby'`
   - find ports in use by Ruby and associated processes (Ruby could be
-    susbtituted with something else found by the first command above, perhaps
+    substituted with something else found by the first command above, perhaps
     via a function argument): `echo -e "ports in use by Ruby processes (lsof) followed by process IDs, uptime, and commands (ps)\n" && lsof -i -P -n | grep 'ruby' | tee > >(awk '{print $9}' | grep --only-matching --extended-regexp "\d+$" | sort | uniq) >(awk '{print $2}' | uniq | xargs -I {} ps {} -o pid=,time=,comm=)`
 - Copy glow.json from Advent of Code repo to this repo (symlinked)
 - Check out Helix some more; symlink in dotfiles repo if useful, uninstall if
@@ -62,7 +62,7 @@
   - Continue reading through The Rust Programming Language
   - Continue with exercises at code/github.com/rust-lang/rustlings
   - Learn Go
-  - Read No Starch Press progamming books (Books app)
+  - Read No Starch Press programming books (Books app)
   - Check out Destroy All Software/Execute Program
   - Check out Frontend Masters
   - Japanese learning: WaniKani, BunPro etc
