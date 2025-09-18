@@ -5,6 +5,6 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     event = "VeryLazy",
-    opts = { delay = 1000 },
+    opts = { delay = 0, preset = "helix" },
   }
 }
