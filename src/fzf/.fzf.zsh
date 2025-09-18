@@ -38,7 +38,7 @@ export FZF_DEFAULT_OPTS="
 # command search
 export FZF_CTRL_R_OPTS="
   --preview 'echo {}'
-  --preview-window down:2:wrap
+  --preview-window down:3:wrap
 "
 
 # file search
