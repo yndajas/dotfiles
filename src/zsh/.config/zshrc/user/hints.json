@@ -149,6 +149,36 @@
       "explanation": "Blame current line",
       "hint": ":Gitsigns blame_line",
       "homegrown": false
+    },
+    {
+      "explanation": "Repeat the last command line command (via registers). Works in visual line mode so you can repeat an action like LSP quick fixes across multiple lines",
+      "hint": "@@ or @:",
+      "homegrown": false
+    },
+    {
+      "explanation": "Fix spelling (:h ins-completion)",
+      "hint": "Ctrl-x s (insert mode)",
+      "homegrown": false
+    },
+    {
+      "explanation": "Go to previous misspelled word",
+      "hint": "[ s",
+      "homegrown": false
+    },
+    {
+      "explanation": "Go to next misspelled word",
+      "hint": "] s",
+      "homegrown": false
+    },
+    {
+      "explanation": "Go back a location",
+      "hint": "Ctrl-o",
+      "homegrown": false
+    },
+    {
+      "explanation": "Go forward a location (after going back)",
+      "hint": "Ctrl-i",
+      "homegrown": false
     }
   ]
 }
