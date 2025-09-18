@@ -144,8 +144,6 @@ cask "bartender"
 cask "calibre"
 # Universal database tool and SQL client
 cask "dbeaver-community"
-# Voice and text chat software
-cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Developer platform
@@ -168,8 +166,6 @@ cask "itch"
 cask "libreoffice"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
-# Multi-platform web browser
-cask "microsoft-edge"
 # Silence embarrassing notifications while screensharing
 cask "muzzle"
 # Reverse proxy, secure introspectable tunnels to localhost
@@ -178,8 +174,6 @@ cask "ngrok"
 cask "obsidian"
 # Professional webcam software for the Opal C1
 cask "opal-composer"
-# Monitors computer mic and webcam
-cask "oversight"
 # Collaboration platform for API development
 cask "postman"
 # Control your tools with a few keystrokes
@@ -192,10 +186,6 @@ cask "shottr"
 cask "slack"
 # Music streaming service
 cask "spotify"
-# Customizable email client
-cask "thunderbird"
-# To-do list
-cask "todoist-app"
 # Remote pair programming app
 cask "tuple"
 # Tool to invert scroll direction for physical scroll wheels
