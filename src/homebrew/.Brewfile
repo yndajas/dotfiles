@@ -9,7 +9,7 @@ brew "adr-tools"
 # Get stuff done with container-native workflows for Kubernetes
 brew "argo"
 # Securely store and access AWS credentials in development environments
-brew "aws-vault", link: false
+brew "aws-vault"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
