@@ -1,3 +1,6 @@
+[alias]
+  ass = add
+  figg = diff
 [color]
 	ui = true
 [commit]
