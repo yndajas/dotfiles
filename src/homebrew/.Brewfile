@@ -2,8 +2,6 @@ tap "alphagov/gds"
 tap "barnardb/cookies"
 tap "domt4/autoupdate"
 tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "ngrok/ngrok"
 tap "oven-sh/bun"
 # CLI tool for working with Architecture Decision Records
