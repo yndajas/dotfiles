@@ -24,7 +24,7 @@ vim.opt.colorcolumn = "+1"
 vim.opt.clipboard = "unnamed"
 -- mark trailing space
 vim.opt.list = true
-vim.opt.listchars = "trail:·"
+vim.opt.listchars = "trail:·,tab:  "
 -- always show tabline, even when there's only one tab
 vim.opt.showtabline = 2
 -- always show sign column to avoid shifting text when in use (e.g. by gitsigns)
