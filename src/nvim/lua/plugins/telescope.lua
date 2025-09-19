@@ -29,7 +29,7 @@ return {
 
       local builtin = require("telescope.builtin")
       vim.keymap.set(
-        "n", "<leader>ff", function()
+        "n", "<leader>fff", function()
           builtin.find_files(
             {
               find_command = {
@@ -46,6 +46,10 @@ return {
           )
         end, { desc = "Find file with fd" }
       )
+      -- exclude git submodules (by default), unlike fd
+      vim.keymap.set("n", "<leader>ffg", function()
+        builtin.git_files({ show_untracked = true })
+      end, { desc = "Find file with git" })
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {
         desc = "Grep files"
       })
