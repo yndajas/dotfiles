@@ -32,3 +32,7 @@ vim.opt.signcolumn = "yes:1"
 -- save per-file undo history to a file, allowing undo history to be restored
 -- when reopening a file
 vim.opt.undofile = true
+-- ignore case when searching with / and ? unless an upper case character is
+-- provided
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
