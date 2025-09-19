@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 
 require("config.options") -- core (Neo)vim options
 require("config.keymap") -- custom keymaps unrelated to any particular plugin
+require("config.autocmds") -- autoc(om)m(an)ds
 
 require("config.lazy") -- package management
 

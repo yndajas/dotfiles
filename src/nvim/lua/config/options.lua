@@ -36,3 +36,5 @@ vim.opt.undofile = true
 -- provided
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+-- use British English for spell checking (enabled by file type in an autocmd)
+vim.opt.spelllang = "en_gb"
