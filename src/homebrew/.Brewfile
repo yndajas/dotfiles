@@ -54,6 +54,8 @@ brew "jq"
 brew "k6"
 # Language Server for the Lua language
 brew "lua-language-server"
+# Package manager for the Lua programming language
+brew "luarocks"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
