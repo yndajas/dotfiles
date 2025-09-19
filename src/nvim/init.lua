@@ -9,3 +9,4 @@ require("config.lazy") -- package management
 
 require("config.lsp") -- language server protocol; probably needs to come after
                       -- Lazy
+require("config.diagnostics") -- diagnostics (e.g. from LSPs)
