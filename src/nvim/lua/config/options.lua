@@ -29,3 +29,6 @@ vim.opt.listchars = "trail:·,tab:  "
 vim.opt.showtabline = 2
 -- always show sign column to avoid shifting text when in use (e.g. by gitsigns)
 vim.opt.signcolumn = "yes:1"
+-- save per-file undo history to a file, allowing undo history to be restored
+-- when reopening a file
+vim.opt.undofile = true
