@@ -137,6 +137,11 @@
       "explanation": "Open hyperlink under cursor",
       "hint": "Cmd + Shift + click",
       "homegrown": true
+    },
+    {
+      "explanation": "Open visible links in fzf, then select one to open in the default browser",
+      "hint": "Ctrl-a O",
+      "homegrown": true
     }
   ],
   "Neovim": [
