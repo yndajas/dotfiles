@@ -1,0 +1,18 @@
+local quit_maps = { "q", "quit" }
+
+-- alias :bq[uit] to :bd[elete], mirroring :q for buffers
+--we get bang support for free because the alias is still composable
+for _, quit_map in ipairs({ "q", "quit" }) do
+  vim.keymap.set("ca", "b" .. quit_map, "bdelete")
+end
+
+-- alias :w[rite]bd[elete] and :w[rite]bq[uit] to :write|bdelete
+for _, write_map in ipairs({ "w", "write" }) do
+  for _, delete_map in ipairs({ "d", "delete" }) do
+    vim.keymap.set("ca", write_map .. "b" .. delete_map, "write|bdelete")
+  end
+
+  for _, quit_map in ipairs(quit_maps) do
+    vim.keymap.set("ca", write_map .. "b" .. quit_map, "write|bdelete")
+  end
+end
