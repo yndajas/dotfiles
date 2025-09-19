@@ -16,3 +16,10 @@ for _, write_map in ipairs({ "w", "write" }) do
     vim.keymap.set("ca", write_map .. "b" .. quit_map, "write|bdelete")
   end
 end
+
+-- alias option-up/down to move current line (normal mode) or selected lines
+-- (visual mode)
+vim.keymap.set("v", "<M-Up>", ":move '<-2<CR>gv=gv")
+vim.keymap.set("v", "<M-Down>", ":move '>+1<CR>gv=gv")
+vim.keymap.set("n", "<M-Up>", "<S-v> :move '<-2<CR><S-v>=")
+vim.keymap.set("n", "<M-Down>", "<S-v> :move '>+1<CR><S-v>=")
