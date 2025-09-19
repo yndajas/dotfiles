@@ -52,6 +52,8 @@ brew "helm"
 brew "jq"
 # Modern load testing tool, using Go and JavaScript
 brew "k6"
+# Language Server for the Lua language
+brew "lua-language-server"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system

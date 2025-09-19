@@ -7,3 +7,5 @@ require("config.autocmds") -- autoc(om)m(an)ds
 
 require("config.lazy") -- package management
 
+require("config.lsp") -- language server protocol; probably needs to come after
+                      -- Lazy
