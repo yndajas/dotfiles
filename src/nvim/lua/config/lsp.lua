@@ -8,5 +8,12 @@ vim.api.nvim_create_user_command("QuickFix", function ()
   })
 end, {})
 
+vim.keymap.set(
+  "n",
+  "<leader>lsp",
+  ":lua vim.lsp.buf.",
+  { desc = "Run an LSP action in command mode" }
+)
+
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ruby_lsp")
