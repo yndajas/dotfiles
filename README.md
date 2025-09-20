@@ -15,7 +15,7 @@ Dotfiles and other setup files for use across systems
 Most of the files contained in this repo are symlinked into the home directory
 (or another appropriate directory). Because of how symlinking works, changes
 will automatically be made directly in the cloned directory. `.zshrc` is set up
-to provide notifications of uncommited or unpushed changes.
+to provide notifications of uncommitted or unpushed changes.
 
 If any new files need backing up, move them into the cloned directory and update
 `install.conf.yaml` to set up an appropriate symlink.
