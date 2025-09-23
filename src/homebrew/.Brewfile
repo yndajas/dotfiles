@@ -118,6 +118,8 @@ brew "tmux"
 brew "unzip"
 # Internet file retriever
 brew "wget"
+# Lexical database for the English language
+brew "wordnet"
 # JavaScript package manager
 brew "yarn"
 # Tool for managing your YubiKey configuration

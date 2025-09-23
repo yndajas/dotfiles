@@ -28,6 +28,17 @@ return {
           end
         end
       },
+      {
+        "Kaiser-Yang/blink-cmp-dictionary",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function ()
+          vim.api.nvim_set_hl(
+            0,
+            "BlinkCmpKindDict",
+            { default = false, fg = "#1e66f5" }
+          )
+        end
+      },
     },
     opts = {
       completion = {
@@ -58,10 +69,24 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
         per_filetype = {
-          gitcommit = { "git" },
+          gitcommit = { "git", "dictionary" },
           lua = { inherit_defaults = true, "lazydev" },
+          markdown = { "dictionary" },
+          text = { "dictionary" },
         },
         providers = {
+          dictionary = {
+            module = 'blink-cmp-dictionary',
+            name = 'Dict',
+            min_keyword_length = 3,
+            opts = {
+              dictionary_files = {
+                vim.fn.expand(
+                  "~/.config/nvim/lua/plugins/data/words_alpha.txt"
+                )
+              },
+            }
+          },
           git = {
             module = "blink-cmp-git",
             name = "Git",
