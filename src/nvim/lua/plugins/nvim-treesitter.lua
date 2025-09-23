@@ -64,6 +64,15 @@ return {
           additional_vim_regex_highlighting = { "ruby" },
         },
         indent = { enable = true, disable = { "ruby" } },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<CR>",
+            node_incremental = "<CR>",
+            scope_incremental = "<M-CR>",
+            node_decremental = "<BS>"
+          },
+        },
       }
     end,
   },
