@@ -52,6 +52,9 @@ return {
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, {
         desc = "Find help" }
       )
+      vim.keymap.set("n", "<leader>fd", function()
+        builtin.diagnostics({ bufnr = 0, sort_by = "severity", wrap_results = true })
+      end, { desc = "Find diagnostics" })
     end,
   },
 }
