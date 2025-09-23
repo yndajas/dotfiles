@@ -38,3 +38,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 -- use British English for spell checking (enabled by file type in an autocmd)
 vim.opt.spelllang = "en_gb"
+-- don't show the mode since lualine reports it (though only insert mode
+-- seems to show it)
+vim.opt.showmode = false
+-- don't show location since lualine reports it
+vim.opt.ruler = false
