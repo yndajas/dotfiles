@@ -20,6 +20,8 @@ return {
         },
       }
 
+      vim.keymap.set("n", "<leader>t", ":Telescope ")
+
       local builtin = require("telescope.builtin")
       vim.keymap.set(
         "n", "<leader>fff", function()
