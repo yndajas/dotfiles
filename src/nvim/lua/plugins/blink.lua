@@ -13,6 +13,21 @@ return {
           },
         },
       },
+      {
+        "Kaiser-Yang/blink-cmp-git",
+        config = function ()
+          local kind_hl = { default = false, fg = "#7287fd" }
+          local label_id_hl = { default = false, fg = "#209fb5" }
+          for _, kind in ipairs({ "Commit", "Issue", "Mention", "PR" }) do
+            vim.api.nvim_set_hl(0, "BlinkCmpGitKind" .. kind, kind_hl)
+            vim.api.nvim_set_hl(
+              0,
+              "BlinkCmpGitLabel" .. kind .. "Id",
+              label_id_hl
+            )
+          end
+        end
+      },
     },
     opts = {
       completion = {
@@ -43,9 +58,14 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
         per_filetype = {
+          gitcommit = { "git" },
           lua = { inherit_defaults = true, "lazydev" },
         },
         providers = {
+          git = {
+            module = "blink-cmp-git",
+            name = "Git",
+          },
           lazydev = {
             name = "LazyDev",
             module = "lazydev.integrations.blink",
