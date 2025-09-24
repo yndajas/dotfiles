@@ -48,3 +48,17 @@ function clean_branches() {
   git branch -vv | awk '/: gone]/{print $1}' | xargs git branch "${delete_flag}"
   git switch -
 }
+
+function branches_by_last_update() {
+  local non_head_branches
+  non_head_branches=$(git branch | grep -v "$(origin_head)" | sed 's/\*/ /')
+
+  local last_update
+  for branch in $(echo -e "${non_head_branches}"); do
+    last_update=$(git show --format='%ci' "${branch}" \
+      | head -n 1 \
+      | sed -r 's/:[0-9]{2} .*//')
+
+    echo -e "${last_update} - ${branch}"
+  done | sort --reverse
+}
