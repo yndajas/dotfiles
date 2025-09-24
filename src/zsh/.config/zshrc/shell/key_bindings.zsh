@@ -5,6 +5,10 @@
 # (https://zsh.sourceforge.io/Guide/zshguide04.html#:~:text=4.5.5%3A%20Keymaps)
 bindkey -v '^?' backward-delete-char '\e[3~' delete-char
 
+# unbind ^g so that fzf-git keybindings can make it through in Vim mode
+# (https://github.com/junegunn/fzf-git.sh/issues/23#issuecomment-2130793362)
+bindkey -r '^g'
+
 # Ctrl + O -> accept current menu selection and try completion with menu
 # selection again
 # (https://zsh.sourceforge.io/Guide/zshguide04.html#:~:text=4.4.1%3A%20Moving%20through%20the%20history)
