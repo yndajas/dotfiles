@@ -144,8 +144,6 @@ cask "altair-graphql-client"
 cask "arc"
 # Securely stores and accesses AWS credentials in a development environment
 cask "aws-vault-binary"
-# Menu bar icon organiser
-cask "bartender"
 # E-books management software
 cask "calibre"
 # Universal database tool and SQL client
@@ -168,6 +166,8 @@ cask "gimp"
 cask "godot"
 # Game client for itch.io
 cask "itch"
+# Menu bar manager
+cask "jordanbaird-ice@beta"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Shows the next meeting in the menu bar
