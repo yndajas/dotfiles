@@ -62,3 +62,17 @@ function branches_by_last_update() {
     echo -e "${last_update} - ${branch}"
   done | sort --reverse
 }
+
+function cherry_pick_branch() {
+  local branch=$1
+
+  if [[ -z "${branch}" ]]; then
+    echo 'Usage: cherry_pick_branch branch-name'
+    return 1
+  fi
+
+  local start
+  start=$(git merge-base "${branch}" "$(origin_head)")
+
+  git cherry-pick "${start}..${branch}"
+}
