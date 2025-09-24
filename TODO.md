@@ -9,6 +9,7 @@
   - https://github.com/netmute/ctags-lsp.nvim
   - https://github.com/archie-judd/blink-cmp-words (vs blink-cmp-dictionary, it
     also has a thesaurus)
+  - https://github.com/nvim-telescope/telescope-live-grep-args.nvim
 - restructure lua/plugins/*.lua to lua/plugins/<org>/<repo>.lua
 - Add Raycast config?
 - Add commands for finding open localhost ports somewhere:
