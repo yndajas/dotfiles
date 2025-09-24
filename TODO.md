@@ -1,5 +1,6 @@
 # TODO
 
+- Namespace custom git functions
 - Consider nvim extensions:
   - https://github.com/gbprod/yanky.nvim
   - https://github.com/alexandre-abrioux/blink-cmp-npm.nvim
