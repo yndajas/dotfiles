@@ -24,6 +24,8 @@ brew "dnsmasq"
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
 # Command-line fuzzy finder written in Go
@@ -42,12 +44,12 @@ brew "git-delta"
 brew "git-interactive-rebase-tool"
 # Render markdown on the CLI
 brew "glow"
-# GNU multiple precision arithmetic library
-brew "gmp"
 # Terminal based graphical activity monitor inspired by gtop and vtop
 brew "gotop"
 # Kubernetes package manager
 brew "helm"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Modern load testing tool, using Go and JavaScript
@@ -72,6 +74,8 @@ brew "pkgconf"
 brew "node-build"
 # Node.js version manager
 brew "nodenv"
+# Adds an OCR text layer to scanned PDF files
+brew "ocrmypdf"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Command-line tool to generate, analyze, convert and manipulate colors
@@ -100,6 +104,8 @@ brew "ripgrep"
 brew "rustup"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# SQL linter and auto-formatter for Humans
+brew "sqlfluff"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Terraform version manager inspired by rbenv
@@ -295,3 +301,7 @@ vscode "wayou.vscode-todo-highlight"
 vscode "wmaurer.change-case"
 vscode "yinfei.luahelper"
 vscode "yoavbls.pretty-ts-errors"
+go "sigs.k8s.io/controller-tools/cmd/controller-gen"
+go "golang.org/x/tools/gopls"
+go "sigs.k8s.io/kustomize/kustomize/v4"
+go "honnef.co/go/tools/cmd/staticcheck"
