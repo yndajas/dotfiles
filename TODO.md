@@ -22,7 +22,8 @@
   - find ports in use by Ruby and associated processes (Ruby could be
     substituted with something else found by the first command above, perhaps
     via a function argument): `echo -e "ports in use by Ruby processes (lsof) followed by process IDs, uptime, and commands (ps)\n" && lsof -i -P -n | grep 'ruby' | tee > >(awk '{print $9}' | grep --only-matching --extended-regexp "\d+$" | sort | uniq) >(awk '{print $2}' | uniq | xargs -I {} ps {} -o pid=,time=,comm=)`
-- Copy glow.json from Advent of Code repo to this repo (symlinked)
+- Copy glow.json from Advent of Code repo to this repo (symlinked to default
+  location - see `glow --help`)
 - Check out Helix some more; symlink in dotfiles repo if useful, uninstall if
   not
 - Shift functions to executable script files added to path? <https://youtu.be/D2pe9ZZ2yCE>
