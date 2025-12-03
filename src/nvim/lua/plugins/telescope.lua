@@ -13,6 +13,16 @@ return {
       require("telescope").load_extension("fzf")
       require("telescope").setup {
         pickers = {
+          buffers = {
+            mappings = {
+              i = {
+                ['<M-d>'] = require('telescope.actions').delete_buffer
+              },
+              n = {
+                ['<M-d>'] = require('telescope.actions').delete_buffer
+              }
+            }
+          },
           find_files = {
             hidden = true,
             no_ignore = false,
