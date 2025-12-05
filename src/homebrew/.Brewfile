@@ -20,6 +20,8 @@ brew "biome"
 brew "curl"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
+# Run arbitrary commands when files change
+brew "entr"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
