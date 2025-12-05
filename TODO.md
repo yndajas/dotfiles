@@ -32,6 +32,8 @@
 - Add more Mac App Store apps to Brewfile? Or is it auto-populated?
 - Move relevant ~/.config/ files into repo
 - Add to hints array
+  - delete back including character under cursor:
+    https://www.reddit.com/r/vim/comments/1gbrxrk/comment/ltotb1w/
   - Vim: splits (:sp), tabs (:tabnew or maybe :new), forward search current word
     (*, then n or N to go next or previous), backward search current word (£,
     then the same), redo (.), visual block mode (Ctrl + V, then use keys to
