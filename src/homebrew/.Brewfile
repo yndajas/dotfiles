@@ -190,8 +190,6 @@ cask "obsidian"
 cask "opal-composer"
 # Collaboration platform for API development
 cask "postman"
-# Control your tools with a few keystrokes
-cask "raycast"
 # .NET IDE
 cask "rider"
 # Screenshot measurement and annotation tool
