@@ -1,17 +1,14 @@
 - defaults:
     link:
-        create: true
-        relink: true
-
+      create: true
+      relink: true
 - shell:
-  - [curl https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh > src/fzf/.fzf-git.sh]
-
+    - - curl https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh > src/fzf/.fzf-git.sh
 - clean:
     ${HOME}/:
     ${HOME}/.config/:
-        recursive: true
+      recursive: true
     ${HOME}/Library/Application Support/Code/User/:
-
 - link:
     ${HOME}/.Brewfile: src/homebrew/.Brewfile
     ${HOME}/.editorconfig: src/.editorconfig
@@ -36,11 +33,9 @@
     ${HOME}/.newsboat/urls: src/newsboat/urls
     ${HOME}/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
     ${HOME}/Library/Application Support/Code/User/settings.json: src/vscode/settings.json
-
 - create:
     - ${HOME}/code
-
 - shell:
-  - command: script/setup_homebrew_and_shell.zsh
-    stdout: true
-    stderr: true
+    - command: script/setup_homebrew_and_shell.zsh
+      stdout: true
+      stderr: true
