@@ -30,6 +30,7 @@
     ${HOME}/.config/nvim: src/nvim
     ${HOME}/.config/ripgreprc: src/ripgrep/ripgreprc
     ${HOME}/.config/starship.toml: src/starship/starship.toml
+    ${HOME}/.config/stylua.toml: src/stylua/stylua.toml
     ${HOME}/.config/zshrc: src/zsh/.config/zshrc
     ${HOME}/.newsboat/config: src/newsboat/config
     ${HOME}/.newsboat/urls: src/newsboat/urls

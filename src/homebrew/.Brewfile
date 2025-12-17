@@ -32,6 +32,8 @@ brew "gmp"
 brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Independent set of GDScript tools - parser, linter, formatter, and more
+brew "gdtoolkit"
 # WebDriver <-> Marionette proxy
 brew "geckodriver"
 # GitHub command-line tool
@@ -110,6 +112,8 @@ brew "shellcheck"
 brew "sqlfluff"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Opinionated Lua code formatter
+brew "stylua"
 # Terraform version manager inspired by rbenv
 brew "tfenv"
 # Linter for Terraform files
