@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-export BAT_THEME='OneHalfLight'
-
 alias cat="bat"
 
 # use bat to add syntax highlighting to man

@@ -23,6 +23,7 @@
     ${HOME}/.tmux.conf: src/tmux/.tmux.conf
     ${HOME}/.zshenv: src/zsh/.zshenv
     ${HOME}/.zshrc: src/zsh/.zshrc
+    ${HOME}/.config/bat: src/bat
     ${HOME}/.config/ghostty/config: src/ghostty/config
     ${HOME}/.config/nvim: src/nvim
     ${HOME}/.config/ripgreprc: src/ripgrep/ripgreprc
