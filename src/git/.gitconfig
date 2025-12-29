@@ -58,6 +58,8 @@
   prune = true
   pruneTags = true
   writeCommitGraph = true
+[format]
+  pretty = "format:%C(yellow)commit%C(auto) %H %d%nAuthor: %an <%ae>%nDate:   %ad%n%n%B"
 [gpg]
   format = ssh
 [gpg "ssh"]
@@ -71,6 +73,8 @@
 [interactive-rebase-tool]
   inputConfirmYes = q
   selectedBackgroundColor = white
+[log]
+  date = "format:%a %d %b %Y %H:%M:%S"
 [merge]
   conflictStyle = zdiff3
 [pull]
