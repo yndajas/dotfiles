@@ -22,6 +22,9 @@
   colorMovedWS = allow-indentation-change
 [diff "rspec"]
   xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
+[fetch]
+  prune = true
+  pruneTags = true
 [gpg]
   format = ssh
 [gpg "ssh"]
