@@ -70,7 +70,7 @@
   inputConfirmYes = q
   selectedBackgroundColor = white
 [merge]
-  conflictstyle = diff3
+  conflictStyle = zdiff3
 [pull]
   ff = only
 [push]
