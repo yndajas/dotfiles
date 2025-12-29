@@ -48,6 +48,7 @@
     bold yellow => syntax "#eacfa9"
   syntax-theme = Catppuccin Latte
 [diff]
+  algorithm = histogram
   colorMoved = default
   colorMovedWS = allow-indentation-change
 [diff "rspec"]
