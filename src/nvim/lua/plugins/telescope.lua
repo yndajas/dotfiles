@@ -12,6 +12,9 @@ return {
     config = function()
       require("telescope").load_extension("fzf")
       require("telescope").setup {
+        defaults = {
+          layout_strategy = "vertical",
+        },
         pickers = {
           buffers = {
             mappings = {
