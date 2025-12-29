@@ -45,6 +45,7 @@
 [status]
 	showStash = true
 	showUntrackedFiles = all
+  submodulesummary = true
 [user]
 	email = yndajas@gmail.com
 	name = Ynda Jas
