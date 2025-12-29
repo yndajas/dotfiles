@@ -2,51 +2,51 @@
   ass = add
   figg = diff
 [color]
-	ui = true
+  ui = true
 [commit]
-	gpgsign = true
-	verbose = true
+  gpgsign = true
+  verbose = true
 [core]
-	editor = nvim
-	excludesfile = /Users/ynda/.gitignore_global
-	pager = delta
+  editor = nvim
+  excludesfile = /Users/ynda/.gitignore_global
+  pager = delta
 [delta]
-	hyperlinks = true
-	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
-	line-numbers = true
-	navigate = true
+  hyperlinks = true
+  hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+  line-numbers = true
+  navigate = true
 [diff]
-	colorMoved = default
-	colorMovedWS = allow-indentation-change
+  colorMoved = default
+  colorMovedWS = allow-indentation-change
 [diff "rspec"]
-	xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
+  xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
 [gpg]
-	format = ssh
+  format = ssh
 [gpg "ssh"]
-	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [help]
   autocorrect = prompt
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [interactive]
-	diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [interactive-rebase-tool]
-	inputConfirmYes = q
-	selectedBackgroundColor = white
+  inputConfirmYes = q
+  selectedBackgroundColor = white
 [merge]
-	conflictstyle = diff3
+  conflictstyle = diff3
 [pull]
-	ff = only
+  ff = only
 [rebase]
-	autosquash = true
-	updateRefs = true
+  autosquash = true
+  updateRefs = true
 [sequence]
-	editor = interactive-rebase-tool
+  editor = interactive-rebase-tool
 [status]
-	showStash = true
-	showUntrackedFiles = all
+  showStash = true
+  showUntrackedFiles = all
   submodulesummary = true
 [user]
-	email = yndajas@gmail.com
-	name = Ynda Jas
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICAybAdFboSceiMH16T8hX1eZ4HNVukUohmxCw6bw8RL
+  email = yndajas@gmail.com
+  name = Ynda Jas
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICAybAdFboSceiMH16T8hX1eZ4HNVukUohmxCw6bw8RL
