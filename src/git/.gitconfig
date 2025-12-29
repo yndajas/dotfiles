@@ -1,6 +1,8 @@
 [alias]
   ass = add
   figg = diff
+[branch]
+  sort = -committerdate
 [color]
   ui = true
 [commit]
