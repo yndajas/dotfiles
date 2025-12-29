@@ -25,6 +25,7 @@
 [fetch]
   prune = true
   pruneTags = true
+  writeCommitGraph = true
 [gpg]
   format = ssh
 [gpg "ssh"]
