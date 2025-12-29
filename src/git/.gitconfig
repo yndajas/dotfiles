@@ -15,7 +15,6 @@
 [delta]
   features = catppuccin-latte
   hyperlinks = true
-  hyperlinks-file-link-format = "vscode://file/{path}:{line}"
   line-numbers = true
   navigate = true
 [delta "catppuccin-latte"]
