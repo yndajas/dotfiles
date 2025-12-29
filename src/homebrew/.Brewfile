@@ -158,6 +158,8 @@ cask "arc"
 cask "aws-vault-binary"
 # E-books management software
 cask "calibre"
+# Colemak mod for more comfortable typing (DH variant)
+cask "colemak-dh"
 # Universal database tool and SQL client
 cask "dbeaver-community"
 # App to build and share containerised applications and microservices
