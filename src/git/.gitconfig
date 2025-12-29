@@ -43,6 +43,8 @@
   conflictstyle = diff3
 [pull]
   ff = only
+[push]
+  autoSetupRemote = true
 [rebase]
   autosquash = true
   updateRefs = true
