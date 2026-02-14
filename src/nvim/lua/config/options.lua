@@ -43,3 +43,5 @@ vim.opt.spelllang = "en_gb"
 vim.opt.showmode = false
 -- don't show location since lualine reports it
 vim.opt.ruler = false
+-- allow project-specific settings
+vim.opt.exrc = true
