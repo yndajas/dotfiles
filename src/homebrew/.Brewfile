@@ -26,8 +26,6 @@ brew "entr"
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# GNU multiple precision arithmetic library
-brew "gmp"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
 # Command-line fuzzy finder written in Go
@@ -48,6 +46,8 @@ brew "git-delta"
 brew "git-interactive-rebase-tool"
 # Render markdown on the CLI
 brew "glow"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # Terminal based graphical activity monitor inspired by gtop and vtop
 brew "gotop"
 # Kubernetes package manager
@@ -178,6 +178,8 @@ cask "ghostty"
 cask "gimp"
 # Game development engine
 cask "godot"
+# Vector graphics editor
+cask "inkscape"
 # Game client for itch.io
 cask "itch"
 # Menu bar manager
