@@ -10,6 +10,7 @@
       recursive: true
     ${HOME}/Library/Application Support/Code/User/:
 - link:
+    ${HOME}/biome.json: src/biome/biome.json
     ${HOME}/.Brewfile: src/homebrew/.Brewfile
     ${HOME}/.editorconfig: src/.editorconfig
     ${HOME}/.fzf-git.sh: src/fzf/.fzf-git.sh
