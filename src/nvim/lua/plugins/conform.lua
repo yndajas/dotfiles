@@ -18,7 +18,7 @@ return {
           gdscript = { "gdformat" },
           go = { "gofmt" },
           graphql = { "biome-check", "prettier", stop_after_first = true },
-          html = { "biome-check", "prettier", stop_after_first = true },
+          html = { "prettier", "biome-check", stop_after_first = true },
           javascript = { "biome-check", "prettier", stop_after_first = true },
           json = { "jq", "prettier", stop_after_first = true },
           lua = { "stylua" },
