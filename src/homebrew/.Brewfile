@@ -100,6 +100,8 @@ brew "pup"
 brew "pv"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
+# Reverse engineering framework
+brew "radare2"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # Ruby version manager
