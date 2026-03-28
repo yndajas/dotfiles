@@ -16,6 +16,8 @@ brew "bash"
 brew "bat"
 # Toolchain of the web
 brew "biome"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Lightweight DNS forwarder and DHCP server
@@ -176,7 +178,7 @@ cask "font-iosevka-nerd-font"
 cask "ghostty"
 # Free and open-source image editor
 cask "gimp"
-# Game development engine
+# 2D and 3D game engine
 cask "godot"
 # Vector graphics editor
 cask "inkscape"
