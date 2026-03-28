@@ -36,6 +36,8 @@ brew "fzf"
 brew "gdtoolkit"
 # WebDriver <-> Marionette proxy
 brew "geckodriver"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
