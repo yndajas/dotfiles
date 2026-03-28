@@ -7,8 +7,9 @@ if ! command_exists /opt/homebrew/bin/brew; then
 fi
 
 if command_exists brew; then
-  # update Brewfile to bring in any vscode or mas changes, avoiding reinstalling
-  # uninstalled apps when running `brew bundle --global install` below
+  # update Brewfile to bring in any mas and possibly go and cargo changes (and
+  # vscode, when installed), avoiding reinstalling uninstalled apps when running
+  # `brew bundle --global install` below
   update_global_brewfile
 else
   eval "$(/opt/homebrew/bin/brew shellenv)"

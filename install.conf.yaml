@@ -33,8 +33,6 @@
     ${HOME}/.config/zshrc: src/zsh/.config/zshrc
     ${HOME}/.newsboat/config: src/newsboat/config
     ${HOME}/.newsboat/urls: src/newsboat/urls
-    ${HOME}/Library/Application Support/Code/User/keybindings.json: src/vscode/keybindings.json
-    ${HOME}/Library/Application Support/Code/User/settings.json: src/vscode/settings.json
 - create:
     - ${HOME}/code
 - shell:
