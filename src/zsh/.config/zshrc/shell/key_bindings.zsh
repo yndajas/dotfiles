@@ -5,6 +5,12 @@
 # (https://zsh.sourceforge.io/Guide/zshguide04.html#:~:text=4.5.5%3A%20Keymaps)
 bindkey -v '^?' backward-delete-char '\e[3~' delete-char
 
+# enable editing commands via editor by pressing o from vicmd (normal) mode
+# see manual zshcontrib, manual autoload, and manual zrhzle
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd o edit-command-line
+
 # unbind ^g so that fzf-git keybindings can make it through in Vim mode
 # (https://github.com/junegunn/fzf-git.sh/issues/23#issuecomment-2130793362)
 bindkey -r '^g'

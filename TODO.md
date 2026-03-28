@@ -31,6 +31,7 @@
 - Add more Mac App Store apps to Brewfile? Or is it auto-populated?
 - Move relevant ~/.config/ files into repo
 - Add to hints array
+  - o from zshcmd mode will let you edit a command from the default editor
   - delete back including character under cursor:
     https://www.reddit.com/r/vim/comments/1gbrxrk/comment/ltotb1w/
   - Vim: splits (:sp), tabs (:tabnew or maybe :new), forward search current word
