@@ -164,6 +164,8 @@ cask "arc"
 cask "aws-vault-binary"
 # E-books management software
 cask "calibre"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # Colemak mod for more comfortable typing (DH variant)
 cask "colemak-dh"
 # Universal database tool and SQL client
