@@ -1,5 +1,6 @@
 # TODO
 
+- move Vial keymap and keymap drawer files here
 - Consider moving away from ruby_lsp because Shopify...
 - Instead of directly curling the latest fzf-git.zsh in install.conf.yaml, diff
   it with own copy and alert if out of date. This is more secure than
