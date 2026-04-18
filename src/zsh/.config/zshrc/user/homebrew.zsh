@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-HOMEBREW_CASK_OPTS=--appdir=~/Applications
+export HOMEBREW_CASK_OPTS=--appdir=~/Applications
 
 [[ -z "${original_brew_command}" ]] && original_brew_command="$(command -v brew)"
 function brew() {
