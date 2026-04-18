@@ -9,7 +9,7 @@ Dotfiles and other setup files for use across systems
 1. Install Xcode (at least the command line tools) manually (to be automated
    later)?
 1. Run `bat cache --build` to register Bat themes
-1. Add WakaTime API keys to VS Code and Neovim
+1. Add WakaTime API keys to Neovim (`:WakaTimeApiKey`)
 1. Restart to register the Colemak DH layout
 
 ## Maintenance
