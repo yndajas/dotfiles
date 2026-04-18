@@ -46,8 +46,6 @@ brew "git"
 brew "git-absorb"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# Native sequence editor for Git interactive rebase
-brew "git-interactive-rebase-tool"
 # Render markdown on the CLI
 brew "glow"
 # GNU multiple precision arithmetic library

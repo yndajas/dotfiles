@@ -70,9 +70,6 @@
   defaultBranch = main
 [interactive]
   diffFilter = delta --color-only
-[interactive-rebase-tool]
-  inputConfirmYes = q
-  selectedBackgroundColor = white
 [log]
   date = "format:%a %d %b %Y %H:%M:%S"
 [merge]
@@ -84,8 +81,6 @@
 [rebase]
   autosquash = true
   updateRefs = true
-[sequence]
-  editor = interactive-rebase-tool
 [status]
   showStash = true
   showUntrackedFiles = all
