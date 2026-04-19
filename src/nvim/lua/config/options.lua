@@ -43,3 +43,7 @@ vim.opt.showmode = false
 vim.opt.ruler = false
 -- allow project-specific settings
 vim.opt.exrc = true
+-- add blank to nrformats, so that numbers only count as negative if preceded by
+-- " -" - without the whitespace numbers are considered positive. This affects
+-- decrement (C-x) and increment (C-a) functionality
+vim.opt.nrformats:append("blank")
