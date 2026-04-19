@@ -67,7 +67,7 @@ brew "luarocks"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
-brew "mysql", restart_service: :changed
+brew "mysql"
 # Free (GNU) replacement for the Pico text editor
 brew "nano"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -91,7 +91,7 @@ brew "pipx"
 # Python package management tool
 brew "poetry"
 # Object-relational database system
-brew "postgresql@14", restart_service: :changed
+brew "postgresql@14"
 # Parse HTML at the command-line
 brew "pup"
 # Monitor data's progress through a pipe
@@ -232,3 +232,5 @@ cargo "taplo-cli"
 cargo "tree-sitter-cli"
 cargo "wasm-pack"
 cargo "wasm-tools"
+npm "corepack"
+npm "neovim"
