@@ -27,3 +27,11 @@ vim.keymap.set("n", "<M-Down>", "<S-v> :move '>+1<CR><S-v>=")
 -- alias tab and shift-tab to buffer next/previous
 vim.keymap.set("n", "<Tab>", ":bnext<CR>")
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>")
+
+-- LSP
+vim.keymap.set(
+  "n",
+  "<leader>lsp",
+  ":lua vim.lsp.buf.",
+  { desc = "Run an LSP action in command mode" }
+)

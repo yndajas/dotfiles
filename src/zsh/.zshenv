@@ -30,3 +30,29 @@ export DOTFILES_DIR="${HOME}/code/github.com/yndajas/dotfiles"
 function update_global_brewfile() {
   brew bundle dump --file="${DOTFILES_DIR}/src/homebrew/.Brewfile" --describe --force
 }
+
+function prepare_ruby_for_vim() {
+  if [[ ! -f ".ruby-version" ]]; then
+    echo "No .ruby-version" && return 1
+  fi
+
+  local version
+  version=$(cat .ruby-version)
+
+  if [[ ! -d "${HOME}/.rbenv/versions/${version}" ]]; then
+    echo "==> Installing Ruby"
+    rbenv install
+  fi
+
+  if [[ ! -f "${HOME}/.rbenv/versions/${version}/bin/ruby-lsp" ]]; then
+    echo "==> Installing ruby-lsp gem"
+    gem install ruby-lsp
+  fi
+
+# -- 3. install ruby-lsp if required -- should this actually be bundle install?
+# what about rubocop-govuk?
+# -- ~/.rbenv/versions/VERSION/bin/rubocop
+# -- gem install rubocop
+
+  echo "==> Done!"
+}
