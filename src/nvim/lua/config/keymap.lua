@@ -16,3 +16,11 @@ vim.keymap.set(
   ":lua vim.lsp.buf.",
   { desc = "Run an LSP action in command mode" }
 )
+
+-- system clipboard
+vim.keymap.set(
+  { "n", "v" },
+  "<leader>s",
+  '"*',
+  { desc = "Use system clipboard for next motion" }
+)
