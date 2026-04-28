@@ -12,7 +12,7 @@ vim.keymap.set("n", "<S-Tab>", ":bprev<CR>")
 -- LSP
 vim.keymap.set(
   "n",
-  "<leader>lsp",
+  "<leader>l",
   ":lua vim.lsp.buf.",
   { desc = "Run an LSP action in command mode" }
 )

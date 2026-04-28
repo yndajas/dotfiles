@@ -13,11 +13,11 @@ require("fzf-lua").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>fzf", ":FzfLua ", { desc = "FzfLua" })
-vim.keymap.set("n", "<leader>ffg", ":FzfLua git_files<CR>", {
+vim.keymap.set("n", "<leader>fz", ":FzfLua ", { desc = "FzfLua" })
+vim.keymap.set("n", "<leader>ff", ":FzfLua git_files<CR>", {
   desc = "Find git files",
 })
-vim.keymap.set("n", "<leader>fff", ":FzfLua files<CR>", {
+vim.keymap.set("n", "<leader>fF", ":FzfLua files<CR>", {
   desc = "Find files",
 })
 vim.keymap.set("n", "<leader>fg", ":FzfLua live_grep<CR>", {
