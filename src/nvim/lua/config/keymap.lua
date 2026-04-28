@@ -10,12 +10,10 @@ vim.keymap.set("n", "<Tab>", ":bnext<CR>")
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>")
 
 -- LSP
-vim.keymap.set(
-  "n",
-  "<leader>l",
-  ":lua vim.lsp.buf.",
-  { desc = "Run an LSP action in command mode" }
-)
+vim.keymap.set("n", "<leader>l", function()
+  vim.api.nvim_feedkeys(":lua vim.lsp.buf", "n", false)
+  vim.api.nvim_input(".")
+end, { desc = "Run an LSP action in command mode" })
 
 -- system clipboard
 vim.keymap.set(
