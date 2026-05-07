@@ -55,6 +55,7 @@ source "${HOME}/.config/zshrc/external/zoxide.zsh"
 # needed before any set_text_format
 source "${HOME}/.config/zshrc/user/text_formatting.zsh"
 
+source "${HOME}/.config/zshrc/user/catls.zsh"
 source "${HOME}/.config/zshrc/user/docker.zsh"
 source "${HOME}/.config/zshrc/user/dotfiles.zsh"
 source "${HOME}/.config/zshrc/user/git.zsh"
