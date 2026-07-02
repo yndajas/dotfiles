@@ -1,0 +1,15 @@
+{
+  "enabledPlugins": {
+    "learning-opportunities@learning-opportunities": true
+  },
+  "extraKnownMarketplaces": {
+    "learning-opportunities": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/DrCatHicks/learning-opportunities.git"
+      }
+    }
+  },
+  "theme": "light",
+  "verbose": true
+}
