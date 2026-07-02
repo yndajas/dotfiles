@@ -9,7 +9,6 @@
     ${HOME}/.claude/:
     ${HOME}/.config/:
       recursive: true
-    ${HOME}/Library/Application Support/Code/User/:
 - link:
     ${HOME}/biome.json: src/biome/biome.json
     ${HOME}/.Brewfile: src/homebrew/.Brewfile
