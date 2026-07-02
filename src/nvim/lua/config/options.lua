@@ -47,3 +47,6 @@ vim.opt.exrc = true
 -- " -" - without the whitespace numbers are considered positive. This affects
 -- decrement (C-x) and increment (C-a) functionality
 vim.opt.nrformats:append("blank")
+-- suggested by tiny-cmdline for use with ui2. Without it the statusline
+-- disappears after using a command
+vim.opt.cmdheight = 0
