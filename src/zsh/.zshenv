@@ -28,7 +28,7 @@ export DOTFILES_DIR="${HOME}/code/github.com/yndajas/dotfiles"
 # installed), entries before brew bundle install is run by the dotfiles install
 # script, which could reinstall anything that's been removed
 function update_global_brewfile() {
-  brew bundle dump --file="${DOTFILES_DIR}/src/homebrew/.Brewfile" --describe --force
+  brew bundle dump --file="${DOTFILES_DIR}/src/homebrew/.Brewfile" --force
 }
 
 function prepare_ruby_for_vim() {
