@@ -163,6 +163,8 @@ cask "arc"
 cask "aws-vault-binary"
 # E-books management software
 cask "calibre"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # Colemak mod for more comfortable typing (DH variant)
