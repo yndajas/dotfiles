@@ -1,9 +1,10 @@
 tap "alphagov/gds"
 tap "barnardb/cookies"
-tap "domt4/autoupdate"
+tap "domt4/autoupdate", trusted: { formulae: ["autoupdate"] }
 tap "heroku/brew"
-tap "ngrok/ngrok"
+tap "ngrok/ngrok", trusted: { formulae: ["ngrok"] }
 tap "oven-sh/bun"
+tap "terraform-linters/tap"
 # CLI tool for working with Architecture Decision Records
 brew "adr-tools"
 # Get stuff done with container-native workflows for Kubernetes
@@ -92,7 +93,7 @@ brew "pipx"
 brew "poetry"
 # Object-relational database system
 brew "postgresql@14"
-# Parse HTML at the command-line
+# CLI companion with 200+ commands across 33+ Datadog products
 brew "pup"
 # Monitor data's progress through a pipe
 brew "pv"
@@ -122,8 +123,6 @@ brew "starship"
 brew "stylua"
 # Terraform version manager inspired by rbenv
 brew "tfenv"
-# Linter for Terraform files
-brew "tflint"
 # Programmatically correct mistyped console commands
 brew "thefuck"
 # Define your dev environment as code. For microservice apps on Kubernetes
@@ -149,13 +148,13 @@ brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
 # CLI for common commands used by Government Digital Service staff
-brew "alphagov/gds/gds-cli"
+brew "alphagov/gds/gds-cli", trusted: true
 # Command-line tool for extracting cookies from the user's web browser
-brew "barnardb/cookies/cookies"
+brew "barnardb/cookies/cookies", trusted: true
 # Everything you need to get started with Heroku
-brew "heroku/brew/heroku"
+brew "heroku/brew/heroku", trusted: true
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
+brew "oven-sh/bun/bun", trusted: true
 # GraphQL client
 cask "altair-graphql-client"
 # Chromium based browser
@@ -216,6 +215,8 @@ cask "slack"
 cask "spotify"
 # Remote pair programming app
 cask "tuple"
+# Pluggable Terraform linter
+cask "terraform-linters/tap/tflint", trusted: true
 # Tool to invert scroll direction for physical scroll wheels
 cask "unnaturalscrollwheels"
 # Web browser with built-in email client focusing on customization and control
