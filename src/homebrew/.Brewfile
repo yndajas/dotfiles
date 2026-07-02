@@ -221,6 +221,7 @@ cask "terraform-linters/tap/tflint", trusted: true
 cask "unnaturalscrollwheels"
 # Web browser with built-in email client focusing on customization and control
 cask "vivaldi"
+mas "Okta Extension App", id: 1439967473
 go "sigs.k8s.io/controller-tools/cmd/controller-gen"
 go "golang.org/x/tools/gopls"
 go "sigs.k8s.io/kustomize/kustomize/v4"
