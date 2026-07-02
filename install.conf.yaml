@@ -9,6 +9,7 @@
     ${HOME}/.claude/:
     ${HOME}/.config/:
       recursive: true
+    ${HOME}/.newsboat/:
 - link:
     ${HOME}/biome.json: src/biome/biome.json
     ${HOME}/.Brewfile: src/homebrew/.Brewfile
