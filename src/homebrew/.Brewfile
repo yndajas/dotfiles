@@ -108,6 +108,8 @@ brew "rbenv"
 brew "redis", restart_service: :changed
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
 # Rust toolchain installer
 brew "rustup"
 # Static analysis and lint tool, for (ba)sh scripts
