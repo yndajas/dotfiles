@@ -215,8 +215,6 @@ cask "shottr"
 cask "slack"
 # Music streaming service
 cask "spotify"
-# Remote pair programming app
-cask "tuple"
 # Pluggable Terraform linter
 cask "terraform-linters/tap/tflint", trusted: true
 # Tool to invert scroll direction for physical scroll wheels
