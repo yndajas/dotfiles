@@ -148,8 +148,6 @@ brew "zsh"
 brew "alphagov/gds/gds-cli", trusted: true
 # GraphQL client
 cask "altair-graphql-client"
-# Chromium based browser
-cask "arc"
 # Securely stores and accesses AWS credentials in a development environment
 cask "aws-vault-binary"
 # E-books management software
