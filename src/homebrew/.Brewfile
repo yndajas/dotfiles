@@ -1,9 +1,6 @@
 tap "alphagov/gds"
-tap "barnardb/cookies"
 tap "domt4/autoupdate", trusted: { formulae: ["autoupdate"] }
-tap "heroku/brew"
 tap "ngrok/ngrok", trusted: { formulae: ["ngrok"] }
-tap "oven-sh/bun"
 tap "terraform-linters/tap"
 # CLI tool for working with Architecture Decision Records
 brew "adr-tools"
@@ -149,12 +146,6 @@ brew "zoxide"
 brew "zsh"
 # CLI for common commands used by Government Digital Service staff
 brew "alphagov/gds/gds-cli", trusted: true
-# Command-line tool for extracting cookies from the user's web browser
-brew "barnardb/cookies/cookies", trusted: true
-# Everything you need to get started with Heroku
-brew "heroku/brew/heroku", trusted: true
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun", trusted: true
 # GraphQL client
 cask "altair-graphql-client"
 # Chromium based browser
