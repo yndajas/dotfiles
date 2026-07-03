@@ -89,7 +89,7 @@ brew "pipx"
 # Python package management tool
 brew "poetry"
 # Object-relational database system
-brew "postgresql@14"
+brew "postgresql@14", restart_service: :changed
 # CLI companion with 200+ commands across 33+ Datadog products
 brew "pup"
 # Monitor data's progress through a pipe
