@@ -1,5 +1,5 @@
 tap "alphagov/gds"
-tap "domt4/autoupdate", trusted: { formulae: ["autoupdate"] }
+tap "domt4/autoupdate", trusted: { commands: ["autoupdate"] }
 tap "ngrok/ngrok", trusted: { formulae: ["ngrok"] }
 tap "terraform-linters/tap"
 # CLI tool for working with Architecture Decision Records
