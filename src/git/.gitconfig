@@ -86,6 +86,8 @@
   showStash = true
   showUntrackedFiles = all
   submodulesummary = true
+[url "git@github.com:"]
+  insteadOf = "gh:"
 [user]
   email = yndajas@gmail.com
   name = Ynda Jas
