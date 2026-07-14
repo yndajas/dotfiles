@@ -90,8 +90,6 @@ brew "pipx"
 brew "poetry"
 # Object-relational database system
 brew "postgresql@14", restart_service: :changed
-# CLI companion with 200+ commands across 33+ Datadog products
-brew "pup"
 # Monitor data's progress through a pipe
 brew "pv"
 # Interpreted, interactive, object-oriented programming language
@@ -214,6 +212,7 @@ mas "Okta Extension App", id: 1439967473 if `hostname`.start_with?("MAC")
 go "sigs.k8s.io/controller-tools/cmd/controller-gen"
 go "golang.org/x/tools/gopls"
 go "sigs.k8s.io/kustomize/kustomize/v4"
+go "github.com/ericchiang/pup"
 go "honnef.co/go/tools/cmd/staticcheck"
 cargo "cargo-binstall"
 cargo "cargo-insta"
