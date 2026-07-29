@@ -2,7 +2,7 @@ vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 
 require("conform").setup({
   -- TODO: consider giving priority to LSP?
-  default_format_opts = { lsp_format = "fallback", timeout = 500 },
+  default_format_opts = { lsp_format = "fallback", timeout_ms = 500 },
   format_on_save = {},
   formatters_by_ft = {
     bash = { "shellcheck" },
@@ -22,7 +22,7 @@ require("conform").setup({
     json = { "jq", "prettier", stop_after_first = true },
     lua = { "stylua" },
     markdown = { "prettier", "markdownlint", stop_after_first = true },
-    ruby = { "rubocop" },
+    ruby = { "rubocop", timeout_ms = 5000 },
     rust = { "rustfmt" },
     sql = { "sqlfluff" },
     typescript = { "biome-check", "prettier", stop_after_first = true },
