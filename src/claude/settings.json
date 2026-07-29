@@ -19,6 +19,7 @@
       }
     }
   },
+  "preferredNotifChannel": "ghostty",
   "theme": "light",
   "verbose": true
 }
