@@ -1,12 +1,21 @@
 {
   "enabledPlugins": {
-    "learning-opportunities@learning-opportunities": true
+    "claude-code-wakatime@wakatime": true,
+    "learning-opportunities-auto@learning-opportunities": true,
+    "learning-opportunities@learning-opportunities": true,
+    "ruby-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "learning-opportunities": {
       "source": {
         "source": "git",
         "url": "https://github.com/DrCatHicks/learning-opportunities.git"
+      }
+    },
+    "wakatime": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/wakatime/claude-code-wakatime.git"
       }
     }
   },
