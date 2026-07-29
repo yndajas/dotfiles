@@ -4,6 +4,10 @@
 
 - Don't suppress or truncate command output — no piping through `tail`, `head`,
   etc. Show the full output.
+- Some GOV.UK repos (e.g. `asset-manager`) run their tooling in Docker: run
+  commands like RSpec, Rails, RuboCop, and rake via `govuk-docker-run`
+  (e.g. `govuk-docker-run bundle exec rspec spec/foo_spec.rb:12`). Not all
+  alphagov/GOV.UK repos use Docker/`govuk-docker`, so check first.
 
 ## Running tests
 
@@ -19,6 +23,13 @@
 - `git push` on its own is enough — upstream tracking is configured in the
   gitconfig, so don't add `-u origin <branch>`.
 
+## Writing style
+
+- Don't use em dashes in commit messages, PR bodies, or plain-text content
+  generally (including chat and terminal output); use regular hyphens/dashes
+  or reword. Em dashes are fine in rich-text-targeted content (e.g. rendered
+  Markdown or HTML) and more formal writing.
+
 ## Commit messages
 
 - Subject line: describe what changed, 50 characters or fewer, imperative mood
@@ -27,6 +38,9 @@
   for the change (the why), not just the what.
 - Write the body in the present tense describing the commit ("This guards
   against…", "This re-renders…"), not the imperative.
+- Use the body to capture context or reasoning that could otherwise be lost,
+  but don't restate the subject or describe what's easily gleaned from the
+  diff. Omit the body when it would only do that.
 - No trailing full stops on body paragraphs.
 - Wrap code identifiers and symbols in backticks (e.g. `params.dig`, `@error`,
   `NoMethodError`).
@@ -40,6 +54,9 @@
 - Body: concise prose that mirrors the commit body. No section headings, no
   separate "why"/"testing" sections, and no "Generated with Claude Code" or
   other Claude references.
+- Write the body as complete sentences without omitting parts of speech
+  (unlike the imperative commit subject). Prefer opening with a subject such
+  as "This" over a verb.
 - No trailing full stops on body paragraphs.
 
 ## Keeping this file current
