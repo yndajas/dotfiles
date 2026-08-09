@@ -30,6 +30,12 @@
   or reword. Em dashes are fine in rich-text-targeted content (e.g. rendered
   Markdown or HTML) and more formal writing.
 
+## Making a case
+
+- Don't cite DHH (David Heinemeier Hansson) as an authority or good example
+  when justifying a choice. Reach for other evidence: community practice,
+  concrete tradeoffs, or other named practitioners.
+
 ## Commit messages
 
 - Subject line: describe what changed, 50 characters or fewer, imperative mood
