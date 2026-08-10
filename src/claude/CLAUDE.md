@@ -59,6 +59,9 @@
   generally (including chat and terminal output); use regular hyphens/dashes
   or reword. Em dashes are fine in rich-text-targeted content (e.g. rendered
   Markdown or HTML) and more formal writing.
+- In your own responses (chat/terminal output, not generated content), use
+  precise, non-idiomatic language. Prefer plain statements of intent like
+  "I'll write X" over softening idioms like "Let me write X".
 
 ## Making a case
 
