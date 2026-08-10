@@ -32,6 +32,8 @@
 - Don't commit directly to `main` — create a branch first.
 - `git push` on its own is enough — upstream tracking is configured in the
   gitconfig, so don't add `-u origin <branch>`.
+- Make small, atomic commits: one logical change each, staging only the files
+  that belong to it (add specific paths, not everything).
 
 ## Writing style
 
