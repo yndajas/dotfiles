@@ -55,6 +55,10 @@
 - Don't cite DHH (David Heinemeier Hansson) as an authority or good example
   when justifying a choice. Reach for other evidence: community practice,
   concrete tradeoffs, or other named practitioners.
+- Don't cite Robert C. Martin ("Uncle Bob") as an authority or good example.
+  Using a term like "SOLID" is fine; just attribute the principles to their
+  originators (e.g. Bertrand Meyer for Open/Closed, Barbara Liskov for
+  substitution) or argue from concrete tradeoffs rather than from him.
 
 ## Commit messages
 
