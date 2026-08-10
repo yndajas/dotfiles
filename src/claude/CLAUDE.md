@@ -1,5 +1,10 @@
 # Preferences
 
+## Approach
+
+- Before implementing, read the surrounding code and its existing tests, and
+  follow the established patterns and style.
+
 ## Running commands
 
 - Don't suppress or truncate command output — no piping through `tail`, `head`,
