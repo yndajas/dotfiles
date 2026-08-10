@@ -8,6 +8,13 @@
   architectural decision, consider recording it as an Architecture Decision
   Record (ADR).
 
+## Learning
+
+- Treat notable design and refactoring decisions as learning opportunities: name
+  the principle at work, explain the why briefly, and offer (without forcing) a
+  short learning exercise, engaging the `learning-opportunities` skill on that
+  specific principle. Skip for trivial changes.
+
 ## Running commands
 
 - Don't suppress or truncate command output — no piping through `tail`, `head`,
