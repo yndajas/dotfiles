@@ -27,6 +27,7 @@
     ${HOME}/.zshrc: src/zsh/.zshrc
     ${HOME}/.claude/CLAUDE.md: src/claude/CLAUDE.md
     ${HOME}/.claude/settings.json: src/claude/settings.json
+    ${HOME}/.claude/skills: src/claude/skills
     ${HOME}/.config/bat: src/bat
     ${HOME}/.config/ghostty/config: src/ghostty/config
     ${HOME}/.config/nvim: src/nvim

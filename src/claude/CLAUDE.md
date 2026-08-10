@@ -1,5 +1,20 @@
 # Preferences
 
+## Approach
+
+- Before implementing, read the surrounding code and its existing tests, and
+  follow the established patterns and style.
+- When making a significant, novel, or hard-to-reverse technical or
+  architectural decision, consider recording it as an Architecture Decision
+  Record (ADR).
+
+## Learning
+
+- Treat notable design and refactoring decisions as learning opportunities: name
+  the principle at work, explain the why briefly, and offer (without forcing) a
+  short learning exercise, engaging the `learning-opportunities` skill on that
+  specific principle. Skip for trivial changes.
+
 ## Running commands
 
 - Don't suppress or truncate command output — no piping through `tail`, `head`,
@@ -15,6 +30,8 @@
   (e.g. `rspec spec/foo_spec.rb:16`, not `rspec -e "does a thing"`).
 - When fixing a bug, write the test first and confirm it fails for the right
   reason before implementing the fix.
+- Don't consider a task complete until the change is covered by tests and the
+  suite passes with no regressions. Keep each commit's test suite green.
 
 ## Git
 
@@ -22,6 +39,19 @@
 - Don't commit directly to `main` — create a branch first.
 - `git push` on its own is enough — upstream tracking is configured in the
   gitconfig, so don't add `-u origin <branch>`.
+- Make small, atomic commits: one logical change each, staging only the files
+  that belong to it (add specific paths, not everything).
+- When a force-push is needed, use `git push --force-with-lease`, never
+  `--force`.
+- Before pushing, check that the branch's commits are atomic and logically
+  ordered so they tell a clear story; if not, encourage the user to tidy the
+  history with an interactive rebase first.
+
+## Security
+
+- Check code you write or change against the OWASP Top Ten (injection, XSS,
+  broken access control, and so on) and flag anything you spot.
+- Never print, log, or commit secrets or credentials.
 
 ## Writing style
 
@@ -35,11 +65,18 @@
 - Don't cite DHH (David Heinemeier Hansson) as an authority or good example
   when justifying a choice. Reach for other evidence: community practice,
   concrete tradeoffs, or other named practitioners.
+- Don't cite Robert C. Martin ("Uncle Bob") as an authority or good example.
+  Using a term like "SOLID" is fine; just attribute the principles to their
+  originators (e.g. Bertrand Meyer for Open/Closed, Barbara Liskov for
+  substitution) or argue from concrete tradeoffs rather than from him.
 
 ## Commit messages
 
 - Subject line: describe what changed, 50 characters or fewer, imperative mood
   (e.g. "Show error when converting with no file").
+- When a commit changes these preferences, phrase the subject so it reads as
+  an instruction to Claude (e.g. "Have Claude read code before implementing"),
+  not like project policy or a code change.
 - Body: wrap at 72 characters. Explain any useful extra detail and the reason
   for the change (the why), not just the what.
 - Write the body in the present tense describing the commit ("This guards
@@ -63,6 +100,7 @@
 - Write the body as complete sentences without omitting parts of speech
   (unlike the imperative commit subject). Prefer opening with a subject such
   as "This" over a verb.
+- Include a screenshot (or short recording) for user-facing UI changes.
 - No trailing full stops on body paragraphs.
 
 ## Keeping this file current
