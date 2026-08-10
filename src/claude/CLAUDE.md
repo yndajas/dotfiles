@@ -43,6 +43,9 @@
   that belong to it (add specific paths, not everything).
 - When a force-push is needed, use `git push --force-with-lease`, never
   `--force`.
+- Before pushing, check that the branch's commits are atomic and logically
+  ordered so they tell a clear story; if not, encourage the user to tidy the
+  history with an interactive rebase first.
 
 ## Security
 
