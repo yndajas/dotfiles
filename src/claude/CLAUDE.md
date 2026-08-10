@@ -71,6 +71,9 @@
 
 - Subject line: describe what changed, 50 characters or fewer, imperative mood
   (e.g. "Show error when converting with no file").
+- When a commit changes these preferences, phrase the subject so it reads as
+  an instruction to Claude (e.g. "Have Claude read code before implementing"),
+  not like project policy or a code change.
 - Body: wrap at 72 characters. Explain any useful extra detail and the reason
   for the change (the why), not just the what.
 - Write the body in the present tense describing the commit ("This guards
