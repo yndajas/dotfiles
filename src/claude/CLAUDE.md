@@ -34,6 +34,8 @@
   gitconfig, so don't add `-u origin <branch>`.
 - Make small, atomic commits: one logical change each, staging only the files
   that belong to it (add specific paths, not everything).
+- When a force-push is needed, use `git push --force-with-lease`, never
+  `--force`.
 
 ## Writing style
 
