@@ -37,6 +37,12 @@
 - When a force-push is needed, use `git push --force-with-lease`, never
   `--force`.
 
+## Security
+
+- Check code you write or change against the OWASP Top Ten (injection, XSS,
+  broken access control, and so on) and flag anything you spot.
+- Never print, log, or commit secrets or credentials.
+
 ## Writing style
 
 - Don't use em dashes in commit messages, PR bodies, or plain-text content
