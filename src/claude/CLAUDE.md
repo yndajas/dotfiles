@@ -23,6 +23,8 @@
   (e.g. `rspec spec/foo_spec.rb:16`, not `rspec -e "does a thing"`).
 - When fixing a bug, write the test first and confirm it fails for the right
   reason before implementing the fix.
+- Don't consider a task complete until the change is covered by tests and the
+  suite passes with no regressions. Keep each commit's test suite green.
 
 ## Git
 
