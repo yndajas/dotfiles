@@ -4,6 +4,9 @@
 
 - Before implementing, read the surrounding code and its existing tests, and
   follow the established patterns and style.
+- When making a significant, novel, or hard-to-reverse technical or
+  architectural decision, consider recording it as an Architecture Decision
+  Record (ADR).
 
 ## Running commands
 
