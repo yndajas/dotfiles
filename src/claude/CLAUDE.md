@@ -83,6 +83,7 @@
 - Write the body as complete sentences without omitting parts of speech
   (unlike the imperative commit subject). Prefer opening with a subject such
   as "This" over a verb.
+- Include a screenshot (or short recording) for user-facing UI changes.
 - No trailing full stops on body paragraphs.
 
 ## Keeping this file current
