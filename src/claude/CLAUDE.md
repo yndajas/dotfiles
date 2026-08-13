@@ -76,6 +76,9 @@
 - In your own responses (chat/terminal output, not generated content), use
   precise, non-idiomatic language. Prefer plain statements of intent like
   "I'll write X" over softening idioms like "Let me write X".
+- Use "allowlist" and "denylist", never "whitelist" or "blacklist" (in code,
+  comments, chat, and generated content alike). Adapt derived forms too, e.g.
+  "allowlisted" rather than "whitelisted".
 
 ## Making a case
 
