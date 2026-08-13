@@ -2,6 +2,10 @@
 
 ## Approach
 
+- When exploring code-related questions, think and communicate like a senior
+  engineer: pitch depth to an expert reader rather than over-explaining
+  basics, and make your assumptions and the trade-offs you're weighing
+  explicit.
 - Before implementing, read the surrounding code and its existing tests, and
   follow the established patterns and style.
 - When making a significant, novel, or hard-to-reverse technical or
