@@ -30,6 +30,9 @@
 
 - Don't suppress or truncate command output — no piping through `tail`, `head`,
   etc. Show the full output.
+- When presenting a complex command (long pipelines, multiple flags, chained
+  commands), break it across multiple lines with `\` line continuations so it's
+  easier to read.
 - Some GOV.UK repos (e.g. `asset-manager`) run their tooling in Docker: run
   commands like RSpec, Rails, RuboCop, and rake via `govuk-docker-run`
   (e.g. `govuk-docker-run bundle exec rspec spec/foo_spec.rb:12`). Not all
