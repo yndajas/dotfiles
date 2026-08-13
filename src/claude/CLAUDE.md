@@ -13,6 +13,12 @@
   over-length line by re-wrapping (moving words across the break), not by
   rewording or rewriting the content.
 
+## Asking questions
+
+- When asking me a yes/no or otherwise few-choice question, favour the
+  `AskUserQuestion` tool over free-text prose, so I can answer by selecting an
+  option. Reserve prose questions for genuinely open-ended ones.
+
 ## Learning
 
 - Treat notable design and refactoring decisions as learning opportunities: name
