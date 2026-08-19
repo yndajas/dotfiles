@@ -48,9 +48,10 @@
 
 - Don't suppress or truncate command output — no piping through `tail`, `head`,
   etc. Show the full output.
-- When presenting a complex command (long pipelines, multiple flags, chained
-  commands), break it across multiple lines with `\` line continuations so it's
-  easier to read.
+- Lay out commands to be easy to read and audit, regardless of complexity.
+  Don't use semicolons to run multiple commands on one line; put each command
+  on its own line. Break long or chained commands (pipelines, `&&` chains,
+  many flags) across multiple lines with `\` line continuations.
 - Some GOV.UK repos (e.g. `asset-manager`) run their tooling in Docker: run
   commands like RSpec, Rails, RuboCop, and rake via `govuk-docker-run`
   (e.g. `govuk-docker-run bundle exec rspec spec/foo_spec.rb:12`). Not all
