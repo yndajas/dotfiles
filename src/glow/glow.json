@@ -27,13 +27,31 @@
   "enumeration": {
     "block_prefix": ". "
   },
-  "heading": {
+  "h1": {
     "background_color": "63",
-    "block_suffix": "\n",
-    "bold": true,
     "color": "228",
     "prefix": " ",
     "suffix": " "
+  },
+  "h2": {
+    "prefix": "## "
+  },
+  "h3": {
+    "prefix": "### "
+  },
+  "h4": {
+    "prefix": "#### "
+  },
+  "h5": {
+    "prefix": "##### "
+  },
+  "h6": {
+    "prefix": "###### "
+  },
+  "heading": {
+    "block_suffix": "\n",
+    "bold": true,
+    "color": "63"
   },
   "hr": {
     "color": "249",
