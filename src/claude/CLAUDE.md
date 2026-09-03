@@ -101,6 +101,12 @@
 - Use "allowlist" and "denylist", never "whitelist" or "blacklist" (in code,
   comments, chat, and generated content alike). Adapt derived forms too, e.g.
   "allowlisted" rather than "whitelisted".
+- Avoid bold text in artifacts and generated documents unless it matches the
+  document's existing style or I ask for it.
+- Avoid twee filler like "genuinely" and "say the word"; be direct and to the
+  point rather than fluffy.
+- After drafting a response or artifact, scan it for any sentence that repeats
+  an idea already stated, and cut or consolidate it.
 
 ## Making a case
 
