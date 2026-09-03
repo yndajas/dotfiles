@@ -24,6 +24,8 @@ function path_excludes() {
 
 export DOTFILES_DIR="${HOME}/code/github.com/yndajas/dotfiles"
 
+alias glow="glow -p -s ${HOME}/.config/glow.json"
+
 # useful for updating mas and possibly go and cargo (and vscode, when
 # installed), entries before brew bundle install is run by the dotfiles install
 # script, which could reinstall anything that's been removed

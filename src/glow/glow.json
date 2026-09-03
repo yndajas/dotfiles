@@ -1,0 +1,79 @@
+{
+  "block_quote": {
+    "indent": 1,
+    "indent_token": "│ "
+  },
+  "code": {
+    "color": "203"
+  },
+  "code_block": {
+    "block_prefix": "\n",
+    "block_suffix": "\n",
+    "color": "202"
+  },
+  "definition_description": {
+    "block_prefix": "\n* "
+  },
+  "definition_list": {},
+  "definition_term": {},
+  "document": {
+    "block_suffix": "\n",
+    "color": "234"
+  },
+  "emph": {
+    "bold": true,
+    "italic": true
+  },
+  "enumeration": {
+    "block_prefix": ". "
+  },
+  "heading": {
+    "background_color": "63",
+    "block_suffix": "\n",
+    "bold": true,
+    "color": "228",
+    "prefix": " ",
+    "suffix": " "
+  },
+  "hr": {
+    "color": "249",
+    "format": "\n--------\n"
+  },
+  "html_block": {},
+  "html_span": {},
+  "image": {
+    "color": "205",
+    "underline": true
+  },
+  "image_text": {
+    "color": "243",
+    "format": "Image: {{.text}} →"
+  },
+  "item": {
+    "block_prefix": "• "
+  },
+  "link": {
+    "color": "36",
+    "underline": true
+  },
+  "link_text": {
+    "bold": true,
+    "color": "29"
+  },
+  "list": {
+    "level_indent": 2
+  },
+  "paragraph": {},
+  "strikethrough": {
+    "crossed_out": true
+  },
+  "strong": {
+    "bold": true
+  },
+  "table": {},
+  "task": {
+    "ticked": "[✓] ",
+    "unticked": "[ ] "
+  },
+  "text": {}
+}
