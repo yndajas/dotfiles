@@ -48,10 +48,13 @@
 
 - Don't suppress or truncate command output — no piping through `tail`, `head`,
   etc. Show the full output.
-- Lay out commands to be easy to read and audit, regardless of complexity.
-  Don't use semicolons to run multiple commands on one line; put each command
-  on its own line. Break long or chained commands (pipelines, `&&` chains,
-  many flags) across multiple lines with `\` line continuations.
+- Before running any Bash command, check it: if it contains `;`, `&&`, `||`,
+  or a pipe `|`, it MUST be laid out multi-line before you run it. Put each
+  command on its own line, break `&&`/`||`/pipe chains across lines with `\`
+  continuations, and never use `;` to sequence commands (use separate lines
+  or separate calls). A single command with many flags also gets `\`-wrapped.
+  If a command would be a one-line chain, stop and reformat it first — this
+  applies to throwaway exploration commands too, not just scripts you save.
 - Some GOV.UK repos (e.g. `asset-manager`) run their tooling in Docker: run
   commands like RSpec, Rails, RuboCop, and rake via `govuk-docker-run`
   (e.g. `govuk-docker-run bundle exec rspec spec/foo_spec.rb:12`). Not all
