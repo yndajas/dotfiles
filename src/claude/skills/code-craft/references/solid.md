@@ -15,7 +15,11 @@ design (Constantine, Yourdon, DeMarco): group what changes together, separate
 what changes for different reasons. Test: can you describe the class in one
 sentence without "and"? Metz teaches the same idea - see
 `object-oriented-design.md`. The Fowler smells it cures are Divergent Change and
-Large Class.
+Large Class, which surface by *convergence* (findings from several dimensions on
+one class), so a small class can still be a God Object (Riel's God Class).
+Detect a breach by responsibility count and the subject-pivot, not by size - the
+mechanical procedure (count app-authored axes; 3+ rates High regardless of
+length) is in `object-oriented-design.md`.
 
 ### O - Open/Closed (Bertrand Meyer, 1988)
 

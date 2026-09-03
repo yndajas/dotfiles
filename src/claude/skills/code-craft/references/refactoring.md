@@ -38,6 +38,11 @@ cure.
 - Divergent Change (one class changed for many different reasons), Shotgun
   Surgery (one change scattered across many classes), Parallel Inheritance
   Hierarchies.
+- Divergent Change (and its extreme, the God Object / God Class) is detected by
+  responsibility count and the subject-pivot in `reviewing.md`, *not* by line
+  count: a small class can be one, and a class collecting findings from several
+  different smells at once is itself the finding even when no single smell named
+  it.
 
 **Dispensables** - things adding no value.
 - Comments (often deodorant for bad code), Duplicated Code, Dead Code, Lazy

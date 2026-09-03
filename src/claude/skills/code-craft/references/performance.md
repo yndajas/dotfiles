@@ -53,7 +53,12 @@ Most Rails performance problems are design/abstraction problems in disguise:
 
 - **N+1 queries** are the classic example - an abstraction leak, not a
   micro-issue. Use `includes`/`preload`/`eager_load`; the `bullet` gem surfaces
-  them.
+  them. They are frequently *triggered from the view layer*: an ordering scope
+  or `.count` on an association inside a partial that renders once per row will
+  re-query per row and silently defeat a controller's `includes`. A
+  query-pattern sweep therefore has to read the templates, not just controllers
+  and models - a Ruby-only reading passes the `includes` and never sees the
+  `.ordered` that undoes it.
 - **Do set work in the database, not in Ruby** - filter, count, and aggregate
   with SQL rather than loading records and looping.
 - **Select only the columns you need**, and add **indexes** for the columns you

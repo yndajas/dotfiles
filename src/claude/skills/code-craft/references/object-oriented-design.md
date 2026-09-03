@@ -33,6 +33,37 @@ Some formulations add: **no more than 4 instance variables** in a class.
 - Low: borderline cases; violations in migrations, routes, DSLs, config, or
   tests, where the rules often should be broken.
 
+**Size is not the only axis, and for classes it is the weaker one.** Line count
+catches a *bloated* class; it misses an *incohesive* one. The deeper test is
+cohesion (structured design: Constantine, Yourdon, DeMarco) - can you describe
+the class in one sentence without "and" (Metz)? A class that fails that while
+spanning unrelated axes (say auth, visibility, and presentation) is a **God
+Class** (Arthur Riel, *Object-Oriented Design Heuristics*) / Divergent Change,
+and rates High **regardless of length** - a ~130-line class can be one. A size
+sweep cannot see this; it surfaces only when findings are re-indexed by subject
+(the subject-pivot in `reviewing.md`), where one class collecting findings from
+several different dimensions at once is the signal.
+
+### Detecting a God Class mechanically (not by eye)
+
+The cohesion test fails silently when you run it as an impression, so make it an
+artifact. For each controller, model, and service in scope:
+
+1. Write its responsibilities as an explicit bullet list - the distinct axes it
+   changes for (e.g. for a `User`: authentication, identity, the social graph,
+   preferences/presentation, authorization/visibility).
+2. Count only *app-authored* axes. A framework mixin (ActiveRecord persistence,
+   a Devise auth module) is one axis, not an excuse that absorbs the rest.
+3. **3+ distinct app-authored axes = God Class = High, regardless of line
+   count.** A 130-line class with five axes is a God Class; a 400-line class
+   doing one thing is not.
+
+This is deliberately mechanical: the enumeration and the count are the finding.
+"Describe it in one sentence without and" is the same test - if the sentence
+needs an "and", list what follows each "and" and you have your axes. Do not
+downgrade the result with "but it's a normal Rails model" or "the methods are
+each small"; those describe symptoms of the God Class, not reasons it isn't one.
+
 ## The refactorings the rules push you toward
 
 - **Long class** - extract a collaborator with its own responsibility (SRP);

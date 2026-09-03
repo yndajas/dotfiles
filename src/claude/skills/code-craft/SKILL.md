@@ -63,9 +63,16 @@ prompt. Skip this for trivial or mechanical changes.
 
 ## Three modes
 
-**Review** - read the code, name issues by their catalogue term (smell, rule
-violation) and cite the source, reference `file:line`, rank by impact, and say
-plainly when code is fine as-is. Do not invent problems to look thorough.
+**Review** - name issues by their catalogue term (smell, rule violation), cite
+the source, reference `file:line`, rank by impact, and say plainly when code is
+fine as-is. Do not invent problems to look thorough. For anything larger than a
+single file or a single diff, load the `craft-reviewing` skill for the shared
+protocol and rigour apparatus, then sweep the code-craft dimensions in
+`references/reviewing.md` and the catalogues below. Run correctness and
+security as separate passes (the security pass has its own catalogue and
+sources - `references/security.md`). A whole-codebase review done
+file-by-file from memory misses the structural findings (God Object, inverted
+dependencies, repeated switches) and reads as a shallow sample.
 
 **Refactor** - confirm tests exist and pass first. Apply changes in small,
 behaviour-preserving steps, running tests between them. Narrate each step. Never
@@ -74,14 +81,27 @@ mix a refactor with a behaviour change in the same step.
 **Architect** - when structuring a new feature, start from the simplest design
 that satisfies the requirement. Reach for a pattern only when a concrete force
 (varying behaviour, many collaborators, a hard-to-test seam) makes it pay for
-itself. Name the pattern and the force it addresses.
+itself. Name the pattern and the force it addresses. Where the feature handles
+access control or untrusted input, design in the security principles as you go
+(`references/security.md`: least privilege, fail-safe defaults, complete
+mediation) rather than leaving them to a later pass.
 
 ## Which reference to read when
 
-Read only what the task needs; each file is self-contained.
+Read only what the task needs; each file is self-contained. Exception: for a
+review that spans more than one file or a whole codebase, treat the catalogues
+as mandatory checklists, not optional reading - start by loading the
+`craft-reviewing` skill (shared protocol + rigour) and your
+`references/reviewing.md` sweep dimensions, then pull `refactoring.md` (smells),
+`solid.md`
+(coupling, connascence, dependency direction), and `object-oriented-design.md`
+(class and method sizing) as the sweep dimensions. Working from this overview
+alone is what makes a review miss the systematic, structural findings.
 
 | Situation | Read |
 |---|---|
+| Reviewing more than one file or a whole codebase - the shared protocol, rigour apparatus, and execution choice | load the `craft-reviewing` skill |
+| The code-craft dimensions that need a whole-scope sweep | `references/reviewing.md` |
 | Ruby OOP sizing, class/method design, dependencies, Law of Demeter | `references/object-oriented-design.md` |
 | Naming a code smell, choosing and safely applying a refactoring | `references/refactoring.md` |
 | Deciding whether a classic pattern fits a new design | `references/design-patterns.md` |
@@ -89,6 +109,7 @@ Read only what the task needs; each file is self-contained.
 | OOP design principles - SOLID, coupling, connascence, module depth, data modelling | `references/solid.md` |
 | Performance as a design concern - complexity, queries, caching | `references/performance.md` |
 | Reliability of services - idempotency, retries, timeouts, failure handling | `references/reliability.md` |
+| Security - access control, injection, info disclosure, secure design | `references/security.md` |
 | Whether a test earns its place, what to test, at what level | `references/testing.md` |
 
 Most real reviews touch more than one. A typical flow: spot smells with Fowler,
