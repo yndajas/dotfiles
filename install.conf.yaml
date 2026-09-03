@@ -28,6 +28,7 @@
     ${HOME}/.claude/CLAUDE.md: src/claude/CLAUDE.md
     ${HOME}/.claude/settings.json: src/claude/settings.json
     ${HOME}/.claude/skills: src/claude/skills
+    ${HOME}/.claude/workflows: src/claude/workflows
     ${HOME}/.config/bat: src/bat
     ${HOME}/.config/ghostty/config: src/ghostty/config
     ${HOME}/.config/glow.json: src/glow/glow.json

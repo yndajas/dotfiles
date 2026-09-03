@@ -19,7 +19,8 @@
       }
     }
   },
-  "preferredNotifChannel": "ghostty",
   "theme": "light",
-  "verbose": true
+  "verbose": true,
+  "preferredNotifChannel": "ghostty",
+  "skipWorkflowUsageWarning": true
 }
