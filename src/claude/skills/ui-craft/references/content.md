@@ -97,6 +97,21 @@ text explanation visible to everyone, not hidden in alt.
   simply; consider offering it in more than one format (a table plus a summary
   sentence).
 
+## The words often live outside the template (review scope)
+
+Much of what this file governs - error and status messages, link and button
+text, alt text, accessible names - is generated in application code or
+configuration, not in the template markup: validation messages,
+translation/localisation files, status text set by a controller, alt text and
+accessible names built in helpers or components. When reviewing, read those
+sources too, through the content lens. The markup can render a correct label and
+a correctly-marked error region while the message a screen reader announces is
+jargon or fails to identify the field ("is invalid") - and you only catch that
+by reading the template and the code or config that feeds it together. This is
+the ui-craft side of scoping by lens rather than by file type, the mirror of a
+code-craft reviewer reading the controller and the view together to catch a
+view-triggered query.
+
 ## Further reading
 
 - dxw accessibility manual - https://accessibility.dxw.com/content/
