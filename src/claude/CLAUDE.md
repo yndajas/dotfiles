@@ -39,10 +39,19 @@
 
 ## Learning
 
-- Treat notable design and refactoring decisions as learning opportunities: name
-  the principle at work, explain the why briefly, and offer (without forcing) a
-  short learning exercise, engaging the `learning-opportunities` skill on that
-  specific principle. Skip for trivial changes.
+- For design or refactoring work outside a craft skill's scope (the code-craft
+  and ui-craft skills carry their own learning mode), treat notable decisions as
+  learning opportunities: name the principle, explain the why briefly, and offer
+  (without forcing) a short exercise via the `learning-opportunities` skill on
+  that specific principle. Skip for trivial changes.
+
+## Reviewing and auditing
+
+- The review methodology (scope, depth, sweeping by dimension, the two
+  aggregations, the rigour apparatus, and choosing inline vs the swarm) lives in
+  the `craft-reviewing`, `code-craft`, and `ui-craft` skills, not here. Load the
+  relevant skill when reviewing or auditing anything broader than a single file,
+  and follow it rather than any summary carried in memory.
 
 ## Running commands
 
