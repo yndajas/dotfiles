@@ -103,6 +103,14 @@
   broken access control, and so on) and flag anything you spot.
 - Never print, log, or commit secrets or credentials.
 
+## Drafting written content
+
+- For substantial prose I intend to publish in my own voice (posts, articles,
+  longer docs), draft a plain, concise bullet-point skeleton first: the section
+  structure plus the substance of each point, with no stylistic flourish, so it
+  is fast to review and correct. Leave the prose styling to me, or expand it
+  only when I ask. This keeps my review on structure and content, not wording.
+
 ## Writing style
 
 - Don't use em dashes in commit messages, PR bodies, or plain-text content
