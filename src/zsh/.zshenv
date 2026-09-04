@@ -26,6 +26,13 @@ export DOTFILES_DIR="${HOME}/code/github.com/yndajas/dotfiles"
 
 alias glow='glow -p -s ${HOME}/.config/glow.json'
 
+# properly reflows hard-wrapped lines that are over- or under-length relative to
+# glow's width
+# remove once this PR lands: https://github.com/charmbracelet/glow/pull/985
+function cleanglow() {
+  glow "${@:2}" =(pandoc --from=gfm --to=gfm --wrap=none -- "${1}")
+}
+
 # useful for updating mas and possibly go and cargo (and vscode, when
 # installed), entries before brew bundle install is run by the dotfiles install
 # script, which could reinstall anything that's been removed
