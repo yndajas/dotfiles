@@ -36,6 +36,11 @@
 - When asking me a yes/no or otherwise few-choice question, favour the
   `AskUserQuestion` tool over free-text prose, so I can answer by selecting an
   option. Reserve prose questions for genuinely open-ended ones.
+- Before applying a change I need to review, show the full code or content in
+  your response and wait for my go-ahead. Don't rely on an `AskUserQuestion`
+  option preview to carry it, since previews are truncated in the terminal.
+  This applies regardless of tool mode: if edits are going through Bash rather
+  than the Edit tool, there's no diff prompt, so the review has to be explicit.
 
 ## Learning
 
