@@ -30,8 +30,7 @@
   "h1": {
     "background_color": "63",
     "color": "228",
-    "prefix": " ",
-    "suffix": " "
+    "prefix": "# "
   },
   "h2": {
     "prefix": "## "
