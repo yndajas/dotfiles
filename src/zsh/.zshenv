@@ -30,7 +30,7 @@ alias glow='glow -p -s ${HOME}/.config/glow.json'
 # glow's width
 # remove once this PR lands: https://github.com/charmbracelet/glow/pull/985
 function cleanglow() {
-  glow "${@:2}" =(pandoc --from=gfm --to=gfm --wrap=none -- "${1}")
+  glow "${@:2}" <(pandoc --from=gfm --to=gfm --wrap=none -- "${1}")
 }
 
 # useful for updating mas and possibly go and cargo (and vscode, when
