@@ -7,4 +7,6 @@ function warn_about_shellcheck_issues {
     set_text_format --foreground red && \
     echo -e "Warning: issues identified with dotfiles\n\$ ${shellcheck_command}"; \
   }
+
+  set_text_format --reset
 }

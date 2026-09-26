@@ -45,4 +45,6 @@ function warn_about_unsynced_dotfiles {
     set_text_format --foreground red
     echo 'Warning: dotfiles submodule is out of date'
   fi
+
+  set_text_format --reset
 }
