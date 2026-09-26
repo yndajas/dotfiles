@@ -19,7 +19,7 @@ require("conform").setup({
     graphql = { "biome-check", "prettier", stop_after_first = true },
     html = { "prettier", "biome-check", stop_after_first = true },
     javascript = { "biome-check", "prettier", stop_after_first = true },
-    json = { "jq", "prettier", stop_after_first = true },
+    json = { "jq", "biome-check", "prettier", stop_after_first = true },
     lua = { "stylua" },
     markdown = {
       "prettier",
