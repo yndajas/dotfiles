@@ -21,7 +21,13 @@ require("conform").setup({
     javascript = { "biome-check", "prettier", stop_after_first = true },
     json = { "jq", "prettier", stop_after_first = true },
     lua = { "stylua" },
-    markdown = { "prettier", "markdownlint", stop_after_first = true },
+    markdown = {
+      "prettier",
+      "markdownlint",
+      "mdformat",
+      stop_after_first = true,
+      timeout_ms = 1000,
+    },
     ruby = { "rubocop", timeout_ms = 5000 },
     rust = { "rustfmt" },
     sql = { "sqlfluff" },
@@ -37,4 +43,8 @@ require("conform").formatters["biome-check"] = {
     "--graphql-formatter-enabled=true",
     "--html-formatter-enabled=true",
   },
+}
+
+require("conform").formatters.mdformat = {
+  append_args = { "--wrap", "80" },
 }
