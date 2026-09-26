@@ -158,6 +158,8 @@
 - Use the body to capture context or reasoning that could otherwise be lost,
   but don't restate the subject or describe what's easily gleaned from the
   diff. Omit the body when it would only do that.
+- Keep that reasoning out of code comments: a comment should carry only what
+  a reader needs to follow the code in front of them.
 - No trailing full stops on body paragraphs.
 - Wrap code identifiers and symbols in backticks (e.g. `params.dig`, `@error`,
   `NoMethodError`).
