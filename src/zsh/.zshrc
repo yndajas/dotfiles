@@ -25,7 +25,6 @@ source "${HOME}/.config/zshrc/shell/pushd.zsh"
 ## system programs
 
 source "${HOME}/.config/zshrc/system/less.zsh"
-source "${HOME}/.config/zshrc/system/ssh.zsh"
 
 ## external programs
 
