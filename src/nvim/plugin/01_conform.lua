@@ -30,3 +30,11 @@ require("conform").setup({
     zsh = { "shellcheck" },
   },
 })
+
+require("conform").formatters["biome-check"] = {
+  append_args = {
+    "--css-formatter-enabled=true",
+    "--graphql-formatter-enabled=true",
+    "--html-formatter-enabled=true",
+  },
+}
