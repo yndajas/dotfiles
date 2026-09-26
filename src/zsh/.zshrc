@@ -26,6 +26,10 @@ source "${HOME}/.config/zshrc/shell/pushd.zsh"
 
 source "${HOME}/.config/zshrc/system/less.zsh"
 
+## self-written programs needed by external programs
+
+source "${HOME}/.config/zshrc/user/cache.zsh"
+
 ## external programs
 
 # needed before anything that relies on Homebrew-installed apps (probably)
