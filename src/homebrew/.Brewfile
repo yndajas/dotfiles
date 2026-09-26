@@ -1,5 +1,6 @@
 tap "alphagov/gds"
 tap "domt4/autoupdate", trusted: { formulae: ["autoupdate"], commands: ["autoupdate"] }
+tap "knight42/tap"
 tap "ngrok/ngrok", trusted: { formulae: ["ngrok"] }
 tap "terraform-linters/tap"
 # CLI tool for working with Architecture Decision Records
@@ -144,6 +145,7 @@ brew "zoxide"
 brew "zsh"
 # CLI for common commands used by Government Digital Service staff
 brew "alphagov/gds/gds-cli", trusted: true
+brew "knight42/tap/krelay", trusted: true
 # GraphQL client
 cask "altair-graphql-client"
 # Securely stores and accesses AWS credentials in a development environment
