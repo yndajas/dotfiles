@@ -110,6 +110,10 @@
   structure plus the substance of each point, with no stylistic flourish, so it
   is fast to review and correct. Leave the prose styling to me, or expand it
   only when I ask. This keeps my review on structure and content, not wording.
+- When a piece of work warrants a written summary or report, write it to a
+  local Markdown file in the relevant repo. Don't publish it as an Artifact,
+  and don't reach for HTML or a bespoke visual design. Ask before publishing
+  an Artifact if you think one is genuinely warranted.
 
 ## Writing style
 
