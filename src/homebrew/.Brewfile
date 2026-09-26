@@ -67,6 +67,8 @@ brew "luarocks"
 brew "mas"
 # Open source relational database management system
 brew "mysql"
+# Open source relational database management system
+brew "mysql-client@8.4"
 # Free (GNU) replacement for the Pico text editor
 brew "nano"
 # Ambitious Vim-fork focused on extensibility and agility
