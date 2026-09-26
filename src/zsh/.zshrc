@@ -63,6 +63,7 @@ source "${HOME}/.config/zshrc/user/git.zsh"
 source "${HOME}/.config/zshrc/user/hints.zsh"
 source "${HOME}/.config/zshrc/user/homebrew.zsh"
 source "${HOME}/.config/zshrc/user/manual.zsh"
+source "${HOME}/.config/zshrc/user/mdformat.zsh"
 source "${HOME}/.config/zshrc/user/shellcheck.zsh"
 
 ## local customisations (not backed up at github.com/yndajas/dotfiles)
@@ -73,4 +74,5 @@ source "${HOME}/.config/zshrc/user/shellcheck.zsh"
 
 warn_about_unsynced_dotfiles
 warn_about_shellcheck_issues
+warn_about_mdformat_plugins
 hints random
