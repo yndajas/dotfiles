@@ -10,8 +10,8 @@ observable behaviour**. It is not rewriting.
 
 - Work in **small, behaviour-preserving steps**.
 - **Run the tests between every step.** If there is no test coverage, add it
-  before refactoring, or refactor only under the compiler's protection using
-  the most mechanical steps.
+  before refactoring, or refactor only under the compiler's protection using the
+  most mechanical steps.
 - Never refactor and change behaviour in the same step.
 - Refactoring is **opportunistic** - done in small doses as part of everyday
   work, to make a needed change easier ("first make the change easy, then make
@@ -25,16 +25,19 @@ A smell is a surface indication of a deeper problem. Naming it points to the
 cure.
 
 **Bloaters** - things that have grown too big.
+
 - Long Method, Large Class, Primitive Obsession (using primitives instead of
   small objects), Long Parameter List, Data Clumps (the same group of fields
   travelling together).
 
 **Object-orientation abusers** - OO applied incompletely.
+
 - Switch Statements (type-based conditionals begging for polymorphism),
   Temporary Field, Refused Bequest (a subclass ignoring inherited behaviour),
   Alternative Classes with Different Interfaces.
 
 **Change preventers** - one change forces many edits.
+
 - Divergent Change (one class changed for many different reasons), Shotgun
   Surgery (one change scattered across many classes), Parallel Inheritance
   Hierarchies.
@@ -45,11 +48,13 @@ cure.
   it.
 
 **Dispensables** - things adding no value.
+
 - Comments (often deodorant for bad code), Duplicated Code, Dead Code, Lazy
-  Class, Speculative Generality (abstraction for a future that never came),
-  Data Class.
+  Class, Speculative Generality (abstraction for a future that never came), Data
+  Class.
 
 **Couplers** - excessive coupling.
+
 - Feature Envy (a method more interested in another class's data), Inappropriate
   Intimacy, Message Chains (`a.b().c().d()`), Middle Man (a class that only
   delegates), Insider Trading.

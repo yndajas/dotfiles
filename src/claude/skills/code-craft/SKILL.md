@@ -28,11 +28,11 @@ Prefer the simplest thing that works. Sandi Metz and Fowler push toward smaller,
 clearer, behaviour-preserving code; the Gang of Four offers structures that add
 indirection. These only conflict if you reach for a pattern speculatively.
 
-**Introduce a pattern, abstraction, or indirection only to remove a problem
-that exists now, never one you imagine might exist later.** When Fowler's smells
-and a GoF pattern disagree, the smell wins: remove duplication and coupling
-first; a pattern is justified only if it leaves the code simpler against a real,
-present need. This is Fowler's "economics, not aesthetics" and the Pragmatic
+**Introduce a pattern, abstraction, or indirection only to remove a problem that
+exists now, never one you imagine might exist later.** When Fowler's smells and
+a GoF pattern disagree, the smell wins: remove duplication and coupling first; a
+pattern is justified only if it leaves the code simpler against a real, present
+need. This is Fowler's "economics, not aesthetics" and the Pragmatic
 Programmer's warning against speculative generality, in one rule. Put plainly:
 YAGNI (you aren't gonna need it) and KISS (keep it simple) - prefer the simplest
 thing that works until a concrete, present need proves otherwise.
@@ -68,11 +68,11 @@ the source, reference `file:line`, rank by impact, and say plainly when code is
 fine as-is. Do not invent problems to look thorough. For anything larger than a
 single file or a single diff, load the `craft-reviewing` skill for the shared
 protocol and rigour apparatus, then sweep the code-craft dimensions in
-`references/reviewing.md` and the catalogues below. Run correctness and
-security as separate passes (the security pass has its own catalogue and
-sources - `references/security.md`). A whole-codebase review done
-file-by-file from memory misses the structural findings (God Object, inverted
-dependencies, repeated switches) and reads as a shallow sample.
+`references/reviewing.md` and the catalogues below. Run correctness and security
+as separate passes (the security pass has its own catalogue and sources -
+`references/security.md`). A whole-codebase review done file-by-file from memory
+misses the structural findings (God Object, inverted dependencies, repeated
+switches) and reads as a shallow sample.
 
 **Refactor** - confirm tests exist and pass first. Apply changes in small,
 behaviour-preserving steps, running tests between them. Narrate each step. Never
@@ -93,24 +93,24 @@ review that spans more than one file or a whole codebase, treat the catalogues
 as mandatory checklists, not optional reading - start by loading the
 `craft-reviewing` skill (shared protocol + rigour) and your
 `references/reviewing.md` sweep dimensions, then pull `refactoring.md` (smells),
-`solid.md`
-(coupling, connascence, dependency direction), and `object-oriented-design.md`
-(class and method sizing) as the sweep dimensions. Working from this overview
-alone is what makes a review miss the systematic, structural findings.
+`solid.md` (coupling, connascence, dependency direction), and
+`object-oriented-design.md` (class and method sizing) as the sweep dimensions.
+Working from this overview alone is what makes a review miss the systematic,
+structural findings.
 
-| Situation | Read |
-|---|---|
-| Reviewing more than one file or a whole codebase - the shared protocol, rigour apparatus, and execution choice | load the `craft-reviewing` skill |
-| The code-craft dimensions that need a whole-scope sweep | `references/reviewing.md` |
-| Ruby OOP sizing, class/method design, dependencies, Law of Demeter | `references/object-oriented-design.md` |
-| Naming a code smell, choosing and safely applying a refactoring | `references/refactoring.md` |
-| Deciding whether a classic pattern fits a new design | `references/design-patterns.md` |
-| General construction quality, naming, defensiveness, decoupling | `references/general-principles.md` |
-| OOP design principles - SOLID, coupling, connascence, module depth, data modelling | `references/solid.md` |
-| Performance as a design concern - complexity, queries, caching | `references/performance.md` |
-| Reliability of services - idempotency, retries, timeouts, failure handling | `references/reliability.md` |
-| Security - access control, injection, info disclosure, secure design | `references/security.md` |
-| Whether a test earns its place, what to test, at what level | `references/testing.md` |
+| Situation                                                                                                      | Read                                   |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Reviewing more than one file or a whole codebase - the shared protocol, rigour apparatus, and execution choice | load the `craft-reviewing` skill       |
+| The code-craft dimensions that need a whole-scope sweep                                                        | `references/reviewing.md`              |
+| Ruby OOP sizing, class/method design, dependencies, Law of Demeter                                             | `references/object-oriented-design.md` |
+| Naming a code smell, choosing and safely applying a refactoring                                                | `references/refactoring.md`            |
+| Deciding whether a classic pattern fits a new design                                                           | `references/design-patterns.md`        |
+| General construction quality, naming, defensiveness, decoupling                                                | `references/general-principles.md`     |
+| OOP design principles - SOLID, coupling, connascence, module depth, data modelling                             | `references/solid.md`                  |
+| Performance as a design concern - complexity, queries, caching                                                 | `references/performance.md`            |
+| Reliability of services - idempotency, retries, timeouts, failure handling                                     | `references/reliability.md`            |
+| Security - access control, injection, info disclosure, secure design                                           | `references/security.md`               |
+| Whether a test earns its place, what to test, at what level                                                    | `references/testing.md`                |
 
 Most real reviews touch more than one. A typical flow: spot smells with Fowler,
 size and shape objects with Metz, and only then ask whether a GoF pattern earns

@@ -30,10 +30,10 @@ sidecar scales down to what's in scope (see Proportionality) but the same
 
 Match the apparatus to the review. For an inline **exhaustive whole-surface**
 review, all of it is mandatory. For a **headline** or **subtree** review, the
-catalogue-load ledger, credits ledger, and self-grill still earn their place; the
-full census and matrix scale down to what's in scope. If filling the matrix by hand is impractical
-because the surface is too large, that is the signal to offer the swarm (see
-`protocol.md`), not to drop coverage silently.
+catalogue-load ledger, credits ledger, and self-grill still earn their place;
+the full census and matrix scale down to what's in scope. If filling the matrix
+by hand is impractical because the surface is too large, that is the signal to
+offer the swarm (see `protocol.md`), not to drop coverage silently.
 
 ## 1. Catalogue-load ledger - prove you opened every catalogue
 
@@ -42,11 +42,11 @@ dimensions* (the ones in your lens's `reviewing.md`) and the high-stakes flows.
 They do **not** force the flat, single-subject catalogue checks - skip link and
 landmark naming (`accessible-code.md`), required-field marking (`forms.md`), a
 non-SQL injection sink like CSV formula injection (`security.md`), a fail-open
-default (`reliability.md`) - because no *sweep* owns them. Those checks live only
-in the catalogues, so a review that never opens a catalogue silently drops its
-entire single-subject contribution while the matrix still looks full. That is the
-exact gap that lets an exhaustive review miss a check every ordinary single-round
-review catches.
+default (`reliability.md`) - because no *sweep* owns them. Those checks live
+only in the catalogues, so a review that never opens a catalogue silently drops
+its entire single-subject contribution while the matrix still looks full. That
+is the exact gap that lets an exhaustive review miss a check every ordinary
+single-round review catches.
 
 So the first artifact, before any finding: a ledger with **one row per catalogue
 your lens declares mandatory** for an exhaustive review, each marked with the
@@ -60,10 +60,10 @@ evidence that you actually read it - a pasted `Read` of the file (or its
 - **ui-craft**: `accessible-code.md`, `usability.md`, `forms.md`, `content.md`,
   `visual-design.md`.
 
-| Catalogue | Read? (evidence) | Single-subject checks it contributed |
-|---|---|---|
-| security.md | Read 1-120 | CSV/formula injection, existence oracle, … |
-| … | … | … |
+| Catalogue   | Read? (evidence) | Single-subject checks it contributed       |
+| ----------- | ---------------- | ------------------------------------------ |
+| security.md | Read 1-120       | CSV/formula injection, existence oracle, … |
+| …           | …                | …                                          |
 
 A catalogue with no Read evidence is **unread**, full stop - open it now, before
 writing the report. An exhaustive review may not attest completeness while a
@@ -81,13 +81,13 @@ often contradicts itself: crediting a pattern as consistent when a sibling
 breaks it, or an operation as safe when a race breaks it. Before writing any
 credit, falsify it - keyed to the *kind* of claim:
 
-| Claim shape | The question that falsifies it |
-|---|---|
-| "X is done right" (a pattern/consistency claim) | List every site X applies to. Which fail? |
-| "X is safe / idempotent" | What happens on the second concurrent call, the retry, the malformed input? |
-| "contrast / theme / state is fine" | Which of the N cases (themes, states) did you actually compute or check? |
-| "the fix is handled everywhere" | Search for the pattern; count the sites; are any missed? |
-| "N+1 avoided / the eager-load works" | Trace the SQL the *templates* fire, not the loader in the controller. Which per-row call (an ordering, count, size, or a scope invoked on an already-loaded collection) re-queries and defeats the preload? |
+| Claim shape                                     | The question that falsifies it                                                                                                                                                                              |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "X is done right" (a pattern/consistency claim) | List every site X applies to. Which fail?                                                                                                                                                                   |
+| "X is safe / idempotent"                        | What happens on the second concurrent call, the retry, the malformed input?                                                                                                                                 |
+| "contrast / theme / state is fine"              | Which of the N cases (themes, states) did you actually compute or check?                                                                                                                                    |
+| "the fix is handled everywhere"                 | Search for the pattern; count the sites; are any missed?                                                                                                                                                    |
+| "N+1 avoided / the eager-load works"            | Trace the SQL the *templates* fire, not the loader in the controller. Which per-row call (an ordering, count, size, or a scope invoked on an already-loaded collection) re-queries and defeats the preload? |
 
 A credit about performance is the one most often asserted from the wrong file:
 the eager-load reads correct where it is declared, yet a per-row call in the
@@ -120,14 +120,14 @@ smell that reads as ordinary (a short controller doing three jobs across a few
 terse methods) is precisely the one a "which files feel large" pass skips, so a
 census that only lists the obvious suspects is not a census.
 
-**Seed the roster mechanically, not from memory.** Before filling a census, paste
-the enumeration that defines its universe - a directory or file listing (e.g.
-every file under `app/controllers`), a glob, or a grep - and give every item it
-returns a row. A roster typed from memory is where the unit that reads as
-ordinary gets silently dropped; when the roster itself came from a pasted
+**Seed the roster mechanically, not from memory.** Before filling a census,
+paste the enumeration that defines its universe - a directory or file listing
+(e.g. every file under `app/controllers`), a glob, or a grep - and give every
+item it returns a row. A roster typed from memory is where the unit that reads
+as ordinary gets silently dropped; when the roster itself came from a pasted
 listing, a unit can only be *marked* (swept / n/a / finding), never forgotten.
-This is the artifact-before-attestation rule applied to the census's *input*, not
-just its output.
+This is the artifact-before-attestation rule applied to the census's *input*,
+not just its output.
 
 Where the domain is mechanically searchable, use a search so the census can't
 "forget" a site - and paste the search, not "I looked". The examples below are
@@ -174,8 +174,8 @@ record the criterion each was swept against: for code, whether the action
 loads-then-authorizes or reveals a resource's existence before confirming access
 (the 404-vs-403 / enumeration oracle); for UI, that *every* screen in the flow,
 including content assembled outside the template (a generated image, a token, an
-emailed string), was swept against the full criteria. An auth or destructive flow
-with no row is unswept, not safe.
+emailed string), was swept against the full criteria. An auth or destructive
+flow with no row is unswept, not safe.
 
 ## 4. Coverage matrix - one row per in-scope file/flow
 
@@ -183,9 +183,9 @@ Enumerating scope (protocol step 1) is not the same as sweeping it. Keep a
 matrix in the sidecar - rows are in-scope files/flows, columns are the
 dimensions - and mark each cell swept / n/a / finding. A blank *row* is a file
 you listed but never analysed; a blank *cell* is a dimension you never ran
-against that file (an auth flow you read but didn't check against the criteria, a
-view you never checked for a page title). Both are gaps, and the grid exists so
-they are visible rather than assumed away. Rows include the easily-forgotten
+against that file (an auth flow you read but didn't check against the criteria,
+a view you never checked for a page title). Both are gaps, and the grid exists
+so they are visible rather than assumed away. Rows include the easily-forgotten
 files - leaf/drill-down screens, error and empty states, config and manifest
 files, not just the index screens and the obvious models. The report carries one
 attestation line ("N in-scope files, all swept; auth and destructive flows swept
@@ -207,8 +207,8 @@ modes made interrogative:
   default) were never run - open it now, before finalising. Reading the overview
   or the sweep dimensions is not reading the catalogue.
 - Sidecar: does the coverage sidecar file actually exist, with the census,
-  matrix, and per-dimension searches filled in? Every attestation in the report -
-  name them - points at which cell or pasted command?
+  matrix, and per-dimension searches filled in? Every attestation in the report
+  \- name them - points at which cell or pasted command?
 - Credits: for each credit, what is its falsifying answer (per the ledger)? For
   any performance/eager-load credit, from which file did you falsify it - the
   template, or (wrongly) the loader?
@@ -216,18 +216,18 @@ modes made interrogative:
   which *cell* is blank? Name the high-stakes flows (auth, destructive,
   state-change) and the criterion each was swept against - as a filled table row
   per flow (#3), not a prose claim; an auth or destructive flow without a row is
-  unswept. Did leaf/drill-down, error, empty-state, and config/manifest files get
-  rows?
+  unswept. Did leaf/drill-down, error, empty-state, and config/manifest files
+  get rows?
 - Dimensions: for each whole-scope sweep dimension in the lens's `reviewing.md`,
   paste the command you ran. Any dimension with no recorded search is unswept -
   run it now. (The mandatory-catalogue check is the Catalogues bullet above,
   backed by the catalogue-load ledger - a sweep of `reviewing.md`'s cross-file
   dimensions does not stand in for reading the catalogues.)
 - Census: for each smell you named, paste the search you used to find all its
-  instances. One instance reported - is it genuinely singular, or unswept? Is the
-  responsibility census filled for *every* controller/model/service/screen, or
-  only the ones that looked big? Was each census's roster seeded from a pasted
-  enumeration (#3), so no unit could be silently dropped?
+  instances. One instance reported - is it genuinely singular, or unswept? Is
+  the responsibility census filled for *every* controller/model/service/screen,
+  or only the ones that looked big? Was each census's roster seeded from a
+  pasted enumeration (#3), so no unit could be silently dropped?
 - Performance: for every template that iterates a collection, which per-row call
   fires I/O? Paste the per-template trace, including any scope invoked on an
   already-loaded association.
@@ -249,9 +249,9 @@ The grill catches artifacts you didn't fill; it can't catch a category you never
 tabulated. The only reliable cure for that is an **independent** pass: a
 **fresh** agent (never a fork - a fork inherits your blind spots) that audits
 the code cold against this protocol and the lens dimensions. Independent passes
-have different blind spots, so their findings are closer to a *union* than a
-max - two passes catch far more together than one larger pass, and the evidence
-is that even a many-agent swarm, sharing one dimension list, misses what a
+have different blind spots, so their findings are closer to a *union* than a max
+\- two passes catch far more together than one larger pass, and the evidence is
+that even a many-agent swarm, sharing one dimension list, misses what a
 differently-run pass finds. So treat this as the highest-leverage coverage move,
 not a luxury: **recommend it for any exhaustive or high-stakes review** - still
 user-approved and never launched on your own, since each pass costs roughly

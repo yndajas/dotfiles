@@ -26,8 +26,8 @@ length) is in `object-oriented-design.md`.
 Software entities should be open for extension but closed for modification: you
 should be able to add behaviour without editing existing, working code. Achieve
 it with polymorphism behind a stable abstraction, so a new case is a new class
-rather than another branch in a `case` statement (this is the Strategy and
-State patterns in `design-patterns.md`). Caveat: do not build the abstraction
+rather than another branch in a `case` statement (this is the Strategy and State
+patterns in `design-patterns.md`). Caveat: do not build the abstraction
 speculatively. Wait until a real axis of variation appears - the first time you
 would edit existing code to add a case is the signal to make it open/closed
 there.
@@ -37,9 +37,9 @@ there.
 A subtype must be usable anywhere its supertype is expected, without surprising
 the caller. Concretely, an override must not strengthen preconditions or weaken
 postconditions, must honour the base type's invariants, and must not throw where
-the base does not. A subclass that overrides an inherited method to raise
-"not supported" violates LSP - and is Fowler's Refused Bequest smell. When a
-subtype cannot honour the contract, prefer composition over inheritance (see
+the base does not. A subclass that overrides an inherited method to raise "not
+supported" violates LSP - and is Fowler's Refused Bequest smell. When a subtype
+cannot honour the contract, prefer composition over inheritance (see
 `object-oriented-design.md`).
 
 ### I - Interface Segregation
@@ -70,6 +70,7 @@ than "coupling bad" or even the Law of Demeter. Two components are connascent if
 changing one requires changing the other to keep the system correct.
 
 **Static kinds** (visible in the code), roughly weakest to strongest:
+
 - **Name** - agree on a name (a method name). Weakest and unavoidable.
 - **Type** - agree on a type.
 - **Meaning** - agree on the meaning of a value (e.g. `true` means admin).
@@ -77,14 +78,16 @@ changing one requires changing the other to keep the system correct.
 - **Algorithm** - agree on an algorithm (both sides must hash the same way).
 
 **Dynamic kinds** (only at runtime), generally stronger and worse:
+
 - **Execution** (order of calls matters), **Timing**, **Value** (values must
   change together), **Identity** (must reference the same instance).
 
 **Three rules of thumb:**
+
 1. **Minimise** overall connascence (reduce coupling).
-2. **Prefer weaker forms** - e.g. replace connascence of Position (positional
+1. **Prefer weaker forms** - e.g. replace connascence of Position (positional
    args) with connascence of Name (keyword arguments or a parameter object).
-3. **Keep strong connascence local** - strong coupling within one class is
+1. **Keep strong connascence local** - strong coupling within one class is
    tolerable; the same coupling across module boundaries is not.
 
 Connascence is the most actionable way to *rank* coupling problems in review.
@@ -106,10 +109,10 @@ useful counterweight to Metz's very small methods:
   a concept and cut duplication, but not past the point where the fragments are
   harder to follow than the whole. Judge by reader complexity, not line count.
 - Related Ousterhout ideas worth applying: **information hiding** (a module's
-  job is to hide a design decision), **define errors out of existence**
-  (design APIs so exceptional cases cannot arise), and **strategic over
-  tactical** (invest a little in design as you go rather than only ever
-  bolting on the next feature).
+  job is to hide a design decision), **define errors out of existence** (design
+  APIs so exceptional cases cannot arise), and **strategic over tactical**
+  (invest a little in design as you go rather than only ever bolting on the next
+  feature).
 
 ## Model so illegal states are unrepresentable
 

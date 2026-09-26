@@ -12,25 +12,24 @@ or more of these five factors:
 
 1. **Verify the code is working correctly** - immediate confidence that what you
    wrote does what you think.
-2. **Prevent future regressions** - part of the suite that tells the next person
+1. **Prevent future regressions** - part of the suite that tells the next person
    they did not break your work.
-3. **Document the code's behaviour** - executable documentation that cannot go
+1. **Document the code's behaviour** - executable documentation that cannot go
    stale; the easiest way to show intended use and edge cases.
-4. **Provide design guidance** - writing a test gives the code a *secondary
+1. **Provide design guidance** - writing a test gives the code a *secondary
    client*, forcing a small, non-speculative amount of generality and surfacing
    awkward design before it sets. Hard-to-test code is a design signal, not a
    testing problem.
-5. **Support refactoring** - tests at the right level let you rearrange code
+1. **Support refactoring** - tests at the right level let you rearrange code
    underneath a stable interface without fear.
 
 ### How to use the factors
 
 - This is a **framework for discussing test strategy, not a checklist**. You
   cannot maximise all five at once; they are in tension. Comprehensive unit
-  tests document well (3) but ossify an interface, hurting refactoring (5).
-  Slow top-level integration tests prove behaviour (1) and document (3) but, as
-  they slow the suite, weaken regression value (2) because people stop running
-  them.
+  tests document well (3) but ossify an interface, hurting refactoring (5). Slow
+  top-level integration tests prove behaviour (1) and document (3) but, as they
+  slow the suite, weaken regression value (2) because people stop running them.
 - In review, ask of each test: **which factors does it serve, and are they the
   right ones here?** A test optimising for a factor that does not matter at this
   spot can often be simplified or deleted.
@@ -50,13 +49,13 @@ frame.
 The most actionable rules for deciding *what* a unit test should assert. Test an
 object's interface, not its internals, by classifying each message:
 
-| Message type | Definition | Test by |
-|---|---|---|
-| Incoming query | Returns a value, no side effect | Asserting the returned value |
-| Incoming command | Causes a side effect | Asserting the direct public side effect |
-| Sent to self (private) | Internal | Do not test at all |
-| Outgoing query | You send it, no side effect on others | Ignore (it is the receiver's incoming query) |
-| Outgoing command | You send it, causes a side effect elsewhere | Expecting it was sent (a mock) |
+| Message type           | Definition                                  | Test by                                      |
+| ---------------------- | ------------------------------------------- | -------------------------------------------- |
+| Incoming query         | Returns a value, no side effect             | Asserting the returned value                 |
+| Incoming command       | Causes a side effect                        | Asserting the direct public side effect      |
+| Sent to self (private) | Internal                                    | Do not test at all                           |
+| Outgoing query         | You send it, no side effect on others       | Ignore (it is the receiver's incoming query) |
+| Outgoing command       | You send it, causes a side effect elsewhere | Expecting it was sent (a mock)               |
 
 Rules of thumb: **test the incoming and the outgoing commands; ignore the
 rest.** Never test private methods directly - if you feel you must, it is a sign
@@ -84,6 +83,7 @@ collaborator to talk to. Fix the design, not the test.
 Fowler's "Mocks Aren't Stubs" gives the vocabulary and the debate.
 
 **The five doubles (Meszaros):**
+
 - **Dummy** - passed but never used, just to fill a signature.
 - **Stub** - returns canned answers to calls made during the test.
 - **Spy** - a stub that also records how it was called.
@@ -91,6 +91,7 @@ Fowler's "Mocks Aren't Stubs" gives the vocabulary and the debate.
 - **Fake** - a working but simplified implementation (e.g. an in-memory repo).
 
 **Two schools:**
+
 - **Classicist / Detroit / sociable** - use real collaborators where cheap; test
   a cluster through its outermost object; double only awkward dependencies
   (network, time, randomness). Fewer doubles, tests survive internal

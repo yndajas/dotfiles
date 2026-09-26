@@ -10,13 +10,13 @@ lens's `references/reviewing.md`.
 
 Pin down these five before starting. Lens, scope, and depth are the parameters
 the `craft-review-swarm` workflow takes, so they carry over unchanged whether
-you review inline or fan out; execution is the separate inline-or-fan-out
-choice itself. If any is ambiguous, ask (prefer a single `AskUserQuestion`); if
-the request already fixes them, proceed.
+you review inline or fan out; execution is the separate inline-or-fan-out choice
+itself. If any is ambiguous, ask (prefer a single `AskUserQuestion`); if the
+request already fixes them, proceed.
 
 - **Lens** - code craft, UI craft, or both. A whole-app review usually wants
-  both, run as separate passes over the same files (they read the same files
-  and ask different questions).
+  both, run as separate passes over the same files (they read the same files and
+  ask different questions).
 - **Scope** - the whole codebase/interface, a subtree, or changed files only,
   plus anything to exclude (e.g. tests / `testing.md`). State what's in and out.
 - **Depth** (the workflow's `depth` arg) - how far down the severity tail:
@@ -61,49 +61,50 @@ knows what was and wasn't covered.
 
 ## The protocol
 
-1. **Establish and enumerate the scope, then go deep.** List every file in
-   scope up front and state what's in and out. Coverage comes before depth.
-   Never sample silently: if you review a subset, say so and say what you left
-   out. A review that skipped files but reads as complete is worse than one that
-   admits its gaps. **Scope by lens, not by file type:** the two lenses read the
-   same files and ask different questions, so a file is in scope for whichever
+1. **Establish and enumerate the scope, then go deep.** List every file in scope
+   up front and state what's in and out. Coverage comes before depth. Never
+   sample silently: if you review a subset, say so and say what you left out. A
+   review that skipped files but reads as complete is worse than one that admits
+   its gaps. **Scope by lens, not by file type:** the two lenses read the same
+   files and ask different questions, so a file is in scope for whichever
    dimensions live in it - a query or N+1 fired from a view (code) and the
    error/label/alt-text wording assembled in a controller or config (UI) are
    both in scope even though the markup is "just a view".
-2. **Load the dimension references as checklists.** Read your lens's sweep
+1. **Load the dimension references as checklists.** Read your lens's sweep
    references before forming conclusions (code: `refactoring.md`, `solid.md`,
    `object-oriented-design.md`, `design-patterns.md`, `reliability.md`,
    `performance.md`, `general-principles.md`; UI: `accessible-code.md`,
    `usability.md`, `forms.md`, `content.md`, `visual-design.md`). These turn "I
-   notice this" into "I swept for all of these". **For an exhaustive review every
-   catalogue is mandatory, not "as scope warrants":** the word "optional" is how
-   a whole dimension gets skipped (e.g. `performance.md` on a query-driven app,
-   which is where the N+1s live). If a catalogue genuinely does not apply, record
-   `n/a: <reason>` in the sidecar rather than skipping it silently - and an app
-   that does any I/O can never mark `performance.md` or `reliability.md` n/a. For
-   a headline or subtree review, scope the catalogues to what is in scope, but
-   say which you set aside. **Record this in the catalogue-load ledger
-   (`rigour.md` #1) with a pasted `Read` per catalogue** - "mandatory" without an
-   artifact is what let the flat single-subject checks (skip link,
-   required-field marking, CSV-injection) get dropped while the sweep censuses
-   still read as complete. Reading `reviewing.md`'s cross-file sweep list is not
-   reading the catalogues; that list deliberately omits the single-subject checks.
-3. **Sweep by dimension, not by file.** For each dimension, pass over the whole
+   notice this" into "I swept for all of these". **For an exhaustive review
+   every catalogue is mandatory, not "as scope warrants":** the word "optional"
+   is how a whole dimension gets skipped (e.g. `performance.md` on a
+   query-driven app, which is where the N+1s live). If a catalogue genuinely
+   does not apply, record `n/a: <reason>` in the sidecar rather than skipping it
+   silently - and an app that does any I/O can never mark `performance.md` or
+   `reliability.md` n/a. For a headline or subtree review, scope the catalogues
+   to what is in scope, but say which you set aside. **Record this in the
+   catalogue-load ledger (`rigour.md` #1) with a pasted `Read` per catalogue** -
+   "mandatory" without an artifact is what let the flat single-subject checks
+   (skip link, required-field marking, CSV-injection) get dropped while the
+   sweep censuses still read as complete. Reading `reviewing.md`'s cross-file
+   sweep list is not reading the catalogues; that list deliberately omits the
+   single-subject checks.
+1. **Sweep by dimension, not by file.** For each dimension, pass over the whole
    scope. Sweeping by dimension is what surfaces the cross-file findings a
    file-by-file read cannot see (see your lens file for which dimensions those
    are).
-4. **Run the lens's orthogonal passes over the same code.** They ask different
+1. **Run the lens's orthogonal passes over the same code.** They ask different
    questions and one does not imply the other. Code: correctness *and*,
    separately, security - the canonical trap is raw SQL that is injection-safe
    (parameterised) yet still wrong because unescaped `%`/`_` act as wildcards.
    UI: walk it twice - once as a first-time sighted mouse user, once as an
    assistive-technology user.
-5. **Aggregate by symptom (the theme view). Write it down.** Group findings by
+1. **Aggregate by symptom (the theme view). Write it down.** Group findings by
    the smell/idea they share and, for each theme, sweep the whole scope again
    for every instance. This is the *across-files, same-problem* axis. Naming a
    theme surfaces more instances than listing them one at a time (code: "type
    switches that want polymorphism"; UI: "state shown but not announced").
-6. **Aggregate by subject (the hotspot view). Write it down as a grid.** The
+1. **Aggregate by subject (the hotspot view). Write it down as a grid.** The
    orthogonal axis: *within one file, different problems*. Re-index the same
    findings by the file/class/component they touch, as a subject × dimension
    grid, and count the *distinct dimensions* per subject (not raw findings).
@@ -123,13 +124,13 @@ knows what was and wasn't covered.
    is diagnosed by responsibility count, and reaching for those phrases is the
    tell that you found one and flinched. To sink a subject below the floor you
    need evidence (see the self-grill in `rigour.md`), never a judgement.
-7. **Turn the two views into a leverage-ordered fix list.** Order the fixes by
+1. **Turn the two views into a leverage-ordered fix list.** Order the fixes by
    *how many findings each dissolves* (not by how cheap each is), annotate rough
    cost, and span genuine one-liners through the expensive structural anchor.
    This list is the forcing function for steps 5-6: you cannot rank by
    findings-dissolved without both aggregations. Don't title it "quick wins" -
    that buries the high-leverage structural fix, usually the costly one.
-8. **Rank, credit, and disclose.** Give every finding an explicit severity
+1. **Rank, credit, and disclose.** Give every finding an explicit severity
    (High/Medium/Low), kept *separate* from the fix-list order, since "how
    alarmed to be" and "what to do first" legitimately diverge. Credit what
    already works so fixes land in context - but every credit is a claim, so
@@ -183,9 +184,8 @@ Steps 1-8 say *what* to produce; `rigour.md` says how to keep a single inline
 pass from quietly under-covering - the catalogue-load ledger (proving every
 mandatory catalogue was actually read, not just the sweep list), the credits
 ledger (step 8), the instance census (steps 3, 5), the coverage attestation
-(step 1), and a final self-grill.
-On the inline path these are mandatory; the swarm earns their equivalents from
-its Verify and subject-pivot stages.
+(step 1), and a final self-grill. On the inline path these are mandatory; the
+swarm earns their equivalents from its Verify and subject-pivot stages.
 
 ## Failure modes that cause misses
 
@@ -194,16 +194,17 @@ Guard against each:
 - Reading file by file instead of sweeping by dimension (misses cross-file
   duplication and dependency-direction / repeat-across-screens problems).
 - Working from the lens overview *or the `reviewing.md` sweep list* instead of
-  the catalogues themselves (misses connascence, Repeated Switch; landmark-naming
-  and name/role/value sweeps - and, because the sweep list omits them, the flat
-  single-subject checks: skip link, required-field marking, a non-SQL injection
-  sink, a fail-open default). Guard: the catalogue-load ledger (`rigour.md` #1) -
-  a pasted `Read` per mandatory catalogue, or its checks were never run.
+  the catalogues themselves (misses connascence, Repeated Switch;
+  landmark-naming and name/role/value sweeps - and, because the sweep list omits
+  them, the flat single-subject checks: skip link, required-field marking, a
+  non-SQL injection sink, a fail-open default). Guard: the catalogue-load ledger
+  (`rigour.md` #1) - a pasted `Read` per mandatory catalogue, or its checks were
+  never run.
 - A single pass over risky code (code: security-only, missing the correctness
   bug in the same lines).
 - No theme synthesis (lists two instances and stops when there are five).
-- Clustering only by theme, so a root cause whose symptoms differ is never
-  named - guard: the subject grid (step 6).
+- Clustering only by theme, so a root cause whose symptoms differ is never named
+  \- guard: the subject grid (step 6).
 - Building the subject grid but only tallying counts, never naming the
   responsibility/fault behind a hotspot.
 - Naming a convergence in the subject grid, then overriding its severity with a

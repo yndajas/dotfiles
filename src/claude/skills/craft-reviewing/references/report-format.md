@@ -1,8 +1,8 @@
 # The report format (shared)
 
 How to lay out a craft-review report so it reads consistently and can be worked
-through by a human *and* by a coding agent picking up the findings later. This is
-the *shape* of the deliverable only; `protocol.md` owns what goes in it (the
+through by a human *and* by a coding agent picking up the findings later. This
+is the *shape* of the deliverable only; `protocol.md` owns what goes in it (the
 sweep, the two aggregations, severities) and `rigour.md` owns the sidecar. This
 file exists because report layout has drifted between reviews - the same finding
 written five different ways across versions makes a report hard to diff, hard to
@@ -17,20 +17,22 @@ order below are the same.
 
 1. **Header** - lens, scope (with exclusions), depth, execution, passes, date,
    and the commit SHA the review was run against.
-2. **Coverage caveat** - the standing "a review samples a larger space" paragraph
-   (`protocol.md`, "Delivering the report").
-3. **Findings index** - the one-row-per-finding table (below). At-a-glance for a
+1. **Coverage caveat** - the standing "a review samples a larger space"
+   paragraph (`protocol.md`, "Delivering the report").
+1. **Findings index** - the one-row-per-finding table (below). At-a-glance for a
    human; the machine-readable summary for tooling.
-4. **Findings** - grouped under a `### High` / `### Medium` / `### Low` subheading
-   (in that order; omit an empty band), each finding a `#### <ID>` block in the
-   schema below. The outline is `## Findings` -> `### <Severity>` -> `#### <ID>`;
-   never jump `## Findings` straight to `#### <ID>`. A skipped heading level is the
-   very fault the ui-craft lens flags (WCAG 1.3.1), and it garbles the outline a
-   human or agent reads the report by, so the report must hold to it too.
-5. **Themes** - the by-symptom aggregation (`protocol.md` step 5).
-6. **Subject grid** - the by-subject aggregation (`protocol.md` step 6).
-7. **Leverage-ordered fix list** - ordered by findings dissolved (step 7).
-8. **Credits** - what already works, each falsified before writing (`rigour.md`).
+1. **Findings** - grouped under a `### High` / `### Medium` / `### Low`
+   subheading (in that order; omit an empty band), each finding a `#### <ID>`
+   block in the schema below. The outline is `## Findings` -> `### <Severity>`
+   -> `#### <ID>`; never jump `## Findings` straight to `#### <ID>`. A skipped
+   heading level is the very fault the ui-craft lens flags (WCAG 1.3.1), and it
+   garbles the outline a human or agent reads the report by, so the report must
+   hold to it too.
+1. **Themes** - the by-symptom aggregation (`protocol.md` step 5).
+1. **Subject grid** - the by-subject aggregation (`protocol.md` step 6).
+1. **Leverage-ordered fix list** - ordered by findings dissolved (step 7).
+1. **Credits** - what already works, each falsified before writing
+   (`rigour.md`).
 
 The coverage sidecar stays a separate `*.coverage.md` file - never fold the
 census/matrix/searches into the report body.
@@ -68,26 +70,27 @@ fix landed.)
   Referenced from the index, themes, subjects, and fix list, so nothing is an
   orphan. **Carry an ID forward unchanged across report versions** for a finding
   that persists - fresh per-version numbering is exactly what makes reports
-  undiffable. A new finding takes the next free number; a retired one's number is
-  not reused.
+  undiffable. A new finding takes the next free number; a retired one's number
+  is not reused.
 - **Severity** - High / Medium / Low: "how alarmed to be". Never the fix order
-  (that is the leverage list). The two legitimately diverge (`protocol.md`
-  step 8).
+  (that is the leverage list). The two legitimately diverge (`protocol.md` step
+  8).
 - **Effort** - Small / Medium / Large: rough cost. Feeds the leverage list; kept
   out of severity.
 - **Confidence** - High / Medium / Low: how sure the finding is real. A
-  Low-confidence finding signals a coding agent to re-verify before acting rather
-  than assuming.
-- **Dimension** - the catalogue dimension *and its source* (Fowler / Metz / GoF /
-  Meyer / Liskov / WCAG x.y / Nielsen #n / OWASP). No un-sourced findings.
+  Low-confidence finding signals a coding agent to re-verify before acting
+  rather than assuming.
+- **Dimension** - the catalogue dimension *and its source* (Fowler / Metz / GoF
+  / Meyer / Liskov / WCAG x.y / Nielsen #n / OWASP). No un-sourced findings.
 - **Locations** - a list; a finding spanning several sites lists **every** site
   (never just the first - that is the instance-census discipline, `rigour.md`),
   each a clickable `file:line` with the symbol in parens.
 - **Problem** - what is wrong *and the impact*, 1-3 sentences.
-- **Fix** - the concrete change; name the pattern, ARIA attribute, or refactoring.
+- **Fix** - the concrete change; name the pattern, ARIA attribute, or
+  refactoring.
 - **Verify** - how to confirm it is fixed: a grep, a query-log count, an axe/
-  contrast check, a repro. This is the field that makes the report drivable by an
-  agent - a fix with no check is not done.
+  contrast check, a repro. This is the field that makes the report drivable by
+  an agent - a fix with no check is not done.
 - **Related** - theme IDs, subject files, and finding IDs it dissolves or rolls
   into.
 - **Status** - open / fixed / wontfix / accepted. Lets a later pass track what
@@ -98,10 +101,10 @@ fix landed.)
 One row per finding, ordered by severity then ID. This is both the human's
 scan-in-ten-seconds view and the parseable summary.
 
-| ID | Severity | Effort | Dimension | Location(s) | Title | Status |
-|----|----------|--------|-----------|-------------|-------|--------|
-| C-01 | High | Large | SRP / God Class | user.rb | `User` God Class | open |
-| C-03 | Medium | Medium | Repeated Switch | 2 sites | Type switch | open |
+| ID   | Severity | Effort | Dimension       | Location(s) | Title            | Status |
+| ---- | -------- | ------ | --------------- | ----------- | ---------------- | ------ |
+| C-01 | High     | Large  | SRP / God Class | user.rb     | `User` God Class | open   |
+| C-03 | Medium   | Medium | Repeated Switch | 2 sites     | Type switch      | open   |
 
 ## Theme block
 
@@ -111,21 +114,21 @@ scan-in-ten-seconds view and the parseable summary.
 **Leverage** what one fix dissolves across the members.
 ```
 
-Every theme lists its member finding IDs; naming the theme then sweeping the whole
-scope for more instances is the point (`protocol.md` step 5), so a theme with one
-member is a prompt to look again, not a finished theme.
+Every theme lists its member finding IDs; naming the theme then sweeping the
+whole scope for more instances is the point (`protocol.md` step 5), so a theme
+with one member is a prompt to look again, not a finished theme.
 
 ## Subject grid
 
-| Subject | Dimensions (finding IDs) | # | Severity | Interpretation |
-|---------|--------------------------|---|----------|----------------|
-| user.rb | C-01, C-07, C-08 | 3 | High | God Class: auth+identity+graph+prefs |
+| Subject | Dimensions (finding IDs) | #   | Severity | Interpretation                       |
+| ------- | ------------------------ | --- | -------- | ------------------------------------ |
+| user.rb | C-01, C-07, C-08         | 3   | High     | God Class: auth+identity+graph+prefs |
 
 State the convergence rule once under the grid and honour it: a subject at 3+
 *distinct* dimensions gets its own finding at High or higher, naming the
 responsibilities - and prose cannot lower that floor without evidence
-(`protocol.md` step 6, `rigour.md` self-grill). The Interpretation column is where
-you name the fault, not just count it.
+(`protocol.md` step 6, `rigour.md` self-grill). The Interpretation column is
+where you name the fault, not just count it.
 
 ## Leverage-ordered fix list
 
@@ -134,14 +137,14 @@ you name the fault, not just count it.
 2. <action> → dissolves C-04 (1). Effort Medium.
 ```
 
-Each line: action -> finding IDs dissolved (count) -> effort. Ordered by findings
-dissolved, not by cost; span genuine one-liners through the expensive structural
-anchor. Don't title it "quick wins" (`protocol.md` step 7).
+Each line: action -> finding IDs dissolved (count) -> effort. Ordered by
+findings dissolved, not by cost; span genuine one-liners through the expensive
+structural anchor. Don't title it "quick wins" (`protocol.md` step 7).
 
 ## Authoring checklist
 
-- Every finding carries all schema fields; none is an example-only stand-in for a
-  swept census.
+- Every finding carries all schema fields; none is an example-only stand-in for
+  a swept census.
 - Severity is separate from the fix order; effort/leverage drive the fix list.
 - Every credit is falsified before writing, scoped to what was checked
   (`rigour.md` ledger).

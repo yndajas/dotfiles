@@ -46,8 +46,8 @@ Assume transient failures (a dropped connection, a rate limit, a brief outage).
 
 - **Never make an unbounded call to anything external.** Set connect and read
   timeouts on every HTTP client, database call, and lock acquisition.
-- A missing timeout is a latent outage: one slow dependency ties up your
-  threads or connection pool until the whole service stalls.
+- A missing timeout is a latent outage: one slow dependency ties up your threads
+  or connection pool until the whole service stalls.
 
 ## Delivery semantics
 

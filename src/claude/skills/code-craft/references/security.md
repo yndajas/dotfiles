@@ -61,16 +61,16 @@ monitoring failures (A09), and SSRF (A10).
 Security is one of the review passes (code-craft SKILL.md): read the same files
 as the correctness pass but ask "can this be abused?", not "is this right?". The
 whole-scope authorization / error-path census in `craft-reviewing`'s `rigour.md`
-is how you check A01 and information disclosure across every endpoint rather than
-file-by-file.
+is how you check A01 and information disclosure across every endpoint rather
+than file-by-file.
 
 ## How this fits code-craft
 
-Security pulls the same way as the rest of the lens more often than it conflicts:
-least privilege and fail-safe defaults are the access-control side of Metz's and
-`solid.md`'s dependency discipline, and economy of mechanism is Ousterhout's
-manage-complexity by another name. Where a control genuinely adds friction,
-isolate it behind a clear interface so it doesn't spread.
+Security pulls the same way as the rest of the lens more often than it
+conflicts: least privilege and fail-safe defaults are the access-control side of
+Metz's and `solid.md`'s dependency discipline, and economy of mechanism is
+Ousterhout's manage-complexity by another name. Where a control genuinely adds
+friction, isolate it behind a clear interface so it doesn't spread.
 
 ## Further reading
 

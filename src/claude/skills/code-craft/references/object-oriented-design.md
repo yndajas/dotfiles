@@ -10,9 +10,9 @@ Heuristics, not laws. They provoke better design by making bad design
 uncomfortable. Break one only with a stated reason.
 
 1. **A class can be no longer than 100 lines of code.**
-2. **A method can be no longer than 5 lines of code.**
-3. **Pass no more than 4 parameters into a method.** Hash options count.
-4. **Controllers can instantiate only one object; views know only one instance
+1. **A method can be no longer than 5 lines of code.**
+1. **Pass no more than 4 parameters into a method.** Hash options count.
+1. **Controllers can instantiate only one object; views know only one instance
    variable.** (Rails-specific. The general form: keep the boundary between HTTP
    and the domain thin.)
 
@@ -52,9 +52,9 @@ artifact. For each controller, model, and service in scope:
 1. Write its responsibilities as an explicit bullet list - the distinct axes it
    changes for (e.g. for a `User`: authentication, identity, the social graph,
    preferences/presentation, authorization/visibility).
-2. Count only *app-authored* axes. A framework mixin (ActiveRecord persistence,
+1. Count only *app-authored* axes. A framework mixin (ActiveRecord persistence,
    a Devise auth module) is one axis, not an excuse that absorbs the rest.
-3. **3+ distinct app-authored axes = God Class = High, regardless of line
+1. **3+ distinct app-authored axes = God Class = High, regardless of line
    count.** A 130-line class with five axes is a God Class; a 400-line class
    doing one thing is not.
 
@@ -66,8 +66,8 @@ each small"; those describe symptoms of the God Class, not reasons it isn't one.
 
 ## The refactorings the rules push you toward
 
-- **Long class** - extract a collaborator with its own responsibility (SRP);
-  use composition or a module. Candidate patterns: Strategy, Decorator, Command,
+- **Long class** - extract a collaborator with its own responsibility (SRP); use
+  composition or a module. Candidate patterns: Strategy, Decorator, Command,
   Facade.
 - **Long method** - extract well-named sub-methods at one level of abstraction
   (Composed Method); guard clauses to flatten nesting; replace conditional with
@@ -101,8 +101,8 @@ The rules are the surface; POODR's real content is managing dependencies.
 
 Config, routes, migrations, generated code, DSLs, and tests are legitimate
 exceptions. The overriding test is clarity: if following a rule makes the code
-harder to understand, the rule loses. Always say *why* a violation is
-acceptable rather than silently ignoring it.
+harder to understand, the rule loses. Always say *why* a violation is acceptable
+rather than silently ignoring it.
 
 ## Enforcement
 

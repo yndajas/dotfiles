@@ -119,14 +119,14 @@ where they are.
 - **Visible focus** - include `:focus` (prefer `:focus-visible`), `:active`, and
   `:hover` states. If the design system has no focus style, keep the browser
   default; never remove an outline without replacing it. WCAG 2.2 also requires
-  the focused element not be fully hidden behind sticky headers/footers
-  (Focus Not Obscured, 2.4.11).
+  the focused element not be fully hidden behind sticky headers/footers (Focus
+  Not Obscured, 2.4.11).
 - **Focus management for dynamic content** - when content appears or the view
   changes without a full page load (modals, Turbo/SPA navigation, async
   results), move focus deliberately (into the dialog, to the new `<h1>`, or to
   an error summary) so keyboard and screen-reader users are not stranded.
-- **Target size** - WCAG 2.2 AA (2.5.8) wants interactive targets at least
-  24×24 CSS px, or with equivalent spacing. (Layout-side guidance in
+- **Target size** - WCAG 2.2 AA (2.5.8) wants interactive targets at least 24×24
+  CSS px, or with equivalent spacing. (Layout-side guidance in
   `visual-design.md`.)
 
 ## Announcing change (Operable / Robust)
@@ -159,5 +159,6 @@ where they are.
 
 - WCAG 2.2 quick reference - https://www.w3.org/WAI/WCAG22/quickref/
 - WAI-ARIA Authoring Practices Guide - https://www.w3.org/WAI/ARIA/apg/
-- dxw accessibility manual - https://accessibility.dxw.com/development/writing-acessible-code/
+- dxw accessibility manual -
+  https://accessibility.dxw.com/development/writing-acessible-code/
 - MDN accessibility - https://developer.mozilla.org/en-US/docs/Web/Accessibility

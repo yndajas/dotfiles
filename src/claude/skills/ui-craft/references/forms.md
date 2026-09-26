@@ -44,8 +44,8 @@ accessibility manual, and the GOV.UK Design System.
 
 Do not encode narrow assumptions about people into fields:
 
-- Do not restrict text to Latin characters - names include accents and
-  non-Latin scripts.
+- Do not restrict text to Latin characters - names include accents and non-Latin
+  scripts.
 - Do not set minimum lengths on names - some are very short.
 - Do not offer only "female/male" for gender (listed alphabetically to avoid
   implying a default), and only ask when you genuinely need it.
@@ -98,5 +98,7 @@ Still test the assembled form as you would hand-written markup.
 ## Further reading
 
 - Luke Wroblewski, *Web Form Design: Filling in the Blanks*.
-- GOV.UK Design System - form components and patterns - https://design-system.service.gov.uk/
-- dxw accessibility manual - accessible forms - https://accessibility.dxw.com/content/
+- GOV.UK Design System - form components and patterns -
+  https://design-system.service.gov.uk/
+- dxw accessibility manual - accessible forms -
+  https://accessibility.dxw.com/content/

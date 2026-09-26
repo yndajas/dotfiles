@@ -71,11 +71,11 @@ anything larger than a single screen, load the `craft-reviewing` skill for the
 shared protocol and rigour apparatus, then sweep the ui-craft dimensions in
 `references/reviewing.md`: enumerate every view, partial, layout and stylesheet
 in scope and sweep per WCAG criterion and per heuristic across the whole scope
-rather than screen by screen;
-and when one component gets an accessibility detail right (e.g. pagination's
-`aria-current`), check every sibling control for the same - the current nav
-item, the active tab, the view toggle. Cluster findings into themes; "state is
-shown but not announced" is a common one that ties many findings together.
+rather than screen by screen; and when one component gets an accessibility
+detail right (e.g. pagination's `aria-current`), check every sibling control for
+the same - the current nav item, the active tab, the view toggle. Cluster
+findings into themes; "state is shown but not announced" is a common one that
+ties many findings together.
 
 ## Which reference to read when
 
@@ -84,21 +84,20 @@ review that spans more than one screen or a whole interface, treat the
 references as mandatory checklists, not optional reading - start by loading the
 `craft-reviewing` skill (shared protocol + rigour) and your
 `references/reviewing.md` sweep dimensions, then pull `accessible-code.md`
-(semantics, landmarks,
-headings, name/role/value, focus) and `usability.md` (heuristics) as the main
-sweep dimensions, adding `forms.md`, `content.md` and `visual-design.md` where
-in scope. Working from this overview alone is what makes a review miss the
-systematic findings.
+(semantics, landmarks, headings, name/role/value, focus) and `usability.md`
+(heuristics) as the main sweep dimensions, adding `forms.md`, `content.md` and
+`visual-design.md` where in scope. Working from this overview alone is what
+makes a review miss the systematic findings.
 
-| Situation | Read |
-|---|---|
+| Situation                                                                                                         | Read                             |
+| ----------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 | Reviewing more than one screen or a whole interface - the shared protocol, rigour apparatus, and execution choice | load the `craft-reviewing` skill |
-| The ui-craft dimensions that need a whole-scope sweep | `references/reviewing.md` |
-| Overall usability, heuristics, navigation, clarity, "does this make me think?" | `references/usability.md` |
-| Markup, semantics, ARIA, landmarks, headings, accessible names, focus | `references/accessible-code.md` |
-| Alt text, link text, headings, plain language, media, data/tables | `references/content.md` |
-| Anything to do with forms - flow, labels, fields, errors, confirmation | `references/forms.md` |
-| Colour contrast, using colour, typography, visual design | `references/visual-design.md` |
+| The ui-craft dimensions that need a whole-scope sweep                                                             | `references/reviewing.md`        |
+| Overall usability, heuristics, navigation, clarity, "does this make me think?"                                    | `references/usability.md`        |
+| Markup, semantics, ARIA, landmarks, headings, accessible names, focus                                             | `references/accessible-code.md`  |
+| Alt text, link text, headings, plain language, media, data/tables                                                 | `references/content.md`          |
+| Anything to do with forms - flow, labels, fields, errors, confirmation                                            | `references/forms.md`            |
+| Colour contrast, using colour, typography, visual design                                                          | `references/visual-design.md`    |
 
 Most real UI work touches more than one. A typical flow: get the structure and
 semantics right (`accessible-code`), make it usable and conventional

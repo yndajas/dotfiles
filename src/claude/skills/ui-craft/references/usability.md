@@ -46,24 +46,24 @@ interface against each:
 
 1. **Visibility of system status** - the system keeps users informed through
    timely feedback (loading, saved, progress).
-2. **Match between system and the real world** - speak the user's language and
+1. **Match between system and the real world** - speak the user's language and
    follow real-world conventions, not internal jargon.
-3. **User control and freedom** - clear exits, undo and redo; do not trap users
+1. **User control and freedom** - clear exits, undo and redo; do not trap users
    in a flow.
-4. **Consistency and standards** - same words and actions mean the same thing;
+1. **Consistency and standards** - same words and actions mean the same thing;
    follow platform conventions.
-5. **Error prevention** - design so mistakes cannot happen (constraints,
+1. **Error prevention** - design so mistakes cannot happen (constraints,
    confirmations, good defaults), better than good error messages.
-6. **Recognition rather than recall** - make options and information visible;
-   do not force users to remember things across screens.
-7. **Flexibility and efficiency of use** - accelerators for experts that do not
+1. **Recognition rather than recall** - make options and information visible; do
+   not force users to remember things across screens.
+1. **Flexibility and efficiency of use** - accelerators for experts that do not
    get in beginners' way.
-8. **Aesthetic and minimalist design** - no irrelevant or rarely-needed
-   content; every extra unit competes with the relevant ones.
-9. **Help users recognise, diagnose, and recover from errors** - plain-language
+1. **Aesthetic and minimalist design** - no irrelevant or rarely-needed content;
+   every extra unit competes with the relevant ones.
+1. **Help users recognise, diagnose, and recover from errors** - plain-language
    messages that state the problem and suggest a fix.
-10. **Help and documentation** - ideally unnecessary, but when needed, easy to
-    search, task-focused, and concrete.
+1. **Help and documentation** - ideally unnecessary, but when needed, easy to
+   search, task-focused, and concrete.
 
 ## Norman: the theory underneath
 
@@ -99,16 +99,16 @@ The layer above any component library, and the right default for public-sector
 service work:
 
 1. Start with user needs.
-2. Do less.
-3. Design with data.
-4. Do the hard work to make it simple.
-5. Iterate. Then iterate again.
-6. This is for everyone (accessibility is not optional - see the accessibility
+1. Do less.
+1. Design with data.
+1. Do the hard work to make it simple.
+1. Iterate. Then iterate again.
+1. This is for everyone (accessibility is not optional - see the accessibility
    references).
-7. Understand context.
-8. Build digital services, not websites.
-9. Be consistent, not uniform.
-10. Make things open: it makes things better.
+1. Understand context.
+1. Build digital services, not websites.
+1. Be consistent, not uniform.
+1. Make things open: it makes things better.
 
 ## Navigation
 
@@ -132,4 +132,5 @@ ask a question - those are the ones worth testing.
 - Jakob Nielsen, "10 Usability Heuristics for User Interface Design" (Nielsen
   Norman Group).
 - Don Norman, *The Design of Everyday Things*.
-- GOV.UK Design Principles - https://www.gov.uk/guidance/government-design-principles
+- GOV.UK Design Principles -
+  https://www.gov.uk/guidance/government-design-principles

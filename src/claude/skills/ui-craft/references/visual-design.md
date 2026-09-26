@@ -81,8 +81,7 @@ must never be the only carrier of meaning (WCAG 1.4.1). Add a second cue:
 - **Reduced motion**: honour `prefers-reduced-motion` for parallax, autoplay,
   and large transitions (implementation in `accessible-code.md`).
 - **Target size** (WCAG 2.2, 2.5.8): give interactive targets enough size and
-  spacing (24×24 CSS px or equivalent) - a layout concern as much as a code
-  one.
+  spacing (24×24 CSS px or equivalent) - a layout concern as much as a code one.
 
 ## The DWP "dos and don'ts" posters
 
@@ -105,7 +104,10 @@ by broad user group:
 
 ## Further reading
 
-- dxw accessibility manual - designing accessible services - https://accessibility.dxw.com/interaction-design/
-- Home Office / DWP accessibility posters - https://ukhomeoffice.github.io/accessibility-posters/
+- dxw accessibility manual - designing accessible services -
+  https://accessibility.dxw.com/interaction-design/
+- Home Office / DWP accessibility posters -
+  https://ukhomeoffice.github.io/accessibility-posters/
 - Inclusive Design Principles - https://inclusivedesignprinciples.org/
-- Microsoft Inclusive Design Toolkit - https://www.microsoft.com/design/inclusive/
+- Microsoft Inclusive Design Toolkit -
+  https://www.microsoft.com/design/inclusive/

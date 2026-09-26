@@ -61,11 +61,11 @@ equivalents from its Verify and subject-pivot stages.
 
 ## Which reference to read
 
-| Situation | Read |
-|---|---|
-| The confirm step, protocol, coverage/sweep, aggregations, severities, execution choice | `references/protocol.md` |
-| Making the pass repeatable - catalogue-load ledger, credits ledger, instance census, coverage attestation, self-grill, independent passes | `references/rigour.md` |
-| Laying out the report - fixed section order, the per-finding schema, the findings index | `references/report-format.md` |
+| Situation                                                                                                                                 | Read                          |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| The confirm step, protocol, coverage/sweep, aggregations, severities, execution choice                                                    | `references/protocol.md`      |
+| Making the pass repeatable - catalogue-load ledger, credits ledger, instance census, coverage attestation, self-grill, independent passes | `references/rigour.md`        |
+| Laying out the report - fixed section order, the per-finding schema, the findings index                                                   | `references/report-format.md` |
 
 Then read your lens's `references/reviewing.md` for the dimensions to sweep.
 

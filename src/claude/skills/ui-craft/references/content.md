@@ -59,7 +59,8 @@ All non-text content needs a text alternative. Good alt text:
   it as an image.
 - Is empty (`alt=""`) for purely decorative images, so screen readers skip them.
 
-Use the [W3C alt-decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
+Use the
+[W3C alt-decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
 to decide what (if anything) an image needs. Note: the dxw convention of ending
 alt text with a full stop (to encourage a pause) is a house style, not a WCAG
 requirement - harmless, but do not rely on it for meaning.
@@ -77,8 +78,8 @@ alt="[chart type] of [type of data] where [key finding or reason for including i
      alt="Pie chart of 2022 school admissions where 43% of children did not get their preferred choice.">
 ```
 
-Also link to the underlying data, and give complex visualisations a short
-text explanation visible to everyone, not hidden in alt.
+Also link to the underlying data, and give complex visualisations a short text
+explanation visible to everyone, not hidden in alt.
 
 ## Video and audio (Perceivable)
 

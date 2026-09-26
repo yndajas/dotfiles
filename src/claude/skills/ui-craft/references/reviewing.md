@@ -1,8 +1,8 @@
 # Reviewing more than one screen (ui-craft)
 
 The shared review protocol and rigour apparatus live in the `craft-reviewing`
-skill - load it first. This file adds only the ui-craft dimensions to sweep for -
-the ones a single-screen review structurally cannot catch.
+skill - load it first. This file adds only the ui-craft dimensions to sweep for
+\- the ones a single-screen review structurally cannot catch.
 
 ## Which dimensions need a whole-scope sweep
 
@@ -34,9 +34,8 @@ of you, not a fixed incantation.
 - **Heading levels across a shared partial's contexts** - a shared partial that
   emits a heading at a hardcoded level can be correct in one context and skip a
   level in another; you only catch it by checking every page the partial renders
-  in. *Sweep:* for each
-  shared partial that emits a heading, list every screen that renders it and
-  record the surrounding heading level at each site.
+  in. *Sweep:* for each shared partial that emits a heading, list every screen
+  that renders it and record the surrounding heading level at each site.
 - **Focus indicator and contrast across all themes** - both are asserted once in
   the stylesheet and affect every screen and every theme, so they're inherently
   whole-scope. *Sweep:* enumerate every theme and record, per theme, the focus
@@ -59,7 +58,8 @@ of you, not a fixed incantation.
   screen reader announces or a user reads (error and status messages, link and
   button labels, alt text, accessible names) is often assembled in application
   code or a translation/config file, not in the markup, so scope by lens, not
-  file type (protocol step 1). The content case is worked through in `content.md`.
+  file type (protocol step 1). The content case is worked through in
+  `content.md`.
 
 Per-screen criteria (a single form's labels, one image's alt text, one link's
 wording) belong to the references and to the ordinary screen-level review; they

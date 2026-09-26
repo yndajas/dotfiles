@@ -32,8 +32,8 @@ problems, not a checklist to satisfy.
   Long Parameter List in constructors.
 - **Prototype** - create by cloning an existing instance. Force: instantiation
   is expensive or configured at runtime.
-- **Singleton** - one instance, global access. Use sparingly; it is global
-  state and hurts testability. Often a smell in disguise.
+- **Singleton** - one instance, global access. Use sparingly; it is global state
+  and hurts testability. Often a smell in disguise.
 
 ### Structural - how objects are composed
 
@@ -79,8 +79,8 @@ problems, not a checklist to satisfy.
 ## Choosing between the common ones
 
 - Varying algorithm behind one call -> **Strategy**.
-- Conditionals on a status/type that drive behaviour -> **State** or
-  **Replace Conditional with Polymorphism** (Fowler) first.
+- Conditionals on a status/type that drive behaviour -> **State** or **Replace
+  Conditional with Polymorphism** (Fowler) first.
 - Optional, stackable enhancements -> **Decorator**, not subclasses.
 - Taming a messy subsystem for callers -> **Facade**.
 - Actions you must queue/undo/log -> **Command**.
