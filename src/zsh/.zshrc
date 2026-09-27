@@ -63,7 +63,6 @@ source "${HOME}/.config/zshrc/user/catls.zsh"
 source "${HOME}/.config/zshrc/user/docker.zsh"
 source "${HOME}/.config/zshrc/user/dotfiles.zsh"
 source "${HOME}/.config/zshrc/user/git.zsh"
-source "${HOME}/.config/zshrc/user/hints.zsh"
 source "${HOME}/.config/zshrc/user/homebrew.zsh"
 source "${HOME}/.config/zshrc/user/manual.zsh"
 
@@ -71,7 +70,6 @@ source "${HOME}/.config/zshrc/user/manual.zsh"
 
 [[ -f "${HOME}/.zshrc_local" ]] && source "${HOME}/.zshrc_local"
 
-## various startup checks/echoes
+## startup checks
 
 warn_about_unsynced_dotfiles
-hints random
