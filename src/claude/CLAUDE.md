@@ -127,6 +127,8 @@
 - Use "allowlist" and "denylist", never "whitelist" or "blacklist" (in code,
   comments, chat, and generated content alike). Adapt derived forms too, e.g.
   "allowlisted" rather than "whitelisted".
+- Use the Oxford comma in lists of three or more, in chat and generated content
+  alike (e.g. "a pre-commit hook, Dependabot, and Conform").
 - Avoid bold text in artifacts and generated documents unless it matches the
   document's existing style or I ask for it.
 - Avoid twee filler like "genuinely" and "say the word"; be direct and to the
