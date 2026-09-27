@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+# --shell=bash because ShellCheck has no Zsh support; the Zsh files carry
+# inline disable directives where the syntax diverges
+# --rcfile because CI has no ~/.shellcheckrc to find
+shellcheck \
+  --shell=bash \
+  --wiki-link-count=100 \
+  --rcfile src/shellcheck/.shellcheckrc \
+  src/zsh/.zshenv \
+  src/zsh/.zshrc \
+  src/zsh/.config/zshrc/*/*.zsh
