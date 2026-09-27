@@ -10,6 +10,8 @@
 - When making a significant, novel, or hard-to-reverse technical or
   architectural decision, consider recording it as an Architecture Decision
   Record (ADR).
+- Don't use single-letter variable names. Name the value for what it holds, even
+  for loop variables and short-lived locals (e.g. `timestamp`, not `t`).
 - When editing a file, match its existing line-length / wrapping convention, and
   before finishing check you haven't introduced lines longer than the file's
   norm (e.g. prose wrapped at ~80, commit bodies at 72). Fix an over-length line
