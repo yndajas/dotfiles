@@ -40,6 +40,17 @@ function update_global_brewfile() {
   brew bundle dump --file="${DOTFILES_DIR}/src/homebrew/.Brewfile" --force
 }
 
+function install_mdformat() {
+  if brew list mdformat &> /dev/null; then
+    echo '==> Removing Homebrew mdformat, which cannot take plugins'
+    brew uninstall mdformat || return 1
+  fi
+
+  echo '==> Installing mdformat with plugins'
+  pipx install mdformat || return 1
+  pipx inject mdformat mdformat-gfm mdformat-frontmatter
+}
+
 function prepare_ruby_for_vim() {
   if [[ ! -f ".ruby-version" ]]; then
     echo "No .ruby-version" && return 1

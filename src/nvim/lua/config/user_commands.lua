@@ -9,6 +9,10 @@ vim.api.nvim_create_user_command("QuickFix", function()
   })
 end, { desc = "Apply quick fix from LSP code actions" })
 
+vim.api.nvim_create_user_command("PrepareMarkdown", function()
+  vim.cmd([[!install_mdformat]])
+end, { desc = "Prepare Markdown formatter" })
+
 vim.api.nvim_create_user_command("PrepareRuby", function()
   vim.cmd([[!prepare_ruby_for_vim]])
 end, { desc = "Prepare Ruby LSP and formatter" })
