@@ -3,19 +3,18 @@
 ## Approach
 
 - When exploring code-related questions, think and communicate like a senior
-  engineer: pitch depth to an expert reader rather than over-explaining
-  basics, and make your assumptions and the trade-offs you're weighing
-  explicit.
+  engineer: pitch depth to an expert reader rather than over-explaining basics,
+  and make your assumptions and the trade-offs you're weighing explicit.
 - Before implementing, read the surrounding code and its existing tests, and
   follow the established patterns and style.
 - When making a significant, novel, or hard-to-reverse technical or
   architectural decision, consider recording it as an Architecture Decision
   Record (ADR).
-- When editing a file, match its existing line-length / wrapping convention,
-  and before finishing check you haven't introduced lines longer than the
-  file's norm (e.g. prose wrapped at ~80, commit bodies at 72). Fix an
-  over-length line by re-wrapping (moving words across the break), not by
-  rewording or rewriting the content.
+- When editing a file, match its existing line-length / wrapping convention, and
+  before finishing check you haven't introduced lines longer than the file's
+  norm (e.g. prose wrapped at ~80, commit bodies at 72). Fix an over-length line
+  by re-wrapping (moving words across the break), not by rewording or rewriting
+  the content.
 
 ## Honesty and reasoning
 
@@ -38,9 +37,9 @@
   option. Reserve prose questions for genuinely open-ended ones.
 - Before applying a change I need to review, show the full code or content in
   your response and wait for my go-ahead. Don't rely on an `AskUserQuestion`
-  option preview to carry it, since previews are truncated in the terminal.
-  This applies regardless of tool mode: if edits are going through Bash rather
-  than the Edit tool, there's no diff prompt, so the review has to be explicit.
+  option preview to carry it, since previews are truncated in the terminal. This
+  applies regardless of tool mode: if edits are going through Bash rather than
+  the Edit tool, there's no diff prompt, so the review has to be explicit.
 
 ## Learning
 
@@ -62,16 +61,16 @@
 
 - Don't suppress or truncate command output — no piping through `tail`, `head`,
   etc. Show the full output.
-- Before running any Bash command, check it: if it contains `;`, `&&`, `||`,
-  or a pipe `|`, it MUST be laid out multi-line before you run it. Put each
-  command on its own line, break `&&`/`||`/pipe chains across lines with `\`
-  continuations, and never use `;` to sequence commands (use separate lines
-  or separate calls). A single command with many flags also gets `\`-wrapped.
-  If a command would be a one-line chain, stop and reformat it first — this
-  applies to throwaway exploration commands too, not just scripts you save.
+- Before running any Bash command, check it: if it contains `;`, `&&`, `||`, or
+  a pipe `|`, it MUST be laid out multi-line before you run it. Put each command
+  on its own line, break `&&`/`||`/pipe chains across lines with `\`
+  continuations, and never use `;` to sequence commands (use separate lines or
+  separate calls). A single command with many flags also gets `\`-wrapped. If a
+  command would be a one-line chain, stop and reformat it first — this applies
+  to throwaway exploration commands too, not just scripts you save.
 - Some GOV.UK repos (e.g. `asset-manager`) run their tooling in Docker: run
-  commands like RSpec, Rails, RuboCop, and rake via `govuk-docker-run`
-  (e.g. `govuk-docker-run bundle exec rspec spec/foo_spec.rb:12`). Not all
+  commands like RSpec, Rails, RuboCop, and rake via `govuk-docker-run` (e.g.
+  `govuk-docker-run bundle exec rspec spec/foo_spec.rb:12`). Not all
   alphagov/GOV.UK repos use Docker/`govuk-docker`, so check first.
 
 ## Running tests
@@ -110,20 +109,20 @@
   structure plus the substance of each point, with no stylistic flourish, so it
   is fast to review and correct. Leave the prose styling to me, or expand it
   only when I ask. This keeps my review on structure and content, not wording.
-- When a piece of work warrants a written summary or report, write it to a
-  local Markdown file in the relevant repo. Don't publish it as an Artifact,
-  and don't reach for HTML or a bespoke visual design. Ask before publishing
-  an Artifact if you think one is genuinely warranted.
+- When a piece of work warrants a written summary or report, write it to a local
+  Markdown file in the relevant repo. Don't publish it as an Artifact, and don't
+  reach for HTML or a bespoke visual design. Ask before publishing an Artifact
+  if you think one is genuinely warranted.
 
 ## Writing style
 
 - Don't use em dashes in commit messages, PR bodies, or plain-text content
-  generally (including chat and terminal output); use regular hyphens/dashes
-  or reword. Em dashes are fine in rich-text-targeted content (e.g. rendered
+  generally (including chat and terminal output); use regular hyphens/dashes or
+  reword. Em dashes are fine in rich-text-targeted content (e.g. rendered
   Markdown or HTML) and more formal writing.
 - In your own responses (chat/terminal output, not generated content), use
-  precise, non-idiomatic language. Prefer plain statements of intent like
-  "I'll write X" over softening idioms like "Let me write X".
+  precise, non-idiomatic language. Prefer plain statements of intent like "I'll
+  write X" over softening idioms like "Let me write X".
 - Use "allowlist" and "denylist", never "whitelist" or "blacklist" (in code,
   comments, chat, and generated content alike). Adapt derived forms too, e.g.
   "allowlisted" rather than "whitelisted".
@@ -138,9 +137,9 @@
 
 ## Making a case
 
-- Don't cite DHH (David Heinemeier Hansson) as an authority or good example
-  when justifying a choice. Reach for other evidence: community practice,
-  concrete tradeoffs, or other named practitioners.
+- Don't cite DHH (David Heinemeier Hansson) as an authority or good example when
+  justifying a choice. Reach for other evidence: community practice, concrete
+  tradeoffs, or other named practitioners.
 - Don't cite Robert C. Martin ("Uncle Bob") as an authority or good example.
   Using a term like "SOLID" is fine; just attribute the principles to their
   originators (e.g. Bertrand Meyer for Open/Closed, Barbara Liskov for
@@ -150,18 +149,18 @@
 
 - Subject line: describe what changed, 50 characters or fewer, imperative mood
   (e.g. "Show error when converting with no file").
-- When a commit changes these preferences, phrase the subject so it reads as
-  an instruction to Claude (e.g. "Have Claude read code before implementing"),
-  not like project policy or a code change.
+- When a commit changes these preferences, phrase the subject so it reads as an
+  instruction to Claude (e.g. "Have Claude read code before implementing"), not
+  like project policy or a code change.
 - Body: wrap at 72 characters. Explain any useful extra detail and the reason
   for the change (the why), not just the what.
 - Write the body in the present tense describing the commit ("This guards
   against…", "This re-renders…"), not the imperative.
-- Use the body to capture context or reasoning that could otherwise be lost,
-  but don't restate the subject or describe what's easily gleaned from the
-  diff. Omit the body when it would only do that.
-- Keep that reasoning out of code comments: a comment should carry only what
-  a reader needs to follow the code in front of them.
+- Use the body to capture context or reasoning that could otherwise be lost, but
+  don't restate the subject or describe what's easily gleaned from the diff.
+  Omit the body when it would only do that.
+- Keep that reasoning out of code comments: a comment should carry only what a
+  reader needs to follow the code in front of them.
 - No trailing full stops on body paragraphs.
 - Wrap code identifiers and symbols in backticks (e.g. `params.dig`, `@error`,
   `NoMethodError`).
@@ -175,14 +174,14 @@
 - Body: concise prose that mirrors the commit body. No section headings, no
   separate "why"/"testing" sections, and no "Generated with Claude Code" or
   other Claude references.
-- Write the body as complete sentences without omitting parts of speech
-  (unlike the imperative commit subject). Prefer opening with a subject such
-  as "This" over a verb.
+- Write the body as complete sentences without omitting parts of speech (unlike
+  the imperative commit subject). Prefer opening with a subject such as "This"
+  over a verb.
 - Include a screenshot (or short recording) for user-facing UI changes.
 - No trailing full stops on body paragraphs.
 
 ## Keeping this file current
 
-- When you learn a new preference in a session — whether from a correction or
-  an explicit request — add or update it here, don't just apply it for the
-  current session.
+- When you learn a new preference in a session — whether from a correction or an
+  explicit request — add or update it here, don't just apply it for the current
+  session.

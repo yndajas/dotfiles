@@ -15,16 +15,18 @@
   - https://github.com/archie-judd/blink-cmp-words (vs blink-cmp-dictionary, it
     also has a thesaurus)
   - https://github.com/nvim-telescope/telescope-live-grep-args.nvim
-- restructure lua/plugins/*.lua to lua/plugins/<org>/<repo>.lua
+- restructure lua/plugins/\*.lua to lua/plugins/<org>/<repo>.lua
 - Add commands for finding open localhost ports somewhere:
   - find listening ports `lsof -i -n -P | grep '(LISTEN)'`
   - find Ruby ports `lsof -i -n -P | grep 'ruby'`
   - find ports in use by Ruby and associated processes (Ruby could be
     substituted with something else found by the first command above, perhaps
-    via a function argument): `echo -e "ports in use by Ruby processes (lsof) followed by process IDs, uptime, and commands (ps)\n" && lsof -i -P -n | grep 'ruby' | tee > >(awk '{print $9}' | grep --only-matching --extended-regexp "\d+$" | sort | uniq) >(awk '{print $2}' | uniq | xargs -I {} ps {} -o pid=,time=,comm=)`
+    via a function argument):
+    `echo -e "ports in use by Ruby processes (lsof) followed by process IDs, uptime, and commands (ps)\n" && lsof -i -P -n | grep 'ruby' | tee > >(awk '{print $9}' | grep --only-matching --extended-regexp "\d+$" | sort | uniq) >(awk '{print $2}' | uniq | xargs -I {} ps {} -o pid=,time=,comm=)`
 - Check out Helix some more; symlink in dotfiles repo if useful, uninstall if
   not
-- Shift functions to executable script files added to path? <https://youtu.be/D2pe9ZZ2yCE>
+- Shift functions to executable script files added to path?
+  <https://youtu.be/D2pe9ZZ2yCE>
 - transfer tabs from Arc and mobile browsers to somewhere else
 - Add more Mac App Store apps to Brewfile? Or is it auto-populated?
 - Move relevant ~/.config/ files into repo
@@ -33,7 +35,7 @@
   - delete back including character under cursor:
     https://www.reddit.com/r/vim/comments/1gbrxrk/comment/ltotb1w/
   - Vim: splits (:sp), tabs (:tabnew or maybe :new), forward search current word
-    (*, then n or N to go next or previous), backward search current word (£,
+    (\*, then n or N to go next or previous), backward search current word (£,
     then the same), redo (.), visual block mode (Ctrl + V, then use keys to
     select multiple lines, then Ctrl + I to go to the start of the first, do
     something, then Esc to apply to the start of each)
