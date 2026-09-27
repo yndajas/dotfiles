@@ -44,7 +44,7 @@ if [[ -z "$(eval grep "$(brew --prefix)/bin/zsh" /etc/shells)" ]]; then
   echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells || echo "\n${text_red_bold}ALERT: action required${text_reset}\n\nFailed to add Homebrew version of Zsh to allowed shell list. Run the following command as an admin\n\n$ echo \"\$(brew --prefix)/bin/zsh\" | sudo tee -a /etc/shells"
 fi
 
-if [[ $SHELL != "/opt/homebrew/bin/zsh" ]]; then
+if [[ ${SHELL} != "/opt/homebrew/bin/zsh" ]]; then
   echo "===> Attempting to change shell to Homebrew version of Zsh"
-  chsh -s "$(brew --prefix)/bin/zsh" "$USER" || echo "\n${text_red_bold}ALERT: action required${text_reset}\n\nFailed to set shell to Homebrew version of Zsh. Run the following command as an admin\n\nchsh -s \"\$(brew --prefix)/bin/zsh\" \"\$USER\""
+  chsh -s "$(brew --prefix)/bin/zsh" "${USER}" || echo "\n${text_red_bold}ALERT: action required${text_reset}\n\nFailed to set shell to Homebrew version of Zsh. Run the following command as an admin\n\nchsh -s \"\$(brew --prefix)/bin/zsh\" \"\${USER}\""
 fi
