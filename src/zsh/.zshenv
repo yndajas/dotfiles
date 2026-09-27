@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+# Every Zsh reads this file, interactive or not, so it holds only what
+# non-interactive shells need: exported environment variables, and functions
+# called by scripts, by Neovim's `!`, or by dotbot's shell steps. Anything used
+# only by interactive shells belongs in .config/zshrc instead
+
 function command_exists() {
   command -v "${1}" > /dev/null 2>&1
 }
