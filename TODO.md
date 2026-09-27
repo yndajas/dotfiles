@@ -37,7 +37,7 @@
     then the same), redo (.), visual block mode (Ctrl + V, then use keys to
     select multiple lines, then Ctrl + I to go to the start of the first, do
     something, then Esc to apply to the start of each)
-  - custom functions like clean_branches and random_hint
+  - custom functions like clean_branches
   - man readline view navigation keys
   - ~command~ \*\* fuzzy find
   - Ctrl + T fuzzy find files
