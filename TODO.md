@@ -26,7 +26,6 @@
   not
 - Shift functions to executable script files added to path? <https://youtu.be/D2pe9ZZ2yCE>
 - transfer tabs from Arc and mobile browsers to somewhere else
-- unset variables outside functions that aren't needed permanently?
 - Add more Mac App Store apps to Brewfile? Or is it auto-populated?
 - Move relevant ~/.config/ files into repo
 - Add to hints array
