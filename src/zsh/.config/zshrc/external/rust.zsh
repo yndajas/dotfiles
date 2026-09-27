@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-rustup_dir="$(brew --prefix rustup)"
+rustup_dir="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/rustup"
 path_excludes "${rustup_dir}/bin" && export PATH="${PATH}:${rustup_dir}/bin"
 unset rustup_dir
 

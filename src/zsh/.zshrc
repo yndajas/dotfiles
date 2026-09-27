@@ -25,7 +25,10 @@ source "${HOME}/.config/zshrc/shell/pushd.zsh"
 ## system programs
 
 source "${HOME}/.config/zshrc/system/less.zsh"
-source "${HOME}/.config/zshrc/system/ssh.zsh"
+
+## self-written programs needed by external programs
+
+source "${HOME}/.config/zshrc/user/cache.zsh"
 
 ## external programs
 
@@ -60,19 +63,13 @@ source "${HOME}/.config/zshrc/user/catls.zsh"
 source "${HOME}/.config/zshrc/user/docker.zsh"
 source "${HOME}/.config/zshrc/user/dotfiles.zsh"
 source "${HOME}/.config/zshrc/user/git.zsh"
-source "${HOME}/.config/zshrc/user/hints.zsh"
 source "${HOME}/.config/zshrc/user/homebrew.zsh"
 source "${HOME}/.config/zshrc/user/manual.zsh"
-source "${HOME}/.config/zshrc/user/mdformat.zsh"
-source "${HOME}/.config/zshrc/user/shellcheck.zsh"
 
 ## local customisations (not backed up at github.com/yndajas/dotfiles)
 
 [[ -f "${HOME}/.zshrc_local" ]] && source "${HOME}/.zshrc_local"
 
-## various startup checks/echoes
+## startup checks
 
 warn_about_unsynced_dotfiles
-warn_about_shellcheck_issues
-warn_about_mdformat_plugins
-hints random

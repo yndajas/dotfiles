@@ -46,5 +46,12 @@ require("conform").formatters["biome-check"] = {
 }
 
 require("conform").formatters.mdformat = {
-  append_args = { "--wrap", "80" },
+  append_args = {
+    "--wrap",
+    "80",
+    "--extensions",
+    "gfm",
+    "--extensions",
+    "frontmatter",
+  },
 }

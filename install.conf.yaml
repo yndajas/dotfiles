@@ -42,6 +42,7 @@
 - create:
     - ${HOME}/code
 - shell:
+    - git config core.hooksPath .githooks
     - command: script/setup_homebrew_and_shell.zsh
       stdout: true
       stderr: true
