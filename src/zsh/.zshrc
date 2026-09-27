@@ -29,6 +29,7 @@ source "${HOME}/.config/zshrc/system/less.zsh"
 ## self-written programs needed by external programs
 
 source "${HOME}/.config/zshrc/user/cache.zsh"
+source "${HOME}/.config/zshrc/user/path.zsh"
 
 ## external programs
 
