@@ -1,0 +1,101 @@
+#!/usr/bin/env zsh
+
+# Profile interactive Zsh startup.
+#
+# Runs under a clean environment, because with an inherited PATH
+# `path_excludes` skips the rbenv, nodenv, and Homebrew initialisation that
+# dominates a real startup. LANG is passed through regardless, since
+# /etc/zshrc branches on the locale.
+#
+# Timings come from xtrace rather than zprof, which times only function calls
+# and so attributes nothing to the top-level `source_cached` and `eval` lines.
+# xtrace inflates line-heavy code, so the wall clock below is the honest total
+# and the breakdown is only for ranking.
+
+set -e
+
+row_limit=${1:-20}
+
+typeset -a clean_env
+clean_env=(
+  env -i
+  "HOME=${HOME}"
+  "USER=${USER}"
+  "TERM=${TERM:-xterm-256color}"
+  "LANG=${LANG}"
+  PATH=/usr/bin:/bin:/usr/sbin:/sbin
+)
+
+# the trace carries raw escape bytes, which a UTF-8 locale refuses to match
+export LC_ALL=C
+
+trace_file=$(mktemp)
+trap 'rm -f "${trace_file}"' EXIT
+
+print -r -- '==> Wall clock, five runs'
+
+# the first run off a cold cache is far slower, so discard one
+"${clean_env[@]}" "${SHELL}" -i -c exit > /dev/null 2>&1 || true
+
+for _run in 1 2 3 4 5; do
+  "${clean_env[@]}" /usr/bin/time "${SHELL}" -i -c exit 2>&1 > /dev/null |
+    tail -1
+done
+
+"${clean_env[@]}" "PS4=+%D{%s%6.} %N:%i> " "${SHELL}" -i -x -c exit \
+  2> "${trace_file}" > /dev/null || true
+
+typeset -A totals_by_file
+typeset -a slowest
+previous_timestamp=''
+previous_location=''
+previous_command=''
+
+# shellcheck disable=2154
+# Zsh's =~ sets $match
+while IFS= read -r trace_line; do
+  # shellcheck disable=2076
+  # Zsh treats a quoted right-hand side as a regex
+  [[ "${trace_line}" =~ '^\++([0-9]{16}) ([^ ]+)> (.*)$' ]] || continue
+  timestamp="${match[1]}"
+  location="${match[2]}"
+  # strip control bytes so entries survive the sort pipeline below
+  traced_command="${match[3]//[^[:print:]]/}"
+
+  if [[ -n "${previous_timestamp}" ]]; then
+    # shellcheck disable=2079
+    # Zsh arithmetic supports decimals
+    elapsed=$(( (timestamp - previous_timestamp) / 1000.0 ))
+    source_file="${previous_location%:*}"
+    totals_by_file[${source_file}]=$(( ${totals_by_file[${source_file}]:-0} + elapsed ))
+    slowest+=("${elapsed} ${previous_location} ${previous_command}")
+  fi
+
+  previous_timestamp="${timestamp}"
+  previous_location="${location}"
+  previous_command="${traced_command}"
+done < "${trace_file}"
+
+print
+print -r -- '==> Slowest lines (xtrace, inflated)'
+
+print -l -- "${slowest[@]}" |
+  sort -rn |
+  head -"${row_limit}" |
+  while read -r elapsed location traced_command; do
+    printf '%8.2fms  %s  %.60s\n' "${elapsed}" "${location}" "${traced_command}"
+  done
+
+print
+print -r -- '==> By file (xtrace, inflated)'
+
+# shellcheck disable=2066,2296
+# Zsh parameter expansion flag: the keys of an associative array
+for source_file in "${(@k)totals_by_file}"; do
+  print -r -- "${totals_by_file[${source_file}]} ${source_file}"
+done |
+  sort -rn |
+  head -"${row_limit}" |
+  while read -r elapsed source_file; do
+    printf '%8.2fms  %s\n' "${elapsed}" "${source_file}"
+  done

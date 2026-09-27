@@ -11,6 +11,7 @@ shellcheck \
   --shell=bash \
   --wiki-link-count=100 \
   --rcfile src/shellcheck/.shellcheckrc \
+  script/profile_zsh \
   script/setup_homebrew_and_shell.zsh \
   src/zsh/.zshenv \
   src/zsh/.zshrc \
