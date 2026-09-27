@@ -17,6 +17,23 @@ fi
 
 brew bundle --global install
 
+# install the nodenv plugin that rehashes after npm installs, and its hooks for
+# each installed node version
+
+if command_exists nodenv; then
+  nodenv_package_rehash_dir="$(nodenv root)/plugins/nodenv-package-rehash"
+
+  if [[ ! -d "${nodenv_package_rehash_dir}" ]]; then
+    echo '==> Installing nodenv-package-rehash'
+    git clone https://github.com/nodenv/nodenv-package-rehash.git \
+      "${nodenv_package_rehash_dir}"
+  fi
+
+  unset nodenv_package_rehash_dir
+
+  nodenv package-hooks install --all
+fi
+
 # Use Homebrew version of Zsh
 
 text_red_bold='\033[1;31m'
