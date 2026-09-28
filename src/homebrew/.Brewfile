@@ -170,7 +170,11 @@ cask "dotnet-sdk"
 cask "fantastical"
 # Web browser
 cask "firefox"
+cask "font-commit-mono"
+cask "font-commit-mono-nerd-font"
 cask "font-fira-code-nerd-font"
+cask "font-hack"
+cask "font-hack-nerd-font"
 cask "font-iosevka-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"

@@ -1,5 +1,6 @@
 # cursor-click-to-move = true
 cursor-style = block
+font-family = CommitMono
 # macos-option-as-alt = true
 macos-titlebar-proxy-icon = hidden
 shell-integration-features = no-cursor
