@@ -15,7 +15,7 @@ else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-brew bundle --global install
+brew bundle --global install --verbose
 
 # install the nodenv plugin that rehashes after npm installs, and its hooks for
 # each installed node version
