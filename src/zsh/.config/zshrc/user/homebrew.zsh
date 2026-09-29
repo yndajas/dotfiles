@@ -2,6 +2,11 @@
 
 export HOMEBREW_CASK_OPTS=--appdir=~/Applications
 
+okta_extension_app_id=1439967473
+[[ "$(hostname)" == MAC* ]] ||
+  export HOMEBREW_BUNDLE_MAS_SKIP="${okta_extension_app_id}"
+unset okta_extension_app_id
+
 function brew() {
   [[ $# -eq 0 ]] && command brew && return 0
 
