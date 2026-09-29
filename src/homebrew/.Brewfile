@@ -171,6 +171,7 @@ cask "fantastical"
 # Web browser
 cask "firefox"
 cask "font-commit-mono"
+cask "font-commit-mono-nerd-font"
 cask "font-hack"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
@@ -184,6 +185,8 @@ cask "inkscape"
 cask "itch"
 # Menu bar manager
 cask "jordanbaird-ice@beta"
+# GPU-based terminal emulator
+cask "kitty"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Shows the next meeting in the menu bar
