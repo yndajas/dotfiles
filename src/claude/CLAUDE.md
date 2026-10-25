@@ -137,6 +137,9 @@
 - Prefer contracted forms ("it's", "doesn't", "can't", "won't") over the
   stilted full forms, in basically all writing: chat, commit messages, PR
   bodies, documentation, and code comments alike.
+- Assume little context and specialist knowledge in generated content. Explain
+  in plain terms rather than reaching for jargon, and give a reader arriving
+  cold the context they need to understand why something exists.
 - After drafting a response or artifact, scan it for any sentence that repeats
   an idea already stated, and cut or consolidate it.
 
