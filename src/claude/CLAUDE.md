@@ -134,6 +134,9 @@
   document's existing style or I ask for it.
 - Avoid twee filler like "genuinely" and "say the word"; be direct and to the
   point rather than fluffy.
+- Prefer contracted forms ("it's", "doesn't", "can't", "won't") over the
+  stilted full forms, in basically all writing: chat, commit messages, PR
+  bodies, documentation, and code comments alike.
 - After drafting a response or artifact, scan it for any sentence that repeats
   an idea already stated, and cut or consolidate it.
 
